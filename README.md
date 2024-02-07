@@ -1,17 +1,12 @@
-Project Title: Gumroad Product Page
+# Gumroad Product Page 
 
 
-----------
-Table of Contents: 
-1. Project Description
-2. Credits
+A basic replication of the Gumroad Product Page UX in Rails and React, with an added 'Recently Viewed' section. 
 
 
-----------
-1. Project Description
+## Demo
+michellef.dev
 
 
-----------
-2. Credits
-
+## Credits
 Michelle Flandin
