@@ -7,7 +7,7 @@ Demo: www.michellef.dev
 ## Table of Contents
 1. [How to Use](#how-to-use)
 2. [How to Edit Schema](#how-to-edit-schema)
-3. [Credits] (#credits)
+3. [Credits](#credits)
 
 
 ## 1. How to Use <a name="how-to-use"></a>
