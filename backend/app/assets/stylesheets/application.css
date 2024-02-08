@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar a:hover {
+    opacity: 0.5;
+}
+
+
+.container {
+    padding: 4rem 2rem;
+}
