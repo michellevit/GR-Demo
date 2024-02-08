@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div id="products">
+  <table class='table table-bordered'> 
+    <thead>
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Creator Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <%= render product %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New product", new_product_path %>
