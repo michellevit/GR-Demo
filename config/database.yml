@@ -1,21 +1,7 @@
-# LOCAL VERSION
+# NOTE: Local environment will not work with current setup: 
+#       *db is not set up with postgresql, and sqlite3 will not work because of difference in how sqlite3 and postgresql handle json fields
 
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
-
-# test:
-#   <<: *default
-#   database: db/test.sqlite3
-  
-
-
-# PRODUCTION VERSION
+# database.yml
 
 default: &default
   adapter: postgresql
