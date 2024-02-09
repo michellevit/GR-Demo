@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ProductCard = ({ product }) => {
+  const apiUrl = process.env.REACT_APP_API_URL
+  const imagePath = apiUrl + "/product_images/" + product.image_urls[0]; 
   return (
     <div className="product-card">
       <div
         className="product-image"
-        style={{ backgroundImage: `url(${product.imageUrl})` }}
-      ></div>
+      ><img src={imagePath} alt={product.product_name} /></div>
       <div className="product-details">
-        <h4>{product.name}</h4>
+        <h4>{product.product_name}</h4>
         <a className="user">
           <FontAwesomeIcon icon={faCircle} />
           {product.user}

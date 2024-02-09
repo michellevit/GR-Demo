@@ -7,7 +7,8 @@
         "flex_price": true,
         "ratings_count": 1000,
         "average_rating": 5,
-        "download_count": 37969
+        "download_count": 37969,
+        "image_urls": []
       },
       {
         "product_name": "Wave Wallpaper Pack",
@@ -17,7 +18,9 @@
         "flex_price": true,
         "ratings_count": 5,
         "average_rating": 4.6,
-        "download_count": 23
+        "download_count": 23,
+        "image_urls": []
+
       },
       {
         "product_name": "PDF Cheque Template Form for Easy Cheque Printing",
@@ -27,7 +30,9 @@
         "flex_price": true,
         "ratings_count": 5000,
         "average_rating": 5.0,
-        "download_count": 20000
+        "download_count": 20000,
+        "image_urls": ["../../public/product_images/Cheque-PDF-1.jpg", "http://example.com/path/to/Cheque-PDF-2.jpg"]
+
       },
       {
         "product_name": "Shape Of You - Ed Sheeran | Undawn piano (Free Macro)",
@@ -37,7 +42,8 @@
         "flex_price": false,
         "ratings_count": 540,
         "average_rating": 5.0,
-        "download_count": 5029
+        "download_count": 5029,
+        "image_urls": []
       },
       {
         "product_name": "CR Basic Brushpack for blender texture painting"        ,
@@ -47,17 +53,19 @@
         "flex_price": true,
         "ratings_count": 156,
         "average_rating": 4.9,
-        "download_count": 4000
+        "download_count": 4000,
+        "image_urls": []
       },
       {
-        "product_name": "IPad Pro + Pencil 2018 – Mockup [FREE PSD] 💎",
+        "product_name": "IPad Pro + Pencil 2018 - Mockup [FREE PSD] 💎",
         "user": "Jovino",
         "description": "Fresh white frontal mockup is out now..",
         "price": 0,
         "flex_price": true,
         "ratings_count": 172,
         "average_rating": 4.5,
-        "download_count": 975
+        "download_count": 975,
+        "image_urls": []
       },
       {
         "product_name": "Free Plyometric Program - Increase your Vertical Jump",
@@ -67,7 +75,8 @@
         "flex_price": false,
         "ratings_count": 4,
         "average_rating": 5.0,
-        "download_count": 12
+        "download_count": 12,
+        "image_urls": []
       },
       {
         "product_name": "How to Learn Chumash with Rashi",
@@ -77,7 +86,8 @@
         "flex_price": true,
         "ratings_count": 12,
         "average_rating": 4.2,
-        "download_count": 29
+        "download_count": 29,
+        "image_urls": []
       }
   ]
 

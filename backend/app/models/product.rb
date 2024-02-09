@@ -1,2 +1,3 @@
 class Product < ApplicationRecord
-end
+    serialize :image_urls, Array
+  end

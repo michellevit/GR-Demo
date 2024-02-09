@@ -18,6 +18,9 @@ Demo: www.michellef.dev
   - To run on a specific port: rails s -p 3001
   - To close server - ctrl c
 - See current routes: rails routes
+- To add a dependency:
+  - Add gem to 'Gemfile' and run 'bundle install'
+  - This updates Gemfile with current dependencies
 
 
 ## 2. How to Interact With Database <a name="how-to-db"></a>
