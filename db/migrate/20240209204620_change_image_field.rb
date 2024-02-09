@@ -1,14 +1,22 @@
 class ChangeImageField < ActiveRecord::Migration[7.1]
   def change
-    reversible do |dir|
-      change_table :products do |t|
-        dir.up do
-          t.change :image_urls, 'jsonb USING CAST(image_urls AS jsonb)'
-        end
+    reversible do |change|
+      change.up do
+        execute <<-SQL
+          ALTER TABLE products
+          ALTER COLUMN image_urls
+          TYPE jsonb
+          USING image_urls::jsonb
+        SQL
+      end
 
-        dir.down do
-          t.change :image_urls, 'text USING CAST(image_urls AS text)'
-        end
+      change.down do
+        execute <<-SQL
+          ALTER TABLE products
+          ALTER COLUMN image_urls
+          TYPE json
+          USING image_urls::json
+        SQL
       end
     end
   end
