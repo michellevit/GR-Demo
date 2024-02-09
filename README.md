@@ -64,7 +64,7 @@ Demo: www.michellef.dev
 ## 5. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
 - ERROR LOGS: heroku logs --tail -a gumroad-demo
 - MIGRATE: heroku run rake db:migrate -a gumroad-demo
-- CLEAR DATABASE: tbd...(reset-database.bat)
+- CLEAR DATABASE: ./reset-database.bat
 
 
 ## 6. Credits <a name="credits"></a>
