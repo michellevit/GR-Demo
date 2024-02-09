@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
-    product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     render json: @products, status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Product not found" }, status: :not_found
