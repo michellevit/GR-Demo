@@ -1,15 +1,21 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: myapp_development
 
 test:
   <<: *default
-  database: db/test.sqlite3
-  
+  database: myapp_test
+
 production:
+  <<: *default
+  database: gumroad-demo_production
   url: <%= ENV['DATABASE_URL'] %>
