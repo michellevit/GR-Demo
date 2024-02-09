@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all
+    render json: @products, status: :ok
   end
 
   # GET /products/1 or /products/1.json
@@ -13,7 +14,7 @@ class ProductsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Product not found" }, status: :not_found
   end
-
+  
   # GET /products/new
   def new
     @product = Product.new
