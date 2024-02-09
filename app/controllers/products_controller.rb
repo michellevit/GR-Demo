@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
+    render json: @products, status: :ok
   end
 
   # GET /products/1 or /products/1.json
