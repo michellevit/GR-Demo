@@ -9,7 +9,7 @@ Demo: www.michellef.dev
 1. [How to Basics](#how-to-basics)
 2. [How to Interact With Database](#how-to-db)
 3. [How to Edit Schema](#how-to-edit-schema)
-4. [Heroku - Troubleshooting](#heroku-troubleshooting)
+4. [Heroku - Updating](#heroku-troubleshooting)
 5. [Heroku - Troubleshooting](#heroku-troubleshooting)
 6. [Credits](#credits)
 
