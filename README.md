@@ -8,10 +8,11 @@ Demo: www.michellef.dev
 ## Table of Contents
 1. [How to Basics](#how-to-basics)
 2. [How to Interact With Database](#how-to-db)
-3. [How to Edit Schema](#how-to-edit-schema)
-4. [Heroku - Updating](#heroku-troubleshooting)
-5. [Heroku - Troubleshooting](#heroku-troubleshooting)
-6. [Credits](#credits)
+3. [How to Edit Schema (Development)](#how-to-edit-schema-development)
+4. [How to Edit Schema (Production)](#how-to-edit-schema-production)
+5. [Heroku - Updating](#heroku-troubleshooting)
+6. [Heroku - Troubleshooting](#heroku-troubleshooting)
+7. [Credits](#credits)
 
 
 
@@ -34,7 +35,7 @@ Demo: www.michellef.dev
 - To seed the db -> exit the rails console + execute: rails db:seed
 
 
-## 3. How to Edit Schema <a name="how-to-edit-schema"></a>
+## 3. How to Edit Schema - Development <a name="how-to-edit-schema-development"></a>
 - Note: This uses version control -> hence complexity
 - Open bash terminal 
 - Navigate to backend dir
@@ -50,22 +51,41 @@ Demo: www.michellef.dev
       end
       -EXAMPLES: 
         -rename_column :products, :creator_name, :user
-    -Run the migration (in bash temrinal): 
+    -Run the migration (in bash terminal): 
       - rails db:migrate
 
 
-## 4. Heroku - Updating <a name="heroku-updating"></a>
+## 4. How to Edit Schema - Production <a name="how-to-edit-schema-production"></a>
+- Note: This uses version control -> hence complexity
+- Open bash terminal 
+- Navigate to backend dir
+  - Generate a migration: rails generate migration [description of change being implemented to db]
+    - e.g. rails generate migration ChangeFieldTypeInProducts
+  - Open the newly created migration file in db/migrate
+    - Inside the migration file, you'll need to add a command to make the change
+    - e.g. For example, to change a column named description from string to text in the products table, you   would write:
+    - class ChangeFieldTypeInProducts < ActiveRecord::Migration[7.1]
+        def change
+          change_column :products, :description, :text
+        end
+      end
+      -EXAMPLES: 
+        -rename_column :products, :creator_name, :user
+  -Run: ./reset-database.bat
+
+
+## 5. Heroku - Updating <a name="heroku-updating"></a>
 - How to push changes to Heroku app
   - Navigate into the Gumroad-Demo directory in the powershell terminal
   - Make sure you are logged into heroku form terminal (run: 'heroku login')
   - Run: .\automate-build-update.bat "Your commit message here"
 
 
-## 5. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
+## 6. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
 - ERROR LOGS: heroku logs --tail -a gumroad-demo
 - MIGRATE: heroku run rake db:migrate -a gumroad-demo
 - CLEAR DATABASE: ./reset-database.bat
 
 
-## 6. Credits <a name="credits"></a>
+## 7. Credits <a name="credits"></a>
 Michelle Flandin
