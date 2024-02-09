@@ -3,6 +3,10 @@
     padding: 1rem;
 }
 
+.backend .nav-item {
+    padding: 0 1rem;
+}
+
 .backend .navbar .nav-link:hover {
     opacity: 0.5;
 }
@@ -25,3 +29,23 @@
     transform: translateX(-4px) translateY(-4px);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 1); 
 }
+
+
+.backend .btn a {
+    color: black;
+    text-decoration: none;
+}
+
+.backend table td {
+    padding: 1rem;
+}
+
+.backend table td a {
+    color: #ff90e8;
+    text-decoration: none;
+}
+
+.backend table td a:hover {
+    opacity: 0.5
+}
+
