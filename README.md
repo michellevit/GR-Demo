@@ -85,6 +85,7 @@ Demo: www.michellef.dev
 - ERROR LOGS: heroku logs --tail -a gumroad-demo
 - MIGRATE: heroku run rake db:migrate -a gumroad-demo
 - CLEAR DATABASE: ./reset-database.bat
+- RESTART SERVER: heroku ps:restart
 
 
 ## 7. Credits <a name="credits"></a>
