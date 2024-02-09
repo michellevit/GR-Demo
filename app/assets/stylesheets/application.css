@@ -16,14 +16,15 @@
     padding: 4rem 2rem;
 }
 
-.backend .btn {
+.backend .btn, .backend .navbar-toggler {
     background-color: #ff90e8;
     color: black;
     border: 1px solid black;
+    border-radius: 0.25rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.backend .btn:hover {
+.backend .btn:hover, .backend .navbar-toggler  {
     background-color: #ff90e8;
     color: black;
     transform: translateX(-4px) translateY(-4px);
