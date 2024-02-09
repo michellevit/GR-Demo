@@ -10,12 +10,9 @@
 
 
 # Load the products JSON data
-file_path = Rails.root.join('lib', 'seeds', 'products.json')
-product_data = JSON.parse(File.read(file_path))
+file_path = Rails.root.join('db', 'seeds', 'products.json')
+products_data = JSON.parse(File.read(file_path))
 
-product_data.each do |product_attrs|
-  # Check for duplicates based on a unique attribute, such as 'product_name'
-  unless Product.exists?(product_name: product_attrs["product_name"])
-    Product.create!(product_attrs)
-  end
+products_data.each do |product_attrs|
+  Product.create!(product_attrs)
 end

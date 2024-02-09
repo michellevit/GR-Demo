@@ -1,21 +1,19 @@
 import React from "react";
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'; // Remove BrowserRouter import here
 import "./App.css";
 import Nav from "./components/Nav";
 import AllProducts from "./pages/AllProducts";
 import SingleProduct from "./components/SingleProduct";
 
 function App() {
-  const location = useLocation();
-  const isAllProductsPage = location.pathname === '/home' || location.pathname === '/';
-
   return (
     <div className="app">
-      <Nav shrink={isAllProductsPage} />
+      <Nav />
       <div className="container">
         <Routes>
           <Route path="home" element={<AllProducts />} />
           <Route path="/" element={<AllProducts />} /> 
+          <Route path="products" element={<AllProducts />} /> 
           <Route path="product/:id" element={<SingleProduct />} /> 
         </Routes>
       </div>
