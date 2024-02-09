@@ -6,14 +6,16 @@ Demo: www.michellef.dev
 
 
 ## Table of Contents
-1. [How to - Basics](#how-to-basics)
+1. [How to Basics](#how-to-basics)
 2. [How to Interact With Database](#how-to-db)
 3. [How to Edit Schema](#how-to-edit-schema)
-4. [Credits](#credits)
+4. [Heroku - Troubleshooting](#heroku-troubleshooting)
+5. [Heroku - Troubleshooting](#heroku-troubleshooting)
+6. [Credits](#credits)
 
 
 
-## 1. How to - Basics <a name="how-to-basics"></a>
+## 1. How to Basics <a name="how-to-basics"></a>
 - To start the server - navigate to backend dir + run: rails s (opens on localhost:3000)
   - To run on a specific port: rails s -p 3001
   - To close server - ctrl c
@@ -52,5 +54,16 @@ Demo: www.michellef.dev
       - rails db:migrate
 
 
-## 4. Credits <a name="credits"></a>
+## 4. Heroku - Updating <a name="heroku-updating"></a>
+- How to push changes to Heroku app
+  - Navigate into the Gumroad-Demo directory in the powershell terminal
+  - Make sure you are logged into heroku form terminal (run: 'heroku login')
+  - Run: .\automate-build-update.bat "Your commit message here"
+
+
+## 5. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
+- heroku logs --tail -a gumroad-demo
+
+
+## 6. Credits <a name="credits"></a>
 Michelle Flandin
