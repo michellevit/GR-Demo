@@ -35,6 +35,11 @@
     outline: none;
 }
 
+.backend  button:active, .backend .btn:active, .backend .navbar-toggler:active {
+    outline: none;
+}
+
+
 .backend .btn a {
     color: black;
     text-decoration: none;
