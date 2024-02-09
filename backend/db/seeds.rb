@@ -9,7 +9,7 @@
 #   end
 
 
-# Load the JSON data
+# Load the products JSON data
 file_path = Rails.root.join('lib', 'seeds', 'products.json')
 product_data = JSON.parse(File.read(file_path))
 

@@ -2,12 +2,20 @@
 
 one:
   product_name: MyString
-  creator_name: MyString
-  description: MyString
-  price: MyString
+  user: MyString
+  description: MyText
+  price: 1.5
+  flex_price: false
+  ratings_count: 1
+  average_rating: 1.5
+  download_count: 1
 
 two:
   product_name: MyString
-  creator_name: MyString
-  description: MyString
-  price: MyString
+  user: MyString
+  description: MyText
+  price: 1.5
+  flex_price: false
+  ratings_count: 1
+  average_rating: 1.5
+  download_count: 1

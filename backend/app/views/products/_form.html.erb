@@ -17,18 +17,38 @@
   </div>
 
   <div>
-    <%= form.label :creator_name, style: "display: block" %>
-    <%= form.text_field :creator_name %>
+    <%= form.label :user, style: "display: block" %>
+    <%= form.text_field :user %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div>
     <%= form.label :price, style: "display: block" %>
     <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :flex_price, style: "display: block" %>
+    <%= form.check_box :flex_price %>
+  </div>
+
+  <div>
+    <%= form.label :ratings_count, style: "display: block" %>
+    <%= form.number_field :ratings_count %>
+  </div>
+
+  <div>
+    <%= form.label :average_rating, style: "display: block" %>
+    <%= form.text_field :average_rating %>
+  </div>
+
+  <div>
+    <%= form.label :download_count, style: "display: block" %>
+    <%= form.number_field :download_count %>
   </div>
 
   <div>
