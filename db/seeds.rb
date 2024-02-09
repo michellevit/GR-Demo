@@ -10,7 +10,7 @@
 
 
 # Load the products JSON data
-file_path = Rails.root.join('db', 'seeds', 'products.json')
+file_path = Rails.root.join('lib', 'seeds', 'products.json')
 products_data = JSON.parse(File.read(file_path))
 
 products_data.each do |product_attrs|
