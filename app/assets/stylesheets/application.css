@@ -31,7 +31,7 @@
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 1); 
 }
 
-button:active, .navbar-toggler:active {
+.backend .navbar-toggler:focus {
     outline: none;
 }
 
