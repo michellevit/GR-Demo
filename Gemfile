@@ -10,6 +10,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem 'rack-cors'
+gem 'pg'
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
@@ -28,5 +29,4 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
 end

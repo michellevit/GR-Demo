@@ -16,7 +16,7 @@ Demo: www.michellef.dev
 
 
 ## 1. How to Basics <a name="how-to-basics"></a>
-- To start the server - navigate to backend dir + run: rails s (opens on localhost:3000)
+- To start the local server - navigate to backend dir + run: rails s (opens on localhost:3000)
   - To run on a specific port: rails s -p 3001
   - To close server - ctrl c
 - See current routes: rails routes
