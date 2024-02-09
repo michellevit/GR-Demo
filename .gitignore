@@ -36,6 +36,5 @@
 
 
 # MF gitignores
-.ico
 .env
 reset-database.bat
