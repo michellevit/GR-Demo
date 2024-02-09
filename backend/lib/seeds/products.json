@@ -1,7 +1,7 @@
 [
     {
         "product_name": "Soft Sketch Brush ✿ FREE Procreate brush",
-        "creator_name": "Clara Voy",
+        "user": "Clara Voy",
         "description": "If you are looking for a free Procreate pencil brush, I've got you covered! This pencil brush is been made using my own textures.",
         "price": 0,
         "flex_price": true,
@@ -11,7 +11,7 @@
       },
       {
         "product_name": "Wave Wallpaper Pack",
-        "creator_name": "Vance Foley",
+        "user": "Vance Foley",
         "description": "Aesthetic wavy wallpapers in 4k resolution. Can easily be adapted to work on any vertical or horizontal screen.",
         "price": 0,
         "flex_price": true,
@@ -21,7 +21,7 @@
       },
       {
         "product_name": "PDF Cheque Template Form for Easy Cheque Printing",
-        "creator_name": "Michelle Flandin",
+        "user": "Michelle Flandin",
         "description": "This PDF template works for most printed cheque formats to streamline your cheque writing. Easily enter cheque details and let the template automatically calculate the totals for quick and accurate printing.",
         "price": 0,
         "flex_price": true,
@@ -31,7 +31,7 @@
       },
       {
         "product_name": "Shape Of You - Ed Sheeran | Undawn piano (Free Macro)",
-        "creator_name": "Sam Thompson",
+        "user": "Sam Thompson",
         "description": "The product has 2 files formatted <b>EXE</b> and <b>MCR</b>.</br></br>To get started, double-click the file and then press F5 or Play button.</br></br><i>Note: This Piano Script has been converted to jitbit macros so you can directly plug and play.</i>",
         "price": 10.99,
         "flex_price": false,
@@ -41,7 +41,7 @@
       },
       {
         "product_name": "CR Basic Brushpack for blender texture painting"        ,
-        "creator_name": "Tonya Sun",
+        "user": "Tonya Sun",
         "description": "A free version of my brushpack.</br></br>You get 6 customizable brushes along regular blender Brush!I hope you will enjoy this! Looking forward to see what you make.</br></br>Also here is a <u>tutorial</u> on 3d illustration",
         "price": 2.99,
         "flex_price": true,
@@ -51,7 +51,7 @@
       },
       {
         "product_name": "IPad Pro + Pencil 2018 – Mockup [FREE PSD] 💎",
-        "creator_name": "Jovino",
+        "user": "Jovino",
         "description": "Fresh white frontal mockup is out now..",
         "price": 0,
         "flex_price": true,
@@ -61,7 +61,7 @@
       },
       {
         "product_name": "Free Plyometric Program - Increase your Vertical Jump",
-        "creator_name": "Tom Jones",
+        "user": "Tom Jones",
         "description": "Free Plyometric training program. Increase your lower body power and explosiveness!</br></br>No gym required.This program includes 3 lower body plyometric workouts per week progressed over 4 weeks.</br></br>Workout 1 consists of short ground contact time jumping exercises. These are more tendon based jumps, focused on getting off the ground as quick as possible.Workout 2 consists of hill sprints, and bodyweight isometric exercises.</br></br>Workout 3 consists of long ground contact time jumping exercises.</br></br>These are more muscular based jumps, focused on producing maximal power output.",
         "price": 1.99,
         "flex_price": false,
@@ -71,7 +71,7 @@
       },
       {
         "product_name": "How to Learn Chumash with Rashi",
-        "creator_name": "Jovino",
+        "user": "Jovino",
         "description": "How to Learn Chumash with Rashi</br></br>The Chumash is our most fundamental Jewish text. Unfortunately, for many Jews it remains a difficult text to read, learn, and enjoy.</br></br>I wrote How to Learn Chumash with Rashi for adults who want to develop independent learning skills. The book guides you through a step-by-step method to learn any verse in Chumash.</br></br>The book's four chapters focus on Rashi, but the skills I teach are applicable to any text.",
         "price": 5.00,
         "flex_price": true,
@@ -80,4 +80,5 @@
         "download_count": 29
       }
   ]
+
 

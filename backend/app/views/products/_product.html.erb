@@ -1,12 +1,42 @@
 <div id="<%= dom_id product %>">
-  
-<tr>
-  <td><%= product.product_name %></td>
-  <td><%= product.user %></td>
-  <td><%= product.description %></td>
-  <td><%= product.price %></td>
-  <td><%= product.flex_price %></td>
-  <td><button type="button" class-"btn btn-secondary"><%= link_to "Show", product %></button></td>
-  <td><button type="button" class-"btn btn-secondary"><%= link_to "Edit", product %></button></td>
-  <td><button type="button" class-"btn btn-secondary"><%= link_to "Destroy", product %></button></td>
-<tr>
+  <p>
+    <strong>Product name:</strong>
+    <%= product.product_name %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= product.user %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= product.price %>
+  </p>
+
+  <p>
+    <strong>Flex price:</strong>
+    <%= product.flex_price %>
+  </p>
+
+  <p>
+    <strong>Ratings count:</strong>
+    <%= product.ratings_count %>
+  </p>
+
+  <p>
+    <strong>Average rating:</strong>
+    <%= product.average_rating %>
+  </p>
+
+  <p>
+    <strong>Download count:</strong>
+    <%= product.download_count %>
+  </p>
+
+</div>

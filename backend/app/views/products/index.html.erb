@@ -1,23 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
 <div id="products">
-  <table class='table table-bordered'> 
-    <thead>
-      <tr>
-        <th scope="col">Product Name</th>
-        <th scope="col">Creator Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Flex Price</th>
-        <th scope="col" colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <%= render product %>
-      <% end %>
-    </tbody>
-  </table>
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  <% end %>
 </div>
 
-
 <%= link_to "New product", new_product_path %>
-

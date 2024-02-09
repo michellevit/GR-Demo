@@ -4,21 +4,32 @@ A basic replication of the Gumroad Product Page UX in Rails and React, with an a
 Demo: www.michellef.dev 
 
 
+
 ## Table of Contents
-1. [How to Use](#how-to-use)
-2. [How to Edit Schema](#how-to-edit-schema)
-3. [Credits] (#credits)
+1. [How to - Basics](#how-to-basics)
+2. [How to Interact With Database](#how-to-db)
+3. [How to Edit Schema](#how-to-edit-schema)
+4. [Credits](#credits)
 
 
-## 1. How to Use <a name="how-to-use"></a>
+
+## 1. How to - Basics <a name="how-to-basics"></a>
 - To start the server - navigate to backend dir + run: rails s (opens on localhost:3000)
   - To run on a specific port: rails s -p 3001
   - To close server - ctrl c
-- Gitbash: rails g controller home 
-- Gitbash: rails routes -> see current routes
+- See current routes: rails routes
 
 
-## 2. How to Edit Schema <a name="how-to-edit-schema"></a>
+## 2. How to Interact With Database <a name="how-to-db"></a>
+- Open rails console: rails console
+  - See all entries: Product.all
+  - List first item in DB: Product.all.first 
+  - Create new entry: Product.create(product_name: "example 1")
+  - Delete all entries: Product.delete_all
+- To seed the db -> exit the rails console + execute: rails db:seed
+
+
+## 3. How to Edit Schema <a name="how-to-edit-schema"></a>
 - Note: This uses version control -> hence complexity
 - Open bash terminal 
 - Navigate to backend dir
@@ -38,5 +49,5 @@ Demo: www.michellef.dev
       - rails db:migrate
 
 
-## 3. Credits <a name="credits"></a>
+## 4. Credits <a name="credits"></a>
 Michelle Flandin
