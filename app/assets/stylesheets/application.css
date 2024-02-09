@@ -24,7 +24,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.backend .btn:hover, .backend .navbar-toggler  {
+.backend .btn:hover, .backend .navbar-toggler:hover  {
     background-color: #ff90e8;
     color: black;
     transform: translateX(-4px) translateY(-4px);
