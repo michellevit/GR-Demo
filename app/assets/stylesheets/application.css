@@ -1,7 +1,7 @@
 
 .backend .navbar {
     padding: 1rem;
-    background-color: #F4F4F0;
+    background-color: #F4F4F0 !important;
 }
 
 .backend .nav-item {
