@@ -21,7 +21,6 @@
     justify-content: center;
     min-width: 100%;
     min-height: 100%;
-    flex-direction: column;
 }
 
 .backend .main {
@@ -29,6 +28,7 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 
