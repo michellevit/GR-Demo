@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const imagePath = "../../public/product_images/" + product.image_urls[0];
   return (
     <>
-      <Link to={`/product/${product.id}`} className='product-card'>
+      <Link to={`/product/${product.id}`}>
       <div className="product-card">
         <div className="product-image">
           <img src={imagePath} alt={product.product_name} />
