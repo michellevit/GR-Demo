@@ -3,24 +3,9 @@ import "./SingleProduct.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 
 const SingleProduct = ({ product }) => {
-  const productId = product.id;
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(`https://gumroad-demo.michellef.dev/products/${product.id}`);
-        setSingleProduct(response.data);
-      } catch (error) {
-        console.error("Error fetching product:", error);
-      }
-    };
-
-    fetchProduct();
-  }, [productId]);
   return (
     <div className="single-product-container">
       <div className="product-header-container">
