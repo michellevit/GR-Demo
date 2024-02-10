@@ -38,3 +38,4 @@
 # MF gitignores
 .env
 reset-database.bat
+node_modules
