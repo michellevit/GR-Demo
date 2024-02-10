@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  private
+  public
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
@@ -76,10 +76,8 @@ class ProductsController < ApplicationController
       @query = params[:query]
       @products = Product.where("product_name LIKE ?", "%#{@query}%")
     
-      respond_to do |format|
-        format.html 
-        format.json { render json: @products } 
-      end
+      render partial: 'home/search'
+    end
     end
 
   end
