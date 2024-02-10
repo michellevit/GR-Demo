@@ -1,6 +1,7 @@
- 
+
 .backend .navbar {
     padding: 1rem;
+    background-color: #F4F4F0;
 }
 
 .backend .nav-item {
@@ -60,5 +61,10 @@
 
 .backend table thead th {
     background-color: #ff90e8;
-    border: 1px solid #ff90e8;
+    border: 1px solid black;
+}
+
+.backend table thead tr {
+    background-color: #ff90e8;
+    border: 1px solid black;
 }
