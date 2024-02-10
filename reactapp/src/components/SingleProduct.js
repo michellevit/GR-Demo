@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
-const SingleProduct = ( {product} ) => {
+const SingleProduct = ({ product }) => {
   const productId = product.id;
   useEffect(() => {
     const fetchProduct = async () => {
