@@ -3,8 +3,25 @@ import "./SingleProduct.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-const SingleProduct = () => {
+
+const SingleProduct = ( {product} ) => {
+  const [product, setProduct] = useState(null);
+  const { productId } = useParams();
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`https://gumroad-demo.michellef.dev/products/${productId}`);
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
   return (
     <div className="single-product-container">
       <div className="product-header-container">
@@ -14,12 +31,12 @@ const SingleProduct = () => {
               <div className="swallowtail-flag-wrapper-wrapper">
                 <div className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
-                    <span className="flag-text">$0.00+</span>
+                    <span className="flag-text">{product.price}({product.flex_price} ? "+" : "")</span>
                   </div>
                 </div>
               </div>
             </div>
-            <h3>Product Name</h3>
+            <h3>{product.product_name}</h3>
             <div className="product-details">
               <div className="rating">
                 <FontAwesomeIcon icon={faStar} />
@@ -27,7 +44,7 @@ const SingleProduct = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
-                <span className="rating-number">X ratings</span>
+                <span className="rating-number">{product.average_rating} ratings</span>
               </div>
               <div className="like">
                 <FontAwesomeIcon icon={faHeart} />
@@ -43,7 +60,7 @@ const SingleProduct = () => {
           <div className="product-data-container">
             <div id="left-column">
               <div id="row1">
-                <h1>Product Name</h1>
+                <h1>{product.product_name}</h1>
               </div>
               <div id="row2">
                 <div id="row2-col-left">
@@ -51,13 +68,13 @@ const SingleProduct = () => {
                     <div className="swallowtail-flag-wrapper-wrapper">
                       <div className="swallowtail-flag-wrapper">
                         <div className="swallowtail-flag">
-                          <span className="flag-text">$0.00+</span>
+                          <span className="flag-text">{product.price}({product.flex_price} ? "+" : "")</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="row2-col-mid">Creator Name</div>
+                <div id="row2-col-mid">{product.user}</div>
                 <div id="row2-col-right">
                   <div className="rating">
                     <FontAwesomeIcon icon={faStar} />
@@ -65,11 +82,11 @@ const SingleProduct = () => {
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
-                    <span className="rating-number">&nbsp;X ratings</span>
+                    <span className="rating-number">&nbsp;{product.average_rating} ratings</span>
                   </div>
                 </div>
               </div>
-              <div id="row3">Product Description</div>
+              <div id="row3">{product.description}</div>
             </div>
             <div id="right-column">
               <div id="row1">
