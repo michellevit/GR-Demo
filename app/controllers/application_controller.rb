@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
     def react_app
-      render file: 'public/index.html'
+      render file: 'public/build/static/index.html'
     end
   end

@@ -58,6 +58,6 @@
     opacity: 0.5
 }
 
-.backend table .th {
-    background-color: #ff90e8;
+.backend table thead {
+    background-color: #ff90e96e;
 }
