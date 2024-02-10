@@ -1,2 +1,5 @@
 class ApplicationController < ActionController::Base
-end
+    def react_app
+      render file: 'public/index.html'
+    end
+  end
