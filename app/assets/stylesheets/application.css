@@ -21,6 +21,7 @@
     justify-content: center;
     min-width: 100%;
     min-height: 100%;
+    flex-direction: column;
 }
 
 .backend .main {
@@ -29,6 +30,13 @@
     display: flex;
     justify-content: center;
 }
+
+
+.backend .main h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 
 .backend .btn, .backend .navbar-toggler {
     background-color: #ff90e8;
