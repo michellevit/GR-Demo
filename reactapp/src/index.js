@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Global styles
 import App from './App'; // Import the main App component
-import reportWebVitals from './reportWebVitals'; // Optional, for measuring performance
 
 // React 17 and earlier
 ReactDOM.render(
