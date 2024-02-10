@@ -33,34 +33,8 @@ if "%~1"=="" (
 )
 
 
-:: Move up one directory to Coding_Projects
-cd ..
-
-:: Save the current directory (Coding_Projects) as the base path
-SET basePath=%cd%
-
-
-:: Navigate to the React app directory
-cd "%basePath%\Gumroad-Demo-Frontend"
-
-
 :: Build the React app
-call npm-run-build.bat
-
-
-:: Navigate back to the base directory
-cd "%basePath%"
-
-:: Delete the old build folder in Rails project
-rd /s /q "%basePath%\Gumroad-Demo\public\build"
-
-
-:: Copy new build folder to Rails static directory
-xcopy /E /I "%basePath%\Gumroad-Demo-Frontend\build\" "%basePath%\Gumroad-Demo\public\build\"
-
-
-:: Navigate to main project directory
-cd "%basePath%\Gumroad-Demo"
+call npm run heroku-postbuild
 
 
 :: Git operations

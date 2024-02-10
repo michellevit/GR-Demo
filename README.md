@@ -77,7 +77,7 @@ Demo: www.michellef.dev
 ## 5. Heroku - Updating <a name="heroku-updating"></a>
 - How to push changes to Heroku app
   - Navigate into the Gumroad-Demo directory in the powershell terminal
-  - Make sure you are logged into heroku form terminal (run: 'heroku login')
+  - Make sure you are logged into heroku from terminal (run: 'heroku login')
   - Run: .\automate-build-update.bat "Your commit message here"
 
 
