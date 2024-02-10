@@ -15,6 +15,7 @@
   <th>Average Rating</th>
   <th>Download Count</th>
   </tr>
+  </thead>
   <% @products.each do |product| %>
     <%= render partial: 'product', locals: { product: product } %>
   <% end %>
