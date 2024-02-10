@@ -19,8 +19,8 @@
     margin: 0;
     display: flex;
     justify-content: center;
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 .backend .main {
