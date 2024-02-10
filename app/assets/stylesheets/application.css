@@ -59,12 +59,11 @@
     opacity: 0.5
 }
 
-.backend table thead th {
+.backend .table thead th, .backend .table thead tr {
     background-color: #ff90e8;
     border: 1px solid black;
 }
 
-.backend table thead tr {
-    background-color: #ff90e8;
+.backend .table tr {
     border: 1px solid black;
 }
