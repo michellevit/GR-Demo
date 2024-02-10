@@ -8,13 +8,12 @@ import axios from 'axios';
 
 
 const SingleProduct = ( {product} ) => {
-  const [product, setProduct] = useState(null);
-  const { productId } = useParams();
+  const productId = product.id;
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://gumroad-demo.michellef.dev/products/${productId}`);
-        setProduct(response.data);
+        const response = await axios.get(`https://gumroad-demo.michellef.dev/products/${product.id}`);
+        setSingleProduct(response.data);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
