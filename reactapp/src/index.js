@@ -1,16 +1,16 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'; // Global styles
+import App from './App'; // Import the main App component
+import reportWebVitals from './reportWebVitals'; // Optional, for measuring performance
 
-function App() {
-  return (
-    <div>
-      <h1>Hello from React!</h1>
-      <p>This is a test page to confirm our React-Rails integration is working.</p>
-    </div>
-  );
-}
-
-export default App;
-
+// React 17 and earlier
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 
 
