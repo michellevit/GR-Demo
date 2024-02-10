@@ -76,8 +76,10 @@ class ProductsController < ApplicationController
       @query = params[:query]
       @products = Product.where("product_name LIKE ?", "%#{@query}%")
     
-      render partial: 'home/search'
-    end
+      respond_to do |format|
+        format.html 
+        format.json { render json: @products } 
+      end
     end
 
   end
