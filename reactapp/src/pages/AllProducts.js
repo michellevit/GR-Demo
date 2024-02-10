@@ -9,7 +9,7 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/products');
+        const response = await axios.get('https://gumroad-demo.michellef.dev/products');
         console.log("Fetched products:", response.data);
         setProducts(response.data); 
       } catch (error) {
