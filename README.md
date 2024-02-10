@@ -90,6 +90,3 @@ Demo: www.michellef.dev
 
 ## 7. Credits <a name="credits"></a>
 Michelle Flandin
-
-
-HELLO HELLO HELLO!
