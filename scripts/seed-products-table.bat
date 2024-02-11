@@ -1,4 +1,4 @@
-:: seed-db.bat
+:: seed-products-table.bat
 :: Note: the heroku command will halt the rest of the reset-database.bat script, so it had to be separated.
 
 

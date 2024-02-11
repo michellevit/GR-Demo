@@ -87,7 +87,7 @@ Demo: www.michellef.dev
 - CLEAR DATABASE: ./reset-database.bat
 - RESTART SERVER: heroku ps:restart -a gumroad-demo
 - SEED DB: heroku run rake db:seed --app gumroad-demo
-- RESET DB: .\reset-database.bat
+- RESET DB: .\reset-products-table.bat
 
 
 ## 7. Credits <a name="credits"></a>

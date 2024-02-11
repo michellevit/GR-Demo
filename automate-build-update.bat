@@ -59,7 +59,6 @@ cd "%basePath%"
 git add .
 git commit -m "%commitMessage%"
 git push origin main
-git push heroku main:main
 
 
 :: --5. Echo message of completion if script runs properly

@@ -1,4 +1,4 @@
-:: migrate-command.bat
+:: run-migrations.bat
 :: Note: the heroku command will halt the rest of the reset-database.bat script, so it had to be separated.
 
 

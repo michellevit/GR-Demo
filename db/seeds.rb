@@ -27,8 +27,3 @@ products_data.each do |product_attrs|
     product.images_id = product_attrs["images_id"]
   end
 end
-
-# Optionally, reset ID sequence in PostgreSQL (Use with caution!)
-if Product.count.zero?
-  ActiveRecord::Base.connection.reset_pk_sequence!('products')
-end
