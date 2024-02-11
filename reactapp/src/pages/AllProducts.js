@@ -9,7 +9,7 @@ const AllProducts = () => {
     return products.slice(startIndex, startIndex + 5);
   };
   const recommendedProducts = getSectionProducts(0);
-  const likedProducts = getSectionProducts(3);
+  const likedProducts = getSectionProducts(5);
   const staffPicksProducts = getSectionProducts(2);
   useEffect(() => {
     const fetchProducts = async () => {
@@ -51,7 +51,7 @@ const AllProducts = () => {
           </div>
         </div>
         <div className="paragraphs">
-          <h2>Staff Picks</h2>
+          <h2>Staff picks</h2>
           <div className="liked-section">
             {staffPicksProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
