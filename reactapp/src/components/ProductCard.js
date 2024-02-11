@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
           </a>
           <div className="rating">
             <FontAwesomeIcon icon={faStar} />
-            X.X (XYZ)
+            {product.average_rating} ({product.ratings_count})
           </div>
         </div>
         <div className="product-price">
