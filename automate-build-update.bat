@@ -4,9 +4,10 @@
 :: This script will:
 :: --1. Prepare the commit message based on the user input
 :: --2. Rebuild the reactapp 'build' file
-:: --3. Copy the new build file contents to the public folder
-:: --4. Add the commit message you include in the call (or else default it to "[YYYYMMDD HH:MM] update")
-:: --5. Echo message of completion if script runs successfully
+:: --3. Copy the new reactapp build file contents to the public folder
+:: --4. Copy the lib/images/products contents to the public folder
+:: --5. Add the commit message you include in the call (or else default it to "[YYYYMMDD HH:MM] update")
+:: --6. Echo message of completion if script runs successfully
 
 
 :: Instructions
@@ -42,7 +43,7 @@ call npm install
 call npm run build
 
 
-:: --3. Copy the new build file contents to the public folder
+:: --3. Copy the new reactapp build file contents to the public folder
 :: Check if the public folder exists before attempting to delete its contents
 if exist "%basePath%\public\" (
     echo Deleting contents of %basePath%\public\
@@ -53,7 +54,12 @@ if exist "%basePath%\public\" (
 xcopy /E /I "%basePath%\reactapp\build\" "%basePath%\public\"
 
 
-:: --4. Add the commit message you include in the call (or else default it to "[YYYYMMDD HH:MM] update")
+:: --4. Copy the lib/images/products contents to the public folder
+:: This is so that they are accessible via HTTP requests
+xcopy /E /I "%basePath%\lib\images\products" "%basePath%\public\"
+
+
+:: --5. Add the commit message you include in the call (or else default it to "[YYYYMMDD HH:MM] update")
 cd "%basePath%"
 :: Git operations
 git add .
@@ -61,5 +67,5 @@ git commit -m "%commitMessage%"
 git push origin main
 
 
-:: --5. Echo message of completion if script runs properly
+:: --6. Echo message of completion if script runs properly
 echo Update, build, and git update process completed.
