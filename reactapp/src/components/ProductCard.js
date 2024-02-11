@@ -5,7 +5,7 @@ import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const imagePath = product.image_urls[0];
+  const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
   return (
     <>
       <Link to={`/product/${product.id}`}>
