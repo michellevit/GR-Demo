@@ -8,9 +8,9 @@ const AllProducts = () => {
   // const recommendedProducts = getSectionProducts(5);
   // const likedProducts = getSectionProducts(5);
   // const staffPicksProducts = getSectionProducts(5);
-  const getSectionProducts = (startIndex) => {
-    return products.slice(startIndex, startIndex + 5);
-  };
+  // const getSectionProducts = (startIndex) => {
+  //   return products.slice(startIndex, startIndex + 5);
+  // };
   useEffect(() => {
     const fetchProducts = async () => {
       try {

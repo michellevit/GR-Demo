@@ -13,8 +13,8 @@ function App() {
         <Routes>
           <Route path="home" element={<AllProducts />} />
           <Route path="/" element={<AllProducts />} /> 
-          <Route path="browse-products" element={<AllProducts />} /> 
-          <Route path="product/:productId" element={<SingleProduct />} /> 
+          <Route path="discover" element={<AllProducts />} /> 
+          <Route path="discover/:productId" element={<SingleProduct />} /> 
         </Routes>
       </div>
     </div>
