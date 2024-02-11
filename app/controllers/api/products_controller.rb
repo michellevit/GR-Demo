@@ -15,7 +15,10 @@ module API
     # GET /products/1 or /products/1.json
     def show
       @product = Product.find(params[:id])
-      render json: @product, status: :ok
+      respond_to do |format|
+        format.html #
+        format.json { render json: @product, status: :ok } 
+      end
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end

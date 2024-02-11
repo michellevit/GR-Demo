@@ -82,12 +82,14 @@ Demo: www.michellef.dev
 
 
 ## 6. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
-- ERROR LOGS: heroku logs --tail -a gumroad-demo
-- MIGRATE: heroku run rake db:migrate -a gumroad-demo
-- CLEAR DATABASE: ./reset-database.bat
-- RESTART SERVER: heroku ps:restart -a gumroad-demo
-- SEED DB: heroku run rake db:seed --app gumroad-demo
-- RESET DB: .\reset-products-table.bat
+- make sure to restart the Heroku server after modifying the routes.rb file 
+- Commands:
+  - ERROR LOGS: heroku logs --tail -a gumroad-demo
+  - MIGRATE: heroku run rake db:migrate -a gumroad-demo
+  - CLEAR DATABASE: ./reset-database.bat
+  - RESTART SERVER: heroku ps:restart -a gumroad-demo
+  - SEED DB: heroku run rake db:seed --app gumroad-demo
+  - RESET DB: .\reset-products-table.bat
 
 
 ## 7. Credits <a name="credits"></a>
