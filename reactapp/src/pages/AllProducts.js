@@ -5,12 +5,12 @@ import ProductCard from "../components/ProductCard";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const recommendedProducts = getSectionProducts(0);
-  const likedProducts = getSectionProducts(0);
-  const staffPicksProducts = getSectionProducts(0);
   const getSectionProducts = (startIndex) => {
     return products.slice(startIndex, startIndex + 5);
   };
+  const recommendedProducts = getSectionProducts(0);
+  const likedProducts = getSectionProducts(0);
+  const staffPicksProducts = getSectionProducts(0);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
