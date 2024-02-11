@@ -2,6 +2,7 @@
 #       *db is not set up with postgresql, and sqlite3 will not work because of difference in how sqlite3 and postgresql handle json fields
 
 # database.yml
+# database.yml
 
 default: &default
   adapter: postgresql
@@ -14,7 +15,7 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: <%= ENV['DB_NAME'] %>
 
 test:
   <<: *default

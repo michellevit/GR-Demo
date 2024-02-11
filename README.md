@@ -86,6 +86,7 @@ Demo: www.michellef.dev
 - MIGRATE: heroku run rake db:migrate -a gumroad-demo
 - CLEAR DATABASE: ./reset-database.bat
 - RESTART SERVER: heroku ps:restart -a gumroad-demo
+- SEED DB: heroku run rake db:seed --app gumroad-demo
 
 
 ## 7. Credits <a name="credits"></a>

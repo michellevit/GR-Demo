@@ -8,7 +8,8 @@
         "ratings_count": 1000,
         "average_rating": 5,
         "download_count": 37969,
-        "image_urls": []
+        "image_urls": ["../101-0.jpg", "../101-1.jpg", "../101-2.jpg"],
+        "images_id": 101
       },
       {
         "product_name": "Wave Wallpaper Pack",
@@ -19,7 +20,8 @@
         "ratings_count": 5,
         "average_rating": 4.6,
         "download_count": 23,
-        "image_urls": []
+        "image_urls": ["../102-0.jpg", "../102-1.jpg"],
+        "images_id": 102
 
       },
       {
@@ -31,7 +33,8 @@
         "ratings_count": 5000,
         "average_rating": 5.0,
         "download_count": 20000,
-        "image_urls": ["../../public/product_images/Cheque-PDF-1.jpg", "http://example.com/path/to/Cheque-PDF-2.jpg"]
+        "image_urls": ["../103-0.jpg", "../103-1.jpg", "../103-2.jpg"],
+        "images_id": 103
 
       },
       {
@@ -43,7 +46,8 @@
         "ratings_count": 540,
         "average_rating": 5.0,
         "download_count": 5029,
-        "image_urls": []
+        "image_urls": ["../104-0.jpg"],
+        "images_id": 104
       },
       {
         "product_name": "CR Basic Brushpack for blender texture painting"        ,
@@ -54,7 +58,8 @@
         "ratings_count": 156,
         "average_rating": 4.9,
         "download_count": 4000,
-        "image_urls": []
+        "image_urls": ["../105-0.jpg"],
+        "images_id": 105
       },
       {
         "product_name": "IPad Pro + Pencil 2018 - Mockup [FREE PSD] 💎",
@@ -65,7 +70,8 @@
         "ratings_count": 172,
         "average_rating": 4.5,
         "download_count": 975,
-        "image_urls": []
+        "image_urls": ["../106-0.jpg", "../106-1.jpg"],
+        "images_id": 106
       },
       {
         "product_name": "Free Plyometric Program - Increase your Vertical Jump",
@@ -76,18 +82,20 @@
         "ratings_count": 4,
         "average_rating": 5.0,
         "download_count": 12,
-        "image_urls": []
+        "image_urls": ["../107-0.jpg"],
+        "images_id": 107
       },
       {
-        "product_name": "How to Learn Chumash with Rashi",
+        "product_name": "Learn Sign Language with Jovi",
         "user": "Jovino",
-        "description": "How to Learn Chumash with Rashi</br></br>The Chumash is our most fundamental Jewish text. Unfortunately, for many Jews it remains a difficult text to read, learn, and enjoy.</br></br>I wrote How to Learn Chumash with Rashi for adults who want to develop independent learning skills. The book guides you through a step-by-step method to learn any verse in Chumash.</br></br>The book's four chapters focus on Rashi, but the skills I teach are applicable to any text.",
+        "description": "Easy to follow along lessons with live instruction available.",
         "price": 5.00,
         "flex_price": true,
         "ratings_count": 12,
         "average_rating": 4.2,
         "download_count": 29,
-        "image_urls": []
+        "image_urls": ["../108-0.jpg", "../108-1.jpg", "../108-2.jpg"],
+        "images_id": 108
       }
   ]
 
