@@ -27,11 +27,11 @@
 }
 
 .product-card .product-image img {
-  width: auto;
-  max-height: 100%; 
-  display: block; 
-  margin: 0 auto; 
-  object-fit: contain; 
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover;
+  display: block;
+  margin: auto; 
 }
   
 .product-card .product-details {
