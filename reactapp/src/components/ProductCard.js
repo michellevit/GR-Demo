@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
   return (
     <>
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/discover/${product.id}`}>
       <div className="product-card">
         <div className="product-image">
           <img src={imagePath} alt={product.product_name} />
