@@ -22,6 +22,14 @@
     min-height: 191.25px;
     max-height:214px;
 }
+
+.product-card .product-image img {
+  width: auto;
+  max-height: 100%; 
+  display: block; 
+  margin: 0 auto; 
+  object-fit: contain; 
+}
   
 .product-card .product-details {
     border-top: solid 0.0625rem black;
