@@ -21,6 +21,9 @@
     background-position: center;
     min-height: 191.25px;
     max-height:214px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-card .product-image img {
