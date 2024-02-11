@@ -8,7 +8,7 @@
         "ratings_count": 1000,
         "average_rating": 5,
         "download_count": 37969,
-        "image_urls": ["../101-0.jpg", "../101-1.jpg", "../101-2.jpg"],
+        "image_urls": ["/lib/images/products/101-0.jpg", "/lib/images/products/101-1.jpg", "/lib/images/products/101-2.jpg"],
         "images_id": 101
       },
       {
@@ -20,7 +20,7 @@
         "ratings_count": 5,
         "average_rating": 4.6,
         "download_count": 23,
-        "image_urls": ["../102-0.jpg", "../102-1.jpg"],
+        "image_urls": ["/lib/images/products/102-0.jpg", "/lib/images/products/102-1.jpg"],
         "images_id": 102
 
       },
@@ -33,7 +33,7 @@
         "ratings_count": 5000,
         "average_rating": 5.0,
         "download_count": 20000,
-        "image_urls": ["../103-0.jpg", "../103-1.jpg", "../103-2.jpg"],
+        "image_urls": ["/lib/images/products/103-0.jpg", "/lib/images/products/103-1.jpg", "/lib/images/products/103-2.jpg"],
         "images_id": 103
 
       },
@@ -46,7 +46,7 @@
         "ratings_count": 540,
         "average_rating": 5.0,
         "download_count": 5029,
-        "image_urls": ["../104-0.jpg"],
+        "image_urls": ["/lib/images/products/104-0.jpg"],
         "images_id": 104
       },
       {
@@ -58,7 +58,7 @@
         "ratings_count": 156,
         "average_rating": 4.9,
         "download_count": 4000,
-        "image_urls": ["../105-0.jpg"],
+        "image_urls": ["/lib/images/products/105-0.jpg"],
         "images_id": 105
       },
       {
@@ -70,7 +70,7 @@
         "ratings_count": 172,
         "average_rating": 4.5,
         "download_count": 975,
-        "image_urls": ["../106-0.jpg", "../106-1.jpg"],
+        "image_urls": ["/lib/images/products/106-0.jpg", "/lib/images/products/106-1.jpg"],
         "images_id": 106
       },
       {
@@ -82,7 +82,7 @@
         "ratings_count": 4,
         "average_rating": 5.0,
         "download_count": 12,
-        "image_urls": ["../107-0.jpg"],
+        "image_urls": ["/lib/images/products/107-0.jpg"],
         "images_id": 107
       },
       {
@@ -94,7 +94,7 @@
         "ratings_count": 12,
         "average_rating": 4.2,
         "download_count": 29,
-        "image_urls": ["../108-0.jpg", "../108-1.jpg", "../108-2.jpg"],
+        "image_urls": ["/lib/images/products/108-0.jpg", "/lib/images/products/108-1.jpg", "/lib/images/products/108-2.jpg"],
         "images_id": 108
       }
   ]

@@ -63,4 +63,4 @@ git push heroku main:main
 
 
 :: --5. Echo message of completion if script runs properly
-echo Build, collectstatic, and git update process completed.
+echo Update, build, and git update process completed.

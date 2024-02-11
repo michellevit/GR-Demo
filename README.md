@@ -7,7 +7,7 @@ Demo: www.michellef.dev
 
 ## Table of Contents
 1. [How to Basics](#how-to-basics)
-2. [How to Interact With Database](#how-to-db)
+2. [How to Interact With Database (Development)](#how-to-db-development)
 3. [How to Edit Schema (Development)](#how-to-edit-schema-development)
 4. [How to Edit Schema (Production)](#how-to-edit-schema-production)
 5. [Heroku - Updating](#heroku-troubleshooting)
@@ -26,7 +26,7 @@ Demo: www.michellef.dev
   - This updates Gemfile with current dependencies
 
 
-## 2. How to Interact With Database <a name="how-to-db"></a>
+## 2. How to Interact With Database <a name="how-to-db-development"></a>
 - Open rails console: rails console
   - See all entries: Product.all
   - List first item in DB: Product.all.first 
@@ -71,11 +71,11 @@ Demo: www.michellef.dev
       end
       -EXAMPLES: 
         -rename_column :products, :creator_name, :user
-  -Run: ./reset-database.bat
+  -Run: heroku run rake db:migrate -a gumroad-demo
 
 
 ## 5. Heroku - Updating <a name="heroku-updating"></a>
-- How to push changes to Heroku app
+- How to push changes to Heroku app:
   - Navigate into the Gumroad-Demo directory in the powershell terminal
   - Make sure you are logged into heroku from terminal (run: 'heroku login')
   - Run: .\automate-build-update.bat "Your commit message here"
@@ -87,6 +87,7 @@ Demo: www.michellef.dev
 - CLEAR DATABASE: ./reset-database.bat
 - RESTART SERVER: heroku ps:restart -a gumroad-demo
 - SEED DB: heroku run rake db:seed --app gumroad-demo
+- RESET DB: .\reset-database.bat
 
 
 ## 7. Credits <a name="credits"></a>
