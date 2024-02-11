@@ -56,7 +56,7 @@ xcopy /E /I "%basePath%\reactapp\build\" "%basePath%\public\"
 
 :: --4. Copy the lib/images/products contents to the public folder
 :: This is so that they are accessible via HTTP requests
-xcopy /E /I "%basePath%\lib\images\products" "%basePath%\public\"
+xcopy /E /I "%basePath%\lib\images\products\*" "%basePath%\public\images\products\"
 
 
 :: --5. Add the commit message you include in the call (or else default it to "[YYYYMMDD HH:MM] update")
