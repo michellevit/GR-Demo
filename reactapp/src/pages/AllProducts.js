@@ -5,9 +5,9 @@ import ProductCard from "../components/ProductCard";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const recommendedProducts = getSectionProducts(5);
-  const likedProducts = getSectionProducts(5);
-  const staffPicksProducts = getSectionProducts(5);
+  // const recommendedProducts = getSectionProducts(5);
+  // const likedProducts = getSectionProducts(5);
+  // const staffPicksProducts = getSectionProducts(5);
   const getSectionProducts = (startIndex) => {
     return products.slice(startIndex, startIndex + 5);
   };
@@ -37,7 +37,7 @@ const AllProducts = () => {
         <div className="paragraphs">
           <h2>Recommended for you</h2>
           <div className="recommended-section">
-            {recommendedProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -45,7 +45,7 @@ const AllProducts = () => {
         <div className="paragraphs">
           <h2>Liked</h2>
           <div className="staff-picks-section">
-            {likedProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -53,7 +53,7 @@ const AllProducts = () => {
         <div className="paragraphs">
           <h2>Staff Picks</h2>
           <div className="liked-section">
-            {staffPicksProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
