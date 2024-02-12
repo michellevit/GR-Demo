@@ -450,7 +450,8 @@ button.next-button {
 
 
 @media (max-width: 639px) {
-  #row2 {
+  #left-column #row2 {
+    display: flex;
     flex-direction: column;
   }
 
@@ -459,7 +460,7 @@ button.next-button {
   }
 
   #row2-col-right {
-    width: 100%;
+    width: auto;
     order: 3; 
   }
 }
