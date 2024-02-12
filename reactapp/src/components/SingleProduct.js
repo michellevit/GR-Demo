@@ -159,7 +159,7 @@ const SingleProduct = () => {
                   </div>
                 </div>
               </div>
-              <div id="row3">{product.description}</div>
+              <div id="row3" dangerouslySetInnerHTML={{ __html: product.description }}></div>
             </div>
             <div id="right-column">
               <div id="row1">
