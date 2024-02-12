@@ -14,9 +14,13 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products`);
+        const response = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products`, {
+          headers: {
+            'Accept': 'application/json',
+          },
+        });
         console.log("Fetched products:", response.data);
-        setProducts(response.data); 
+        setProducts(response.data);
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
       }
