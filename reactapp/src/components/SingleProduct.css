@@ -84,8 +84,8 @@ button.next-button {
 .prev-button .svg-inline--fa,
 .next-button .svg-inline--fa {
   color: black;
-  width: 58px;
-  height: 58px; 
+  width: 30px;
+  height: 30px; 
 }
 
 .image-carousel:hover .prev-button,
@@ -275,6 +275,11 @@ button.next-button {
   white-space: nowrap;
   padding: 0.25rem 1rem 0.25rem 0;
 }
+
+.product-data-container .right-column .row1 button {
+  width: 100%;
+}
+
 
 /* ---------------------------------------- */
 /* ------------------------------||-------- */
