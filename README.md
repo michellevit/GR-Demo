@@ -4,6 +4,7 @@ A basic replication of the Gumroad Product Page UX in Rails and React, with an a
 Demo - Frontend: [www.michellef.dev](https://gumroad-demo.michellef.dev/)
 Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef.dev/api/products)
 
+
 ## Table of Contents
 1. [How to Basics](#how-to-basics)
 2. [How to Interact With Database (Development)](#how-to-db-development)

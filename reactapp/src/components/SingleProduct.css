@@ -367,7 +367,6 @@ button.next-button {
     margin-bottom: -4px;
     flex-shrink: 0;
     padding-right: 1rem;
-    margin-right: 1rem;
   }
 
   .single-product-container .product-data-container .rating-number {
@@ -382,7 +381,8 @@ button.next-button {
   .single-product-container .product-main-section {
     padding: 0 0;
   }
-  .single-product-container .product-details .rating-number
+
+  
   .single-product-container .product-data-container {
     display: flex;
     flex-direction: row;
