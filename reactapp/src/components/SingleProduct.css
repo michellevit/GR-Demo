@@ -43,22 +43,6 @@
   opacity: 1; 
 }
 
-.slide-left-enter {
-  transform: translateX(100%);
-}
-
-.slide-left-exit {
-  transform: translateX(-100%);
-}
-
-.slide-right-enter {
-  transform: translateX(-100%);
-}
-
-.slide-right-exit {
-  transform: translateX(100%);
-}
-
 .carousel-controls {
   position: absolute;
   top: 0;
@@ -76,7 +60,12 @@ button.next-button {
   top: 50%; 
   cursor: pointer;
   opacity: 0; 
+  border:none;
+  padding: none;
+  background-color: none;
 }
+
+
 
 .prev-button:hover,
 .next-button:hover {
