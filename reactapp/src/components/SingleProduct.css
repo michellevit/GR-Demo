@@ -379,7 +379,7 @@ button.next-button {
   }
 
   .single-product-container .product-details .rating-number {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: -4px;
     flex-shrink: 0;
     width: max-content;
