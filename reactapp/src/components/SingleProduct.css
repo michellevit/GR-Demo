@@ -464,6 +464,7 @@ button.next-button {
   .product-data-container #left-column #row2 > #row2-col-mid {
     width: 100%;
     flex-basis: 100%;
+    border-bottom: none;
   }
 
   .product-data-container #left-column #row2 {
