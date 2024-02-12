@@ -117,12 +117,17 @@
   width: 100%;
 }
 
-.dot {
+.carousel-dots .dot, .dot.active {
+  filter: drop-shadow(0 0 0 1px black);
+  margin: 0 5px;
+}
+
+.carousel-dots .dot {
   margin: 0 5px;
   color: white;
 }
 
-.dot.active {
+.carousel-dots .dot.active {
   color: black;
 }
 
