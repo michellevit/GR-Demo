@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);
-  const [numberOfPics, setNumberOfPics] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { productId } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,7 +22,6 @@ const SingleProduct = () => {
         );
         console.log("Fetched single product:", response.data);
         setProduct(response.data);
-        setNumberOfPics((product.image_urls).length);
       } catch (error) {
         console.error("There was an error fetching the product: ", error);
       }
@@ -30,6 +29,17 @@ const SingleProduct = () => {
 
     fetchProduct();
   }, [productId]);
+  const nextImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % product.image_urls.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? product.image_urls.length - 1 : prevIndex - 1
+    );
+  };
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -72,7 +82,15 @@ const SingleProduct = () => {
       </div>
       <div className="product-main-container">
         <div className="product-main-section">
-          <div className="image-carousel">PICTURE CAROUSEL HERE</div>
+          <div className="image-carousel">
+            {" "}
+            <button onClick={prevImage}>Prev</button>
+            <img
+              src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
+              alt={`Product ${currentImageIndex + 1}`}
+            />
+            <button onClick={nextImage}>Next</button>
+          </div>
           <div className="product-data-container">
             <div id="left-column">
               <div id="row1">
