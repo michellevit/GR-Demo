@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);
+  const [numberOfPics, setNumberOfPics] = useState(null);
   const { productId } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -21,6 +22,7 @@ const SingleProduct = () => {
         );
         console.log("Fetched single product:", response.data);
         setProduct(response.data);
+        setNumberOfPics((product.image_urls).length);
       } catch (error) {
         console.error("There was an error fetching the product: ", error);
       }

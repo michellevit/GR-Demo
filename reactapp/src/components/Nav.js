@@ -3,6 +3,8 @@ import "./Nav.css";
 import logo from '../images/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 
 const Nav = ({ shrink }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -10,7 +12,8 @@ const Nav = ({ shrink }) => {
   return (
     <header className="hero">
       <div className={`hero-actions ${shrink ? 'shrink' : ''}`}>
-        <div className="app-logo"><img src={logo} alt="logo" /></div>
+        <div className="app-logo">
+<Link to={`discover`}><img src={logo} alt="logo" /></Link></div>
         <div className={`combobox ${isFocused ? 'focused' : ''} ${shrink ? 'shrink' : ''}`} style={{ flexGrow: 1 }}>
           <div className="input-group">
             <input 
