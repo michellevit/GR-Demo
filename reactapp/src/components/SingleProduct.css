@@ -175,6 +175,7 @@ button.next-button {
   border-right: 1px solid black;
   padding: ;
 }
+
 #left-column #row2 > #row2-col-mid {
   width: fit-content;
   border-bottom: 1px solid black;
@@ -252,6 +253,7 @@ button.next-button {
 #row2-col-mid #user {
   width: max-content;
   flex-shrink: 0;
+  line-height: 1.5rem;
 }
 
 .single-product .product-price {
@@ -483,10 +485,13 @@ button.next-button {
 
   .product-data-container #left-column #row2 > #row2-col-left {
     flex-basis: auto;
+    width: min-content;
   }
 
   .product-data-container #left-column #row2 > #row2-col-mid {
     flex-grow: 1;
+    width: auto;
+    width: -webkit-fill-available;
   }
 
   .product-data-container #left-column #row2 > #row2-col-right {
