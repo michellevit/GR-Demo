@@ -75,7 +75,7 @@ const SingleProduct = () => {
               <div className="like">
                 <FontAwesomeIcon icon={faHeart} />
               </div>
-              <button type="button">Add to cart</button>
+              <button type="button" className='add-to-cart'>Add to cart</button>
             </div>
           </div>
         </div>
