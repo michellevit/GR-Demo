@@ -127,7 +127,9 @@ button.next-button {
 }
 
 #row1,
-#row2 > div,
+#row2 #row2-col-left,
+#row2 #row2-col-mid,
+#row2 #row2-col-right,
 #row3,
 #right-column #row1,
 #right-column #row2 {
@@ -161,11 +163,17 @@ button.next-button {
   align-items: center;
 }
 
+#left-column #row2 #row2-col-left,
+#left-column #row2 #row2-col-mid,
+#left-column #row2 #row2-col-right {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 #left-column #row2 > #row2-col-left {
   width: fit-content;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
   border-right: 1px solid black;
+  padding: ;
 }
 #left-column #row2 > #row2-col-mid {
   width: fit-content;
@@ -490,6 +498,4 @@ button.next-button {
     display: flex;
     flex-direction: row;
   }
-
-
 }
