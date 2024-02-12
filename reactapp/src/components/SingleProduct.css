@@ -26,6 +26,11 @@
   position: relative;
 }
 
+.image-carousel:hover .prev-button,
+.image-carousel:hover .next-button {
+  opacity: 1;
+}
+
 .image-carousel img {
   width: 100%;
   height: auto; 
@@ -53,6 +58,7 @@
   border: none;
   cursor: pointer;
   padding: 10px 20px;
+  opacity: 0;
 }
 
 .prev-button:hover,
@@ -68,6 +74,29 @@
 
 .next-button {
   right: 10px;
+}
+
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.dot {
+  margin: 0 5px;
+  color: white;
+}
+
+.dot.active {
+  color: black;
+}
+
+/* Hide dots if there's only one image */
+.image-carousel:only-child .carousel-dots {
+  display: none;
 }
 
 

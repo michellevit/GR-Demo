@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./SingleProduct.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faHeart,
+  faCircle,
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
@@ -95,6 +101,17 @@ const SingleProduct = () => {
                 <button className="next-button" onClick={nextImage}>
                   Next
                 </button>
+                <div className="carousel-dots">
+                  {product.image_urls.map((_, index) => (
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      className={
+                        currentImageIndex === index ? "dot active" : "dot"
+                      }
+                      key={index}
+                    />
+                  ))}
+                </div>
               </>
             )}
             {product.image_urls.length === 1 && (
@@ -142,7 +159,9 @@ const SingleProduct = () => {
             </div>
             <div id="right-column">
               <div id="row1">
-                <button type="button" className='add-to-cart'>Add to cart</button>
+                <button type="button" className="add-to-cart">
+                  Add to cart
+                </button>
                 <div className="like">
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
