@@ -23,6 +23,7 @@
 .image-carousel {
   width: 100%;
   border-bottom: black solid 1px;
+  position: relative;
 }
 
 .image-carousel img {
@@ -30,6 +31,31 @@
   height: auto; 
   display: block; 
   object-fit: cover; 
+}
+
+
+.carousel-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  background-color: rgba(255, 255, 255, 0.5); 
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(255, 255, 255, 0.8); 
 }
 
 

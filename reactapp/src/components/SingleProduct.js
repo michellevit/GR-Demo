@@ -47,47 +47,62 @@ const SingleProduct = () => {
     <div className="single-product-container">
       <div className="product-header-container">
         <div className="product-header">
-            <div className="product-price">
-              <div className="swallowtail-flag-wrapper-wrapper">
-                <div className="swallowtail-flag-wrapper">
-                  <div className="swallowtail-flag">
-                    <span className="flag-text">
-                      ${product.price}
-                      {product.flex_price ? "+" : ""}
-                    </span>{" "}
-                  </div>
+          <div className="product-price">
+            <div className="swallowtail-flag-wrapper-wrapper">
+              <div className="swallowtail-flag-wrapper">
+                <div className="swallowtail-flag">
+                  <span className="flag-text">
+                    ${product.price}
+                    {product.flex_price ? "+" : ""}
+                  </span>{" "}
                 </div>
               </div>
             </div>
-            <h3>{product.product_name}</h3>
-            <div className="product-details">
-              <div className="rating">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <span className="rating-number">
-                  {product.average_rating} ratings
-                </span>
-              </div>
-              <div className="like">
-                <FontAwesomeIcon icon={faHeart} />
-              </div>
-              <button type="button" className='add-to-cart'>Add to cart</button>
+          </div>
+          <h3>{product.product_name}</h3>
+          <div className="product-details">
+            <div className="rating">
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <span className="rating-number">
+                {product.average_rating} ratings
+              </span>
             </div>
+            <div className="like">
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <button type="button" className="add-to-cart">
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
       <div className="product-main-container">
         <div className="product-main-section">
           <div className="image-carousel">
-            {" "}
-            <button onClick={prevImage}>Prev</button>
-            <img
-              src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
-              alt={`Product ${currentImageIndex + 1}`}
-            />
-            <button onClick={nextImage}>Next</button>
+            {product.image_urls.length > 1 && (
+              <>
+                <button className="prev-button" onClick={prevImage}>
+                  Prev
+                </button>
+                <img
+                  src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
+                  alt={`Product ${currentImageIndex + 1}`}
+                />
+                <button className="next-button" onClick={nextImage}>
+                  Next
+                </button>
+              </>
+            )}
+            {product.image_urls.length === 1 && (
+              <img
+                src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
+                alt={`Product ${currentImageIndex + 1}`}
+              />
+            )}
           </div>
           <div className="product-data-container">
             <div id="left-column">
