@@ -70,15 +70,11 @@
   align-items: center;
 }
 
-.prev-button,
-.next-button {
+button.prev-button,
+button.next-button {
   position: absolute;
   top: 50%; 
-  background-color: white; 
-  border: 1px solid black; 
-  border-radius: 50%; 
   cursor: pointer;
-  padding: 5px; 
   opacity: 0; 
 }
 
