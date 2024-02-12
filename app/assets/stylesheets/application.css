@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: popper, 
 }
 
 .backend .navbar {
@@ -70,16 +71,16 @@ body {
     text-decoration: none;
 }
 
-.backend table td {
+.backend .table td {
     padding: 1rem;
 }
 
-.backend table td a {
+.backend .table td a {
     color: #ff90e8;
     text-decoration: none;
 }
 
-.backend table td a:hover {
+.backend .table td a:hover {
     opacity: 0.5
 }
 
