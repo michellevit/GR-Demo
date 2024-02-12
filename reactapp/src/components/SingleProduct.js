@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 
-const SingleProduct = (}) => {
+const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const { productId } = useParams();
   useEffect(() => {
