@@ -490,13 +490,15 @@ button.next-button {
   .product-data-container #left-column #row2 > #row2-col-left {
     flex-basis: auto;
     width: min-content;
+    border-bottom: none;
   }
 
   .product-data-container #left-column #row2 > #row2-col-mid {
     flex-grow: 1;
-    width: -webkit-fill-available;
+    width: 100%;
     border-left: 1px solid black;
     border-right: none;
+    border-bottom: none;
   }
 
   .product-data-container #left-column #row2 > #row2-col-right {
