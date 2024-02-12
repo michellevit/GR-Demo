@@ -15,10 +15,10 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="product-details">
           <h4>{product.product_name}</h4>
-          <a className="user">
+          <div className="user">
             <FontAwesomeIcon icon={faCircle} />
             {product.user}
-          </a>
+          </div>
           <div className="rating">
             <FontAwesomeIcon icon={faStar} />
             {product.average_rating} ({product.ratings_count})

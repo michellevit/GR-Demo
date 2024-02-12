@@ -27,8 +27,6 @@ const AllProducts = () => {
     };
 
     fetchProducts();
-    console.log(products);
-
   }, []);
 
   if (products.length === 0) {
