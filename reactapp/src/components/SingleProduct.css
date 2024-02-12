@@ -110,7 +110,6 @@
 
 
 .single-product-container .product-details button .add-to-cart {
-  /* width: 100%; */
   white-space: nowrap;
   padding: 0.5rem 1rem;
 }
@@ -237,7 +236,6 @@
     font-weight: 500;
     margin: 0;
     line-height: 1.5rem;
-    padding-left: 1rem;
     flex-grow: 1;
     white-space: normal;
     overflow: hidden;
