@@ -92,14 +92,14 @@ const SingleProduct = () => {
             {product.image_urls.length > 1 && (
               <>
                 <button className="prev-button" onClick={prevImage}>
-                  Prev
+                  <FontAwesomeIcon icon={faCircleArrowLeft} />
                 </button>
                 <img
                   src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
                   alt={`Product ${currentImageIndex + 1}`}
                 />
                 <button className="next-button" onClick={nextImage}>
-                  Next
+                  <FontAwesomeIcon icon={faCircleArrowRight} />
                 </button>
                 <div className="carousel-dots">
                   {product.image_urls.map((_, index) => (
