@@ -471,7 +471,7 @@ button.next-button {
 /* ------------------------------\/-------- */
 /* ---------------------------------------- */
 
-@media (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .product-data-container #left-column #row2 {
     display: flex;
     flex-direction: column;
