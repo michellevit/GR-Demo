@@ -224,7 +224,6 @@ button.next-button {
 
 .like .svg-inline--fa path:hover {
   stroke: black;
-  fill: #ff90e8;
   stroke: 1px;
   stroke-width: 10px;
   cursor: pointer;
@@ -233,6 +232,7 @@ button.next-button {
 .like .svg-inline--fa:hover {
   transform: translateX(-4px) translateY(-4px);
   filter: drop-shadow(4px 4px 0 rgb(0 0 0 / 1));
+  fill: #ff90e8;
 }
 
 .single-product .product-price {
