@@ -78,7 +78,7 @@ const SingleProduct = () => {
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
               <span className="rating-number">
-                {product.average_rating} ratings
+                {product.ratings_count} ratings
               </span>
             </div>
             <div className="like">
@@ -154,7 +154,7 @@ const SingleProduct = () => {
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <span className="rating-number">
-                      &nbsp;{product.average_rating} ratings
+                      &nbsp;{product.ratings_count} ratings
                     </span>
                   </div>
                 </div>

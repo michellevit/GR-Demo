@@ -175,6 +175,7 @@ button.next-button {
   border-right: 1px solid black;
 }
 #left-column #row2 > #row2-col-right {
+  width: 100%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 }
@@ -420,6 +421,7 @@ button.next-button {
     border-right: 1px solid black;
   }
   .single-product-container #left-column #row2 > #row2-col-right {
+    width: 100%;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
   }
