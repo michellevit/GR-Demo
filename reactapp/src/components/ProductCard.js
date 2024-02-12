@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
             <div className="swallowtail-flag-wrapper-wrapper">
               <div className="swallowtail-flag-wrapper">
                 <div className="swallowtail-flag">
-                  <span className="flag-text">${product.price}</span>
+                  <span className="flag-text">${product.price}{product.flex_price ? "+" : ""}</span>
                 </div>
               </div>
             </div>
