@@ -1,9 +1,8 @@
 # Gumroad Product Page 
 
 A basic replication of the Gumroad Product Page UX in Rails and React, with an added 'Recently Viewed' section. 
-Demo: www.michellef.dev 
-
-
+Demo - Frontend: [www.michellef.dev](https://gumroad-demo.michellef.dev/)
+Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef.dev/api/products)
 
 ## Table of Contents
 1. [How to Basics](#how-to-basics)
@@ -13,7 +12,6 @@ Demo: www.michellef.dev
 5. [Heroku - Updating](#heroku-troubleshooting)
 6. [Heroku - Troubleshooting](#heroku-troubleshooting)
 7. [Credits](#credits)
-
 
 
 ## 1. How to Basics <a name="how-to-basics"></a>
