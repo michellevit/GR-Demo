@@ -265,10 +265,12 @@ button.next-button {
   grid-template-columns: 1fr auto;
   padding: 1rem;
 }
-
+.swallowtail-flag span {
+  line-height: 1.9rem;
+}
 .single-product-container .swallowtail-flag-wrapper-wrapper {
   display: inline-flex;
-  height: 30px;
+  height: 1.5rem;
   background-color: black;
   clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
   align-items: center;
@@ -277,7 +279,7 @@ button.next-button {
 
 .single-product-container .swallowtail-flag-wrapper {
   display: inline-flex;
-  height: 28px;
+  height: 1.4rem;
   background-color: #ff90e8;
   clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
   align-items: center;
@@ -510,4 +512,9 @@ button.next-button {
     display: flex;
     flex-direction: row;
   }
+
+  #row2 .rating {
+    line-height: 1.9rem;
+  }
+
 }
