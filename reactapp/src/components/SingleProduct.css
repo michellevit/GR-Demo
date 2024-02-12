@@ -201,7 +201,7 @@
   .single-product-container .product-header {
     width: 100%;
     max-width: 1140px;
-    padding: 1rem 4rem; 
+    padding: 1rem max(50% - 35.625rem, 4rem); 
     flex-grow: 1;
     display: flex;
     flex-direction: row;
