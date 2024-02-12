@@ -1,11 +1,11 @@
 module Api
   class ProductsController < ApplicationController
+    layout 'application'
     before_action :set_product, only: %i[ show edit update destroy ]
 
     # GET /products or /products.json
     def index
       @products = Product.all
-
       respond_to do |format|
         format.html
         format.json { render json: @products } 
