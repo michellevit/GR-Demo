@@ -86,6 +86,7 @@
 .next-button:hover {
   background-color: white;
   transform: translateX(0) translateY(0);
+  box-shadow: none;
 }
 
 .prev-button {
@@ -130,11 +131,9 @@
   color: black;
 }
 
-/* Hide dots if there's only one image */
 .image-carousel:only-child .carousel-dots {
   display: none;
 }
-
 
 .product-data-container #left-column h1 {
   margin: 0;
