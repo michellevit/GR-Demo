@@ -50,9 +50,6 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
-
-
-  
   return (
     <div className="single-product-container">
       <div className="product-header-container">
@@ -132,20 +129,22 @@ const SingleProduct = () => {
               </div>
               <div id="row2">
                 <div id="row2-col-left">
-                  <div className="product-price">
-                    <div className="swallowtail-flag-wrapper-wrapper">
-                      <div className="swallowtail-flag-wrapper">
-                        <div className="swallowtail-flag">
-                          <span className="flag-text">
-                            ${product.price}
-                            {product.flex_price ? "+" : ""}
-                          </span>
+                  <div id="double-col">
+                    <div className="product-price">
+                      <div className="swallowtail-flag-wrapper-wrapper">
+                        <div className="swallowtail-flag-wrapper">
+                          <div className="swallowtail-flag">
+                            <span className="flag-text">
+                              ${product.price}
+                              {product.flex_price ? "+" : ""}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div id="row2-col-mid">{product.user}</div>
                 </div>
-                <div id="row2-col-mid">{product.user}</div>
                 <div id="row2-col-right">
                   <div className="rating">
                     <FontAwesomeIcon icon={faStar} />
@@ -159,7 +158,10 @@ const SingleProduct = () => {
                   </div>
                 </div>
               </div>
-              <div id="row3" dangerouslySetInnerHTML={{ __html: product.description }}></div>
+              <div
+                id="row3"
+                dangerouslySetInnerHTML={{ __html: product.description }}
+              ></div>
             </div>
             <div id="right-column">
               <div id="row1">

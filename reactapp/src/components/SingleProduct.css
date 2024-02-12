@@ -33,14 +33,14 @@
 
 .image-carousel img {
   width: 100%;
-  height: auto; 
-  display: block; 
-  object-fit: cover; 
+  height: auto;
+  display: block;
+  object-fit: cover;
   transition: opacity 0.5s ease-in-out;
 }
 
 .image-carousel .visible {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .carousel-controls {
@@ -57,15 +57,13 @@
 button.prev-button,
 button.next-button {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   cursor: pointer;
-  opacity: 0; 
-  border:none;
+  opacity: 0;
+  border: none;
   padding: 0;
   background-color: inherit;
 }
-
-
 
 .prev-button:hover,
 .next-button:hover {
@@ -74,7 +72,7 @@ button.next-button {
 }
 
 .prev-button {
-  left: 10px; 
+  left: 10px;
 }
 
 .next-button {
@@ -85,12 +83,12 @@ button.next-button {
 .next-button .svg-inline--fa {
   color: black;
   width: 28px;
-  height: 28px; 
+  height: 28px;
 }
 
 .image-carousel:hover .prev-button,
 .image-carousel:hover .next-button {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .carousel-dots {
@@ -101,7 +99,8 @@ button.next-button {
   width: 100%;
 }
 
-.carousel-dots .dot, .dot.active {
+.carousel-dots .dot,
+.dot.active {
   filter: drop-shadow(0 0 0 1px black);
   margin: 0 5px;
 }
@@ -203,11 +202,9 @@ button.next-button {
   padding: 0.75rem 1rem;
 }
 
-
 .product-data-container button.add-to-cart {
   width: 100%;
 }
-
 
 .like {
   position: relative;
@@ -227,12 +224,11 @@ button.next-button {
   stroke: black;
   fill: #f4f4f0;
   stroke: 1px;
-  stroke-width: 10px;
+  stroke-width: 11px;
 }
 
 .like .svg-inline--fa path:hover {
   stroke: black;
-  stroke: 1px;
   stroke-width: 10px;
 }
 
@@ -288,7 +284,6 @@ button.next-button {
   width: 100%;
 }
 
-
 /* ---------------------------------------- */
 /* ------------------------------||-------- */
 /* ---------------BIG SCREEN----\  /------- */
@@ -308,7 +303,7 @@ button.next-button {
   .single-product-container .product-header {
     width: 100%;
     max-width: 1140px;
-    padding: 1rem max(50% - 35.625rem, 4rem); 
+    padding: 1rem max(50% - 35.625rem, 4rem);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -320,8 +315,7 @@ button.next-button {
   .single-product-container .add-to-cart,
   .single-product-container .add-to-cart .rating,
   .single-product-container .add-to-cart .rating-number,
-  .single-product-container .add-to-cart .like
-   {
+  .single-product-container .add-to-cart .like {
     flex-shrink: 0;
   }
 
@@ -345,7 +339,8 @@ button.next-button {
     min-width: 0;
   }
 
-  .single-product-container .rating, .single-product-container .rating_number {
+  .single-product-container .rating,
+  .single-product-container .rating_number {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -382,7 +377,6 @@ button.next-button {
     padding: 0 0;
   }
 
-  
   .single-product-container .product-data-container {
     display: flex;
     flex-direction: row;
@@ -450,14 +444,11 @@ button.next-button {
   }
 }
 
-
 /* ---------------------------------------- */
 /* ------------------------------||-------- */
 /* ---------------SMALL SCREEN--\  /------- */
 /* ------------------------------\/-------- */
 /* ---------------------------------------- */
-
-
 
 @media (max-width: 639px) {
   .product-data-container #left-column #row2 {
@@ -486,7 +477,14 @@ button.next-button {
   }
 
   .product-data-container #left-column #row2 > #row2-col-right {
-    width: auto; 
-    order: 3; 
+    width: auto;
+    order: 3;
   }
+
+  #row2 #row2-col-left #double-col {
+    display: flex;
+    flex-direction: row;
+  }
+
+
 }
