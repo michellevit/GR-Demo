@@ -453,14 +453,19 @@ button.next-button {
   #left-column #row2 {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
-  #row2-col-left, #row2-col-mid {
+  #left-column #row2 > #row2-col-left {
+    flex: 0 0 auto; 
+  }
+
+  #left-column #row2 > #row2-col-mid {
+    flex-grow: 1; 
+  }
+
+  #left-column #row2 > #row2-col-right {
     width: 100%; 
-  }
-
-  #row2-col-right {
-    width: auto;
     order: 3; 
   }
 }
