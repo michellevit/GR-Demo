@@ -477,8 +477,8 @@ button.next-button {
     flex-direction: column;
   }
 
-#left-column #row2 > #row2-col-left,
- #left-column #row2 > #row2-col-mid {
+#left-column #row2 #row2-col-left,
+ #left-column #row2 #row2-col-mid {
     width: -webkit-fill-available;
     flex-basis: 100%;
     border-bottom: none;
@@ -489,13 +489,13 @@ button.next-button {
     flex-wrap: wrap;
   }
 
- #left-column #row2 > #row2-col-left {
+ #left-column #row2 #row2-col-left {
     flex-basis: auto;
     width: min-content;
     border-bottom: none;
   }
 
- #left-column #row2 > #row2-col-mid {
+ #left-column #row2 #row2-col-mid {
     flex-grow: 1;
     width: 100%;
     border-left: 1px solid black;
@@ -503,7 +503,7 @@ button.next-button {
     border-bottom: none;
   }
 
- #left-column #row2 > #row2-col-right {
+ #left-column #row2 #row2-col-right {
     width: auto;
     order: 3;
   }
