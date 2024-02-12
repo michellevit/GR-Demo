@@ -241,6 +241,11 @@ button.next-button {
   fill: #ff90e8;
 }
 
+#row2-col-mid #user {
+  width: max-content;
+  flex-shrink: 0;
+}
+
 .single-product .product-price {
   display: grid;
   grid-template-columns: 1fr auto;
