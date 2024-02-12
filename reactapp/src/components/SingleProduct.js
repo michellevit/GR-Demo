@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import "./SingleProduct.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
+
 
 
 const SingleProduct = ({ product }) => {
+  const [product, setProduct] = useState(null);
+  const { productId } = useParams();
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`, {
+          headers: {
+            'Accept': 'application/json',
+          },
+        });
+        console.log("Fetched single product:", response.data);
+        setProduct(response.data);
+      } catch (error) {
+        console.error("There was an error fetching the product: ", error);
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
+  if (!product) {
+    return <div>Loading...</div>; 
+  }
   return (
     <div className="single-product-container">
       <div className="product-header-container">
