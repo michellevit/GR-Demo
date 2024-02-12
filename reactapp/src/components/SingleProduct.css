@@ -249,10 +249,15 @@ button.next-button {
   fill: #ff90e8;
 }
 
+#row2-col-mid {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
 #row2-col-mid #user {
   width: max-content;
   flex-shrink: 0;
-  line-height:1.9rem;
+  line-height: 1.9rem;
 }
 
 .single-product .product-price {
@@ -489,8 +494,9 @@ button.next-button {
 
   .product-data-container #left-column #row2 > #row2-col-mid {
     flex-grow: 1;
-    width: auto;
     width: -webkit-fill-available;
+    border-left: 1px solid black;
+    border-right: none;
   }
 
   .product-data-container #left-column #row2 > #row2-col-right {
