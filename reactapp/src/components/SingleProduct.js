@@ -128,8 +128,8 @@ const SingleProduct = () => {
                 <h1>{product.product_name}</h1>
               </div>
               <div id="row2">
-                <div id="row2-col-left">
-                  <div id="double-col">
+                <div id="double-col">
+                  <div id="row2-col-left">
                     <div className="product-price">
                       <div className="swallowtail-flag-wrapper-wrapper">
                         <div className="swallowtail-flag-wrapper">
