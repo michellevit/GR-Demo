@@ -142,7 +142,7 @@ const SingleProduct = () => {
             </div>
             <div id="right-column">
               <div id="row1">
-                <button type="button">Add to cart</button>
+                <button type="button" className='add-to-cart'>Add to cart</button>
                 <div className="like">
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
