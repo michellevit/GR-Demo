@@ -366,7 +366,7 @@ button.next-button {
     font-size: 0.8rem;
     margin-bottom: -4px;
     flex-shrink: 0;
-    padding-right: 1rem;
+    width: max-content;
   }
 
   .single-product-container .product-data-container .rating-number {
