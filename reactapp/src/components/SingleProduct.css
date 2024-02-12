@@ -47,7 +47,10 @@
 
 .prev-button,
 .next-button {
-  background-color: rgba(255, 255, 255, 0.5); 
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%); 
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   cursor: pointer;
   padding: 10px 20px;
@@ -56,6 +59,14 @@
 .prev-button:hover,
 .next-button:hover {
   background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.prev-button {
+  left: 10px; 
+}
+
+.next-button {
+  right: 10px;
 }
 
 
@@ -251,12 +262,8 @@
   .single-product-container .product-details {
     display: flex;
     align-items: center;
-    flex: 1;
-    width: 50%;
-  }
-
-  .single-product-container .product-details {
     justify-content: flex-end;
+    flex: 1;
     font-size: 0.9rem;
     gap: 1rem;
   }
@@ -293,6 +300,7 @@
     font-size: 0.8rem;
     margin-bottom: -4px;
     flex-shrink: 0;
+    padding-right: 1rem;
   }
 
   .single-product-container .product-data-container .rating-number {
