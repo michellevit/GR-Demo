@@ -132,10 +132,19 @@ height: 3rem;
 
 .like .svg-inline--fa path {
 stroke: black;
-fill: #ff90e8;
+fill: #F4F4F0;
 stroke: 1px;
 stroke-width: 10px;
+transition: transform 0.2s ease;
 }
+
+.like .svg-inline--fa path:hover {
+  stroke: black;
+  fill: #ff90e8;
+  stroke: 1px;
+  stroke-width: 10px;
+  }
+
 
 
 .like .svg-inline--fa:hover {
