@@ -135,7 +135,6 @@ stroke: black;
 fill: #F4F4F0;
 stroke: 1px;
 stroke-width: 10px;
-transition: transform 0.2s ease;
 }
 
 .like .svg-inline--fa path:hover {
