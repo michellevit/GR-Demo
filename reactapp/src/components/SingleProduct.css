@@ -508,12 +508,16 @@ button.next-button {
     order: 3;
   }
 
-  #row2 #row2-col-left #double-col {
+  #left-column #row2 #row2-col-left #double-col {
     display: flex;
     flex-direction: row;
   }
 
-  #row2 .rating {
+  #left-column #row2 .rating {
+    line-height: 2.5rem;
+  }
+
+  #right-column {
     line-height: 2.5rem;
   }
 
