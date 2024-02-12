@@ -36,8 +36,28 @@
   height: auto; 
   display: block; 
   object-fit: cover; 
+  transition: opacity 0.5s ease-in-out;
 }
 
+.image-carousel .visible {
+  opacity: 1; 
+}
+
+.slide-left-enter {
+  transform: translateX(100%);
+}
+
+.slide-left-exit {
+  transform: translateX(-100%);
+}
+
+.slide-right-enter {
+  transform: translateX(-100%);
+}
+
+.slide-right-exit {
+  transform: translateX(100%);
+}
 
 .carousel-controls {
   position: absolute;
@@ -76,7 +96,6 @@
   right: 10px;
 }
 
-/* FontAwesome icons styling */
 .prev-button .svg-inline--fa,
 .next-button .svg-inline--fa {
   color: black;
