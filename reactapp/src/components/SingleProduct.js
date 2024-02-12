@@ -142,9 +142,9 @@ const SingleProduct = () => {
                         </div>
                       </div>
                     </div>
-                    <div id="row2-col-mid">
-                      <div id="user">{product.user}</div>
-                    </div>
+                  </div>
+                  <div id="row2-col-mid">
+                    <div id="user">{product.user}</div>
                   </div>
                 </div>
                 <div id="row2-col-right">
