@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 
-const SingleProduct = () => {
+const SingleProduct = (}) => {
   const [product, setProduct] = useState(null);
   const { productId } = useParams();
   useEffect(() => {
@@ -39,8 +39,7 @@ const SingleProduct = () => {
               <div className="swallowtail-flag-wrapper-wrapper">
                 <div className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
-                    <span className="flag-text">{product.price}({product.flex_price} ? "+" : "")</span>
-                  </div>
+                  <span className="flag-text">{product.price}{product.flex_price ? "+" : ""}</span>                  </div>
                 </div>
               </div>
             </div>

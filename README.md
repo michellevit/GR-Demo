@@ -82,7 +82,11 @@ Demo: www.michellef.dev
 
 
 ## 6. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
-- make sure to restart the Heroku server after modifying the routes.rb file 
+- Reminders:
+  - After updating routes.rb file: 
+    - Make sure to restart the Heroku server after modifying the routes.rb file 
+  - If the frontend isn't working
+    - Check if the public folder has the index.html file (if not react build has failed)
 - Commands:
   - ERROR LOGS: heroku logs --tail -a gumroad-demo
   - MIGRATE: heroku run rake db:migrate -a gumroad-demo
