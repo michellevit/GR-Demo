@@ -212,7 +212,9 @@
 
   .single-product-container .add-to-cart,
   .single-product-container .add-to-cart .rating,
-  .single-product-container .add-to-cart .like {
+  .single-product-container .add-to-cart .rating_number,
+  .single-product-container .add-to-cart .like
+   {
     flex-shrink: 0;
   }
 
