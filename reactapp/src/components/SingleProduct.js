@@ -47,7 +47,6 @@ const SingleProduct = () => {
     <div className="single-product-container">
       <div className="product-header-container">
         <div className="product-header">
-          <div className="product-name">
             <div className="product-price">
               <div className="swallowtail-flag-wrapper-wrapper">
                 <div className="swallowtail-flag-wrapper">
@@ -77,7 +76,6 @@ const SingleProduct = () => {
               </div>
               <button type="button" className='add-to-cart'>Add to cart</button>
             </div>
-          </div>
         </div>
       </div>
       <div className="product-main-container">

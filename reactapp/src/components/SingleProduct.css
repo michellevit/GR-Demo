@@ -207,6 +207,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
   .single-product-container .add-to-cart,
@@ -217,7 +218,6 @@
     flex-shrink: 0;
   }
 
-  .single-product-container .product-name,
   .single-product-container .product-details {
     display: flex;
     align-items: center;
@@ -257,10 +257,6 @@
   .single-product-container button:hover {
     transform: translateX(-4px) translateY(-4px);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
-  }
-
-  .single-product-container .product-name {
-    justify-content: flex-start;
   }
 
   .single-product-container .product-details .rating-number {
