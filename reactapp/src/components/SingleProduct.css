@@ -242,7 +242,7 @@
     text-overflow: ellipsis;
   }
 
-  .single-product-container .rating, .single-product-container .rating {
+  .single-product-container .rating, .single-product-container .rating_number {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -262,10 +262,12 @@
   .single-product-container .product-details .rating-number {
     font-size: 0.8rem;
     margin-bottom: -4px;
+    flex-shrink: 0;
   }
 
   .single-product-container .product-data-container .rating-number {
     margin-bottom: -4px;
+    flex-shrink: 0;
   }
 
   .single-product-container .product-main-container {
