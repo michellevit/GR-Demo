@@ -1,31 +1,25 @@
 <% provide(:title, "Backend") %>
 
-<div class="backend">
-  <div class="container">
-    <div class='main'>
-      <h1>Products</h1>
-        <div id="products">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>User</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Flex Price</th>
-                <th>Ratings Count</th>
-                <th>Average Rating</th>
-                <th>Download Count</th>
-              </tr>
-            </thead>
-            <% @products.each do |product| %>
-              <%= render partial: 'product', locals: { product: product } %>
-            <% end %>
-          </table>
-        </div>
-    </div>
-  </div>
-</div>
+<h1>Products</h1>
 
+<div id="products">
+  <table class="table table-bordered">
+  <thead>
+  <tr>
+  <th>ID</th>
+  <th>Product Name</th>
+  <th>User</th>
+  <th>Description</th>
+  <th>Price</th>
+  <th>Flex Price</th>
+  <th>Ratings Count</th>
+  <th>Average Rating</th>
+  <th>Download Count</th>
+  </tr>
+  </thead>
+  <% @products.each do |product| %>
+    <%= render partial: 'product', locals: { product: product } %>
+  <% end %>
+  </table>
+</div>
 
