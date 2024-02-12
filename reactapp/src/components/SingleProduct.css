@@ -61,15 +61,14 @@ button.next-button {
   cursor: pointer;
   opacity: 0; 
   border:none;
-  padding: none;
-  background-color: none;
+  padding: 0;
+  background-color: inherit;
 }
 
 
 
 .prev-button:hover,
 .next-button:hover {
-  background-color: white;
   transform: translateX(0) translateY(0);
   box-shadow: none;
 }
@@ -85,8 +84,8 @@ button.next-button {
 .prev-button .svg-inline--fa,
 .next-button .svg-inline--fa {
   color: black;
-  width: 20px;
-  height: 20px; 
+  width: 25px;
+  height: 25px; 
 }
 
 .image-carousel:hover .prev-button,
