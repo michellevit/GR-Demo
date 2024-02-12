@@ -386,13 +386,14 @@ button.next-button {
   }
 
   .single-product-container .product-data-container #left-column {
-    width: 75%;
+    max-width: 758px;
     display: flex;
     flex-direction: column;
   }
 
   .single-product-container .product-data-container #right-column {
-    min-width: 25%;
+    min-width: 295px;
+    width: auto;
     display: flex;
     flex-direction: column;
     border-left: solid 1px black;
