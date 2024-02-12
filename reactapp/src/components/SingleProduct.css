@@ -252,7 +252,7 @@ button.next-button {
 #row2-col-mid #user {
   width: max-content;
   flex-shrink: 0;
-  line-height: 1.5rem;
+  line-height:1.9rem;
 }
 
 .single-product .product-price {
@@ -496,7 +496,6 @@ button.next-button {
   .product-data-container #left-column #row2 > #row2-col-right {
     width: auto;
     order: 3;
-    padding: 1rem 1.5rem; 
   }
 
   #row2 #row2-col-left #double-col {
