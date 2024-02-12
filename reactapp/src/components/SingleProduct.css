@@ -214,6 +214,10 @@ button.next-button {
   display: flex;
 }
 
+.like:hover {
+  cursor: pointer;
+}
+
 .like .svg-inline--fa {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: 3rem;
@@ -230,7 +234,6 @@ button.next-button {
   stroke: black;
   stroke: 1px;
   stroke-width: 10px;
-  cursor: pointer;
 }
 
 .like:hover .svg-inline--fa {
