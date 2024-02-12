@@ -111,14 +111,13 @@
 .single-product-container button.add-to-cart {
   border: 1px solid black;
   line-height: 1.5rem;
-  padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   font-weight: 500;
   font-size: 1rem;
   color: black;
   background-color: #ff90e8;
   white-space: nowrap;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 
@@ -215,6 +214,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    overflow: hidden;
   }
 
   .single-product-container .add-to-cart,
@@ -262,7 +262,7 @@
     gap: 0.25rem;
   }
 
-  .single-product-container button:hover {
+  .single-product-container button.add-to-cart:hover {
     transform: translateX(-4px) translateY(-4px);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
   }
