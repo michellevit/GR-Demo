@@ -1,6 +1,10 @@
 # Gumroad Product Page 
 
-A basic replication of the Gumroad Product Page UX in Rails and React, with an added 'Recently Viewed' section. 
+A basic replication of the Gumroad Product Page UX in Rails and React, with a few additons:
+- Discover Page 'Liked' section
+- Product Page 'like' button
+- Product Page 'Liked' section
+- Product Page 'Bundle' section
 Demo - Frontend: [www.michellef.dev](https://gumroad-demo.michellef.dev/)
 Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef.dev/api/products)
 
@@ -16,16 +20,13 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
 
 
 ## 1. How to Basics <a name="how-to-basics"></a>
-- To start the local server - navigate to backend dir + run: rails s (opens on localhost:3000)
-  - To run on a specific port: rails s -p 3001
-  - To close server - ctrl c
 - See current routes: rails routes
 - To add a dependency:
   - Add gem to 'Gemfile' and run 'bundle install'
   - This updates Gemfile with current dependencies
 
 
-## 2. How to Interact With Database <a name="how-to-db-development"></a>
+## 2. How to Interact With Database (Development)<a name="how-to-db-development"></a>
 - Open rails console: rails console
   - See all entries: Product.all
   - List first item in DB: Product.all.first 
@@ -34,7 +35,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
 - To seed the db -> exit the rails console + execute: rails db:seed
 
 
-## 3. How to Edit Schema - Development <a name="how-to-edit-schema-development"></a>
+## 3. How to Edit Schema (Development) <a name="how-to-edit-schema-development"></a>
 - Note: This uses version control -> hence complexity
 - Open bash terminal 
 - Navigate to backend dir
