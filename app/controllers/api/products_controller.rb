@@ -5,13 +5,20 @@ module Api
     # GET /products or /products.json
     def index
       @products = Product.all
-      render json: @products
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @products } 
+      end
     end
 
     # GET /products/1 or /products/1.json
     def show
       @product = Product.find(params[:id])
-      render json: @product, status: :ok
+      respond_to do |format|
+        format.html # Renders app/views/api/products/show.html.erb for HTML requests
+        format.json { render json: @product, status: :ok } # Renders JSON for API requests
+      end
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end
