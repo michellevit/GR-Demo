@@ -204,6 +204,11 @@ button.next-button {
 }
 
 
+.product-data-container button.add-to-cart {
+  width: 100%;
+}
+
+
 .like {
   position: relative;
   display: flex;
