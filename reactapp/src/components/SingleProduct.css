@@ -404,19 +404,18 @@ button.next-button {
   }
 
   .single-product-container #left-column #row2 > #row2-col-left {
-    width: 25%;
+    width: fit-content;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     border-right: 1px solid black;
   }
   .single-product-container #left-column #row2 > #row2-col-mid {
-    width: 25%;
+    width: fit-content;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     border-right: 1px solid black;
   }
   .single-product-container #left-column #row2 > #row2-col-right {
-    width: 50%;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
   }
