@@ -84,8 +84,8 @@ button.next-button {
 .prev-button .svg-inline--fa,
 .next-button .svg-inline--fa {
   color: black;
-  width: 30px;
-  height: 30px; 
+  width: 28px;
+  height: 28px; 
 }
 
 .image-carousel:hover .prev-button,
