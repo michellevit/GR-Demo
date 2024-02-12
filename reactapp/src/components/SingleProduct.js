@@ -50,19 +50,9 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
-  const changeImage = (newIndex) => {
-    setIsLoading(true);
-    const imageLength = product.image_urls.length;
-    const nextIndex = (newIndex + imageLength) % imageLength;
-    setCurrentImageIndex(nextIndex);
-  };
 
-  useEffect(() => {
-    const image = new Image();
-    image.src = product?.image_urls[currentImageIndex];
-    image.onload = () => setIsLoading(false);
-  }, [product, currentImageIndex]);
 
+  
   return (
     <div className="single-product-container">
       <div className="product-header-container">
@@ -109,12 +99,8 @@ const SingleProduct = () => {
                   <FontAwesomeIcon icon={faCircleArrowLeft} />
                 </button>
                 <img
-                  key={index}
-                  src={`${process.env.REACT_APP_DEMO_URL}${url}`}
-                  alt={`Product ${index + 1}`}
-                  className={`image-carousel-img ${
-                    currentImageIndex === index && !isLoading ? "visible" : ""
-                  }`}
+                  src={`${process.env.REACT_APP_DEMO_URL}${product.image_urls[currentImageIndex]}`}
+                  alt={`Product ${currentImageIndex + 1}`}
                 />
                 <button className="next-button" onClick={nextImage}>
                   <FontAwesomeIcon icon={faCircleArrowRight} />
