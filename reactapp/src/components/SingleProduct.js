@@ -185,7 +185,7 @@ const SingleProduct = () => {
                   <div id="row2-col-mid">
                     <div id="user">
                       <FontAwesomeIcon icon={faCircle} />
-                      {product.user.name}
+                      {product.user && product.user.name}
                     </div>
                   </div>
                 </div>
