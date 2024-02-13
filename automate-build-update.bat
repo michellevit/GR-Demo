@@ -1,4 +1,4 @@
-:: automate-build-update.bat
+:: automate-git-push.bat
 
 
 :: This script will:
