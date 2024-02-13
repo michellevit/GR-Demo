@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :products do
       post 'like', on: :member
+      get 'like_status'
     end
     resources :users do
       collection do
