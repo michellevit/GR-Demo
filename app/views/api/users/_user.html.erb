@@ -7,15 +7,36 @@
   <td><%= user.background_color %></td>
   <td>
     <% if user.products.any? %>
-      <ul>
+      <ol>
         <% user.products.each do |product| %>
           <li><%= product.product_name %></li>
         <% end %>
-      </ul>
+      </ol>
     <% else %>
-      No products
-    <% end %></td>
+      n/a
+    <% end %>
+  </td>
   <td>TBD</td>
-  <td><%= user.recently_viewed_products%></td>
-  <td><%= user.recently_viewed_categories%></td>
+  <td>
+    <% if user.recently_viewed_products.any? %>
+      <ol>
+        <% user.products.each do |product| %>
+          <li><%= product.product_name %></li>
+        <% end %>
+      </ol>
+    <% else %>
+      n/a
+    <% end %>
+  </td>
+  <td>
+    <% if user.recently_viewed_categories.any? %>
+      <ol>
+        <% user.products.each do |product| %>
+          <li><%= product.product_name %></li>
+        <% end %>
+      </ol>
+    <% else %>
+      n/a
+    <% end %>
+  </td>
 <tr>
