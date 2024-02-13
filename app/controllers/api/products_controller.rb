@@ -77,7 +77,8 @@ module Api
       if user.nil?
         return render json: { error: "User not found" }, status: :not_found
       end
-    
+      Rails.logger.info "User: #{user.inspect}"
+
       if request.post?
         if params[:liked] == "false" 
           user.liked_products.delete(@product.id.to_s)
