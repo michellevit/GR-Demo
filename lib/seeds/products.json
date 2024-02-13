@@ -1,8 +1,7 @@
 [
     {   
-        "product_id": 101,
         "product_name": "Soft Sketch Brush ✿ FREE Procreate brush",
-        "user_id": 1,
+        "email": "cvoy@gr.com",
         "description": "If you are looking for a free Procreate pencil brush, I've got you covered! This pencil brush is been made using my own textures.",
         "price": 0,
         "flex_price": true,
@@ -12,9 +11,8 @@
         "image_urls": ["/images/products/101-0.jpg", "/images/products/101-1.jpg", "/images/products/101-2.jpg"]
       },
       {
-        "product_id": 102,
         "product_name": "Wave Wallpaper",
-        "user_id": 2,
+        "email": "vfoley@gr.com",
         "description": "Aesthetic wavy wallpapers in 4k resolution. Can easily be adapted to work on any vertical or horizontal screen.",
         "price": 0.99,
         "flex_price": true,
@@ -25,9 +23,8 @@
 
       },
       {
-        "product_id": 103,
         "product_name": "PDF Cheque Template Form for Easy Cheque Printing",
-        "user_id": 3,
+        "email": "mflandin@gr.com",
         "description": "<p style='font-size: large'><b style='font-weight: 600;'>Simplified Cheque Printing with Our PDF Template</b></p><br/><p style='font-size: medium'><b style='font-weight: 600;'>Easy Manual Entry & Automatic Totals:</b></p><br/>This PDF template works for most printed cheque formats to streamline your cheque writing. Easily enter cheque details and let the template automatically calculate the totals for quick and accurate printing.<br/><p style='font-size: medium'><b style='font-weight: 600;'>Multiple Invoice Payments:</b></p><br/>Efficiently manage payments for multiple invoices. The template's lower section allows for clear listing of each invoice, date, and amount, keeping your payments organized.<br/><p style='font-size: medium'><b style='font-weight: 600;'>QuickBooks Alternative: </b></p><br/>Avoid the constraints of <a href='https://quickbooks.intuit.com/learn-support/en-ca/other-questions/how-to-change-cheque-print-template/00/671482'><u>having to purchase cheques from QuickBooks</u></a> or having to purchase additional software. Our PDF template works with most web browsers (e.g. Chrome) and can be modified with Adobe Acrobat DC.<br/><p style='font-size: medium'><b style='font-weight: 600;'>Compatible with Most Printed Cheques:</b></p>Designed for <a href='https://direct.ecommerce.dh.com/en/D2C-sage-50-multi-purpose-cheque'><u>D+H multi-purpose business cheques</u></a>, our template is compatible with nearly 8,000 financial institutions, including Canada's top five banks:</br><ul><li>RBC Royal Bank</li><li>TD Canada Trust</li><li>BMO Bank of Montreal</li><li>Scotiabank (+ Tangerine)</li><li>CIBC (+ Simplii Financial)</li></ul><br/>It also works with other banks such as ATB Financial, Caisses de l'Ontario, Caisses Desjardins, Canadian Western Bank, HSBC, Laurentian Bank, Manulife, National Bank of Canada, and UNI Financial Cooperation.<br/><p style='font-size: medium'><b style='font-weight: 600;'>Questions and Support</b></p><br/>If you need help using the PDF template, or if you have any questions, please visit the Discord community.<br/>Discord Server Name: Universal Cheque - Community Questions",
         "price": 0,
         "flex_price": true,
@@ -38,9 +35,8 @@
 
       },
       { 
-        "product_id": 104,
         "product_name": "Shape Of You - Ed Sheeran | Undawn piano (Free Macro)",
-        "user_id": 4,
+        "email": "sthompson@gr.com",
         "description": "The product has 2 files formatted <b>EXE</b> and <b>MCR</b>.</br></br>To get started, double-click the file and then press F5 or Play button.</br></br><i>Note: This Piano Script has been converted to jitbit macros so you can directly plug and play.</i>",
         "price": 10.99,
         "flex_price": false,
@@ -50,9 +46,8 @@
         "image_urls": ["/images/products/104-0.jpg"]
       },
       {
-        "product_id": 105,
         "product_name": "CR Basic Brushpack for blender texture painting"        ,
-        "user_id": 5,
+        "email": "tsun@gr.com",
         "description": "A free version of my brushpack.</br></br>You get 6 customizable brushes along regular blender Brush!I hope you will enjoy this! Looking forward to see what you make.</br></br>Also here is a <u>tutorial</u> on 3d illustration",
         "price": 2.99,
         "flex_price": true,
@@ -62,9 +57,8 @@
         "image_urls": ["/images/products/105-0.jpg"]
       },
       {
-        "product_id": 106,
         "product_name": "IPad Pro + Pencil 2018 - Mockup [FREE PSD] 💎",
-        "user_id": 6,
+        "email": "jovino@gr.com",
         "description": "Fresh white frontal mockup is out now.<br/>Use our PSD 💎mockup FREE<br/>New iPad Pro + Pencil 2018 mockup are waiting 🔥<br/>",
         "price": 0,
         "flex_price": true,
@@ -74,9 +68,8 @@
         "image_urls": ["/images/products/106-0.jpg", "/images/products/106-1.jpg"]
       },
       {
-        "product_id": 107,
         "product_name": "Free Plyometric Program - Increase your Vertical Jump",
-        "user_id": 7,
+        "email": "tjones@gr.com",
         "description": "Free Plyometric training program. Increase your lower body power and explosiveness!</br></br>No gym required.This program includes 3 lower body plyometric workouts per week progressed over 4 weeks.</br></br>Workout 1 consists of short ground contact time jumping exercises. These are more tendon based jumps, focused on getting off the ground as quick as possible.Workout 2 consists of hill sprints, and bodyweight isometric exercises.</br></br>Workout 3 consists of long ground contact time jumping exercises.</br></br>These are more muscular based jumps, focused on producing maximal power output.",
         "price": 1.99,
         "flex_price": false,
@@ -86,9 +79,8 @@
         "image_urls": ["/images/products/107-0.jpg"]
       },
       {
-        "product_id": 108,
         "product_name": "Learn Sign Language with Jovi",
-        "user_id": 7,
+        "email": "jovino@gr.com",
         "description": "Easy to follow along lessons with live instruction available.",
         "price": 5.00,
         "flex_price": true,
@@ -98,9 +90,8 @@
         "image_urls": ["/images/products/108-0.jpg", "/images/products/108-1.jpg", "/images/products/108-2.jpg"]
       },
       {
-        "product_id": 109,
         "product_name": "Abstract Wallpaper",
-        "user_id": 2,
+        "email": "vfoley@gr.com",
         "description": "Aesthetic abstract wallpapers in 4k resolution. Can easily be adapted to work on any vertical or horizontal screen.",
         "price": 0.99,
         "flex_price": true,

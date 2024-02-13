@@ -1,139 +1,51 @@
 [
     {
-        "id": 1,
         "name": "Clara Voy",
+        "email": "cvoy@gr.com",
         "highlight_color": "F384A4",
         "background_color": "FFFFFF",
-        "profile_pic": "/images/user/user-1.jpg.jpg",
-        "products": [
-            101
-        ],
-        "bundled_products": [],
-        "recently_viewed_products": [
-            102,
-            103
-        ],
-        "recently_viewed_categories": [
-            "Art",
-            "Design"
-        ]
+        "profile_pic": "/images/user/user-1.jpg.jpg"
     },
     {
-        "id": 2,
         "name": "Vance Foley",
+        "email": "vfoley@gr.com",
         "highlight_color": "A5EACB",
         "background_color": "ECE8E8",
-        "profile_pic": "/images/user/user-2.jpg.jpg",
-        "products": [
-            102,
-            109
-        ],
-        "bundled_products": [
-            102,
-            109
-        ],
-        "recently_viewed_products": [],
-        "recently_viewed_categories": [
-            "Music",
-            "Wallpapers"
-        ]
+        "profile_pic": "/images/user/user-2.jpg.jpg"
     },
     {
-        "id": 3,
         "name": "Michelle Flandin",
+        "email": "mflandin@gr.com",
         "highlight_color": "E7CFFE",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-3.jpg.jpg",
-        "products": [
-            103
-        ],
-        "bundled_products": [],
-        "recently_viewed_products": [
-            104,
-            109,
-            105,
-            108,
-            107
-        ],
-        "recently_viewed_categories": [
-            "Education",
-            "Software"
-        ]
+        "profile_pic": "/images/user/user-3.jpg.jpg"
     },
     {
-        "id": 4,
         "name": "Sam Thompson",
+        "email": "sthompson@gr.com",
         "highlight_color": "52FE44",
         "background_color": "F0F0F0",
-        "profile_pic": "/images/user/user-4.jpg.jpg",
-        "products": [
-            104
-        ],
-        "bundled_products": [],
-        "recently_viewed_products": [
-            102,
-            103
-        ],
-        "recently_viewed_categories": [
-            "Art",
-            "Design"
-        ]
+        "profile_pic": "/images/user/user-4.jpg.jpg"
     },
     {
-        "id": 5,
         "name": "Tonya Sun",
+        "email": "tsun@gr.com",
         "highlight_color": "FEDE0D",
         "background_color": "FFFFFF",
-        "profile_pic": "/images/user/user-5.jpg.jpg",
-        "products": [
-            105
-        ],
-        "bundled_products": [],
-        "recently_viewed_products": [
-            101
-        ],
-        "recently_viewed_categories": [
-            "Music",
-            "Wallpapers"
-        ]
+        "profile_pic": "/images/user/user-5.jpg.jpg"
     },
     {
-        "id": 6,
         "name": "Jovino",
+        "email": "jovino@gr.com",
         "highlight_color": "800080",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-6.jpg.jpg",
-        "products": [
-            106,
-            108
-        ],
-        "bundled_products": [
-            106,
-            108
-        ],
-        "recently_viewed_products": [],
-        "recently_viewed_categories": [
-            "Education",
-            "Software"
-        ]
+        "profile_pic": "/images/user/user-6.jpg.jpg"
     },
     {
-        "id": 7,
         "name": "Tom Jones",
+        "email": "tjones@gr.com",
         "highlight_color": "68ACC4",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-6.jpg.jpg",
-        "products": [
-            107
-        ],
-        "bundled_products": [],
-        "recently_viewed_products": [
-            104,
-            105
-        ],
-        "recently_viewed_categories": [
-            "Education",
-            "Software"
-        ]
+        "profile_pic": "/images/user/user-6.jpg.jpg"
     }
 ]
