@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
           <h4>{product.product_name}</h4>
           <div className="user">
             <FontAwesomeIcon icon={faCircle} />
-            {product.user}
+            {product.user.name}
           </div>
           <div className="rating">
             <FontAwesomeIcon icon={faStar} />
