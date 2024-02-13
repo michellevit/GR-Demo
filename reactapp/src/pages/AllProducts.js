@@ -13,6 +13,7 @@ const AllProducts = () => {
   };
 
   useEffect(() => {
+    document.title = "GR Discover: Assets, books, courses & more";
     const fetchProducts = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products`, {
