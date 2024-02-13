@@ -262,6 +262,19 @@ button.next-button {
   gap: 0.5rem;
 }
 
+.product-card .product-details .user svg {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.product-card .product-details .user .svg-inline--fa path {
+  stroke: black;
+  fill: #ff90e8;
+  stroke: 1px;
+  stroke-width: 20px;
+}
+
+
 .single-product .product-price {
   display: grid;
   grid-template-columns: 1fr auto;
