@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./AllProducts.css";
 import ProductCard from "../components/ProductCard";
 
@@ -14,13 +14,20 @@ const AllProducts = () => {
 
   useEffect(() => {
     document.title = "GR Discover: Assets, books, courses & more";
+  }, []);
+
+  useEffect(() => {
+    document.title = "GR Discover: Assets, books, courses & more";
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products`, {
-          headers: {
-            'Accept': 'application/json',
-          },
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
@@ -50,7 +57,9 @@ const AllProducts = () => {
     return null;
   }
 
-  const likedProducts = products.filter(product => currentUser.liked_products.includes(String(product.id)));
+  const likedProducts = products.filter((product) =>
+    currentUser.liked_products.includes(String(product.id))
+  );
 
   return (
     <div className="all-products-container">
@@ -63,14 +72,16 @@ const AllProducts = () => {
             ))}
           </div>
         </div>
-        <div className="paragraphs">
-          <h2>Liked</h2>
-          <div className="staff-picks-section">
-            {getSectionProducts(likedProducts).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+        {likedProducts.length > 0 && (
+          <div className="paragraphs">
+            <h2>Liked</h2>
+            <div className="staff-picks-section">
+              {getSectionProducts(likedProducts).map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className="paragraphs">
           <h2>Staff picks</h2>
           <div className="liked-section">
