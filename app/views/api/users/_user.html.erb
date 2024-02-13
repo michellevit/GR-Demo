@@ -38,16 +38,5 @@
       n/a
     <% end %>
   </td>
-  <td>
-    <% if user.liked_products.any? %>
-      <ol>
-        <% user.liked_products.each do |product| %>
-          <li><%= product.product_name %></li>
-        <% end %>
-      </ol>
-    <% else %>
-      n/a
-    <% end %>
-  </td>
   <td>TBD</td>
 <tr>
