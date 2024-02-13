@@ -19,8 +19,8 @@
   <td>
     <% if user.liked_products.any? %>
       <ol>
-        <% user.liked_products.each do |product| %>
-          <li><%= product.product_name %></li>
+        <% user.liked_products.each do |product_id| %>
+          <li><%= product_id %></li>
         <% end %>
       </ol>
     <% else %>
