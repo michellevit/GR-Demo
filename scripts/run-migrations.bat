@@ -4,7 +4,7 @@
 
 @echo off
 cd ".."
-heroku run rails db:migrate --app gumroad-demo
+heroku run rails db:migrate --app gr-demo
 if %ERRORLEVEL% neq 0 (
     echo Migration failed. Exiting...
     exit /b

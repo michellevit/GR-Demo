@@ -12,7 +12,7 @@
 
 :: Instructions
 :: Make sure you are logged into heroku form terminal (run: 'heroku login')
-:: Navigate into the Gumroad-Demo directory in the powershell terminal
+:: Navigate into the GR-Demo directory in the powershell terminal
 :: Run: .\automate-build-update.bat "Your commit message here"
 
 
@@ -36,7 +36,7 @@ if "%~1"=="" (
 )
 
 
-:: --2. Rebuild the reactapp 'build' file, based on the source "Gumroad-Demo" 
+:: --2. Rebuild the reactapp 'build' file, based on the source "GR-Demo" 
 SET basePath=%cd%
 cd "reactapp"
 call npm install

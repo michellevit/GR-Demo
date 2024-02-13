@@ -11,7 +11,7 @@
 
 
 :: Instructions
-:: Navigate into the Gumroad-Demo directory in the powershell terminal
+:: Navigate into the GR-Demo directory in the powershell terminal
 :: Make sure you are logged into heroku from terminal (run: 'heroku login')
 :: Run: .\reset-database.bat
 

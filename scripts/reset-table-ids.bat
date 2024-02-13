@@ -6,5 +6,5 @@
 
 
 cd ".."
-heroku run rake products:reset_pk_sequence --app gumroad-demo
-heroku run rake users:reset_pk_sequence --app gumroad-demo
+heroku run rake products:reset_pk_sequence --app gr-demo
+heroku run rake users:reset_pk_sequence --app gr-demo
