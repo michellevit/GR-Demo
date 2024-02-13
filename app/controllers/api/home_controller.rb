@@ -1,6 +1,6 @@
 module Api
   class HomeController < ApplicationController
-    layout 'application'
+    layout 'api'
     def index
     end
   end
