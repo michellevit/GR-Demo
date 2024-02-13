@@ -1,3 +1,5 @@
+<% provide(:title, "Demo | Backend") %>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <%= link_to 'Demo', root_path, class:"navbar-brand" %>
@@ -7,8 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "Products (Backend)", api_products_path, class:"nav-link" %>
-          <%= link_to "Products (Backend)", api_users_path, class:"nav-link" %>
+          <%= link_to "Products", api_products_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Users", api_users_path, class:"nav-link" %>
         </li>
       </ul>
       </div>
