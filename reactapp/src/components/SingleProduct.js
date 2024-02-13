@@ -35,7 +35,6 @@ const SingleProduct = () => {
         console.error("There was an error fetching the product: ", error);
       }
     };
-
     fetchProduct();
   }, [productId]);
 
@@ -54,7 +53,6 @@ const SingleProduct = () => {
         setCurrentUser(null);
       }
     };
-
     fetchUser();
   }, [productId]);
 
