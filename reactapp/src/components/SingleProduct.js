@@ -80,6 +80,7 @@ const SingleProduct = () => {
         `${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`,
         {
           user_email: currentUser.email,
+          liked: !isLiked
         },
         { headers: { Accept: "application/json" } }
       );

@@ -69,24 +69,23 @@ module Api
     end
 
     def like
-      
       if @product.nil?
         return render json: { error: "Product not found" }, status: :not_found
       end
-
+    
       user = User.find_by(email: params[:user_email])
       if user.nil?
         return render json: { error: "User not found" }, status: :not_found
       end
-
+    
       if request.post?
-        if liked
+        if params[:liked] == "true" 
           user.liked_products.delete(@product.id.to_s)
         else
           user.liked_products << @product.id.to_s
         end
       elsif request.get?
-        return render json: { liked: liked }, status: :ok
+        return render json: { liked: user.liked_products.include?(@product.id.to_s) }, status: :ok
       else
         return render json: { error: "Unsupported request method" }, status: :unprocessable_entity
       end
