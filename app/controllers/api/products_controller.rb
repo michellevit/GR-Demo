@@ -1,14 +1,13 @@
 module Api
   class ProductsController < ApplicationController
     before_action :set_product, only: %i[ show edit update destroy ]
-    layout 'api'
     
     # GET /products or /products.json
     def index
       @products = Product.includes(:user).order(:id)
       products_with_user = @products.as_json(include: { user: { only: [:name] } })
       respond_to do |format|
-        format.html
+        format.html { render layout: 'api' }
         format.json { render json: products_with_user }
       end
     end
@@ -100,6 +99,7 @@ module Api
       # Use callbacks to share common setup or constraints between actions.
       def set_product
         @product = Product.find(params[:id])
+        render json: @user, status: :ok
       rescue ActiveRecord::RecordNotFound
         render json: { error: "Product not found" }, status: :not_found
       end
