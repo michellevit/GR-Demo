@@ -73,14 +73,13 @@ module Api
         return render json: { error: "Product not found" }, status: :not_found
       end
     
-      user = User.find_by(email: params[:user_email])
       if user.nil?
         return render json: { error: "User not found" }, status: :not_found
       end
       Rails.logger.info "User: #{user}"
 
       if request.post?
-        if params[:liked] == "false" 
+        if params[:liked].to_s == "false" 
           user.liked_products.delete(@product.id.to_s)
         else
           user.liked_products << @product.id.to_s
