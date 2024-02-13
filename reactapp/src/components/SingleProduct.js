@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
   const { productId } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -49,6 +50,21 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
+  const handleLike = async () => {
+    const userId = 3;
+    try {
+      const response = await axios.post("/api/users/updateLikes", {
+        userId: userId,
+        productId: product.id,
+      });
+      if (response.status === 200) {
+        setIsLiked(!isLiked);
+      }
+    } catch (error) {
+      console.error("Error updating likes:", error);
+    }
+  };
+
   return (
     <div className="single-product-container">
       <div className="product-header-container">
@@ -77,7 +93,10 @@ const SingleProduct = () => {
                 {product.ratings_count} ratings
               </span>
             </div>
-            <div className="like">
+            <div
+              className={`like ${isLiked ? "liked" : ""}`}
+              onClick={handleLike}
+            >
               <FontAwesomeIcon icon={faHeart} />
             </div>
             <button type="button" className="add-to-cart">
@@ -172,7 +191,10 @@ const SingleProduct = () => {
                 <button type="button" className="add-to-cart">
                   Add to cart
                 </button>
-                <div className="like">
+                <div
+                  className={`like ${isLiked ? "liked" : ""}`}
+                  onClick={handleLike}
+                >
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
               </div>

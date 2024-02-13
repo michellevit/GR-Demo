@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :products
+    resources :products do
+      post 'like', on: :member
+    end
     resources :users
     get '/', to: 'home#index', as: 'home'
   end

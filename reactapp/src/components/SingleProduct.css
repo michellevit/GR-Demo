@@ -235,6 +235,11 @@ button.next-button {
   stroke-width: 11px;
 }
 
+.liked .svg-inline--fa path {
+  fill: #ff90e8;
+}
+
+
 .like .svg-inline--fa path:hover {
   stroke: black;
   stroke-width: 10px;
