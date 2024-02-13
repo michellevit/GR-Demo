@@ -33,14 +33,17 @@ body {
     flex-direction: column;
 }
 
-.backend .home {
-    text-align: center;
-    display: block;
-}
-
 .backend .main h1 {
     text-align: center;
     padding-bottom: 1rem;
+}
+
+.backend .home {
+    display: block;
+}
+
+.backend .home p {
+    text-align: center;
 }
 
 
