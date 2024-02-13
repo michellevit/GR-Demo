@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_13_020156) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_13_031809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_13_020156) do
     t.string "background_color"
     t.string "profile_pic"
     t.text "recently_viewed_products", default: [], array: true
-    t.text "recently_viewed_categories", default: [], array: true
+    t.text "liked_products", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
