@@ -15,7 +15,7 @@ module Api
     # GET /products/1 or /products/1.json
     def show
       @product = Product.includes(:user).find(params[:id])
-      product_with_user = @product.as_json(include: { user: {} })
+      product_with_user = @product.as_json(include: { user: { only: [:name] } })
       render json: product_with_user
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
@@ -95,8 +95,9 @@ module Api
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
-      render json: @product, status: :ok
+      @product = Product.includes(:user).find(params[:id])
+      product_with_user = @product.as_json(include: { user: { only: [:name] } })
+      render json: product_with_user
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end
