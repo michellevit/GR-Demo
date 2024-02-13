@@ -4,6 +4,11 @@
 
 @echo off
 cd ".."
+
+:: Migrate locally
+rails db:migrate
+
+:: Migrate Heroku 
 heroku run rails db:migrate --app gr-demo
 if %ERRORLEVEL% neq 0 (
     echo Migration failed. Exiting...
