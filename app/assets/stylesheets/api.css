@@ -1,103 +1,110 @@
 body {
-    margin: 0;
-    font-family: popper, 
+  margin: 0;
+  font-family: popper;
 }
 
 .backend .navbar {
-    padding: 2rem;
-    background-color: white !important;
+  padding: 2rem;
+  background-color: white !important;
 }
 
 .backend .nav-item {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .backend .navbar .nav-link:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
-
 .backend .container {
-    background-color: #F4F4F0;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    min-width: 100vw;
-    min-height: 100vh;
+  background-color: #f4f4f0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .backend .main {
-    padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .backend .main h1 {
-    text-align: center;
-    padding-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .backend .main .home {
-    display: block;
+  display: block;
 }
 
 .backend .main .home p {
-    text-align: center;
+  text-align: center;
 }
 
-
+.backend .main tbody th,
 .backend .main tbody td {
-    text-align: center;
+  text-align: center;
 }
 
-.backend .btn, .backend .navbar-toggler {
-    background-color: #ff90e8;
-    color: black;
-    border: 1px solid black;
-    border-radius: 0.25rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.backend .btn,
+.backend .navbar-toggler {
+  background-color: #ff90e8;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.backend .btn:hover, .backend .navbar-toggler:hover  {
-    background-color: #ff90e8;
-    color: black;
-    transform: translateX(-4px) translateY(-4px);
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 1); 
+.backend .btn:hover,
+.backend .navbar-toggler:hover {
+  background-color: #ff90e8;
+  color: black;
+  transform: translateX(-4px) translateY(-4px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
 }
 
-.backend button:focus, .backend .btn:focus, .backend .navbar-toggler:focus, .backend .navbar-toggler-icon:focus {
-    outline: none;
+.backend button:focus,
+.backend .btn:focus,
+.backend .navbar-toggler:focus,
+.backend .navbar-toggler-icon:focus {
+  outline: none;
 }
 
-.backend button:active, .backend .btn:active, .backend .navbar-toggler:active, .backend .navbar-toggler-icon:active {
-    outline: none;
+.backend button:active,
+.backend .btn:active,
+.backend .navbar-toggler:active,
+.backend .navbar-toggler-icon:active {
+  outline: none;
 }
-
 
 .backend .btn a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .backend .table td {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .backend .table td a {
-    color: #ff90e8;
-    text-decoration: none;
+  color: #ff90e8;
+  text-decoration: none;
 }
 
 .backend .table td a:hover {
-    opacity: 0.5
+  opacity: 0.5;
 }
 
-.backend .table thead th, .backend .table thead tr {
-    background-color: #ff90e8;
-    border: 1px solid black;
+.backend .table thead th,
+.backend .table thead tr {
+  background-color: #ff90e8;
+  border: 1px solid black;
 }
 
 .backend .table tr {
-    border: 1px solid black;
+  border: 1px solid black;
 }

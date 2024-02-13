@@ -46,6 +46,7 @@ if %errorlevel% neq 0 (
 
 
 :: Step 3: Commit changes to Github (so Heroku can access the current files)
+echo Updating Git with app's current state...
 git add .
 git commit -m "Commit before resetting database tables"
 git push origin main
