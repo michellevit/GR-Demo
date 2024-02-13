@@ -5,8 +5,17 @@
   <td><%= user.email %></td>
   <td><%= user.highlight_color %></td>
   <td><%= user.background_color %></td>
+  <td>
+    <% if user.products.any? %>
+      <ul>
+        <% user.products.each do |product| %>
+          <li><%= product.product_name %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      No products
+    <% end %></td>
   <td>TBD</td>
-  <td>TBD</td>
-  <td>TBD</td>
-  <td>TBD</td>
+  <td><%= user.recently_viewed_products%></td>
+  <td><%= user.recently_viewed_categories%></td>
 <tr>
