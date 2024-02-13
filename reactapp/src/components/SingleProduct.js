@@ -15,6 +15,7 @@ const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null)
   const { productId } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,6 +30,12 @@ const SingleProduct = () => {
         );
         setProduct(response.data);
         document.title = response.data.product_name;
+        const userResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`,
+          { headers: { Accept: "application/json" } }
+        );
+        setCurrentUser(userResponse.data);
+        setIsLiked(userResponse.data.liked_products.includes(productId));
       } catch (error) {
         console.error("There was an error fetching the product: ", error);
       }
@@ -58,7 +65,7 @@ const SingleProduct = () => {
   const handleLike = async () => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`, {
-        user_email: "mflandin@gr.com"
+        user_email: currentUser.email
       });
 
       if (response.status === 200) {

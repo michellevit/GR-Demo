@@ -36,7 +36,7 @@ if "%~1"=="" (
 )
 
 
-:: --2. Rebuild the reactapp 'build' file, based on the source "GR-Demo" 
+:: --2. Rebuild the reactapp 'build' file 
 SET basePath=%cd%
 cd "reactapp"
 call npm install

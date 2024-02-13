@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     resources :products do
       post 'like', on: :member
     end
-    resources :users
+    resources :users do
+      collection do
+        get 'find_by_email', to: 'users#find_by_email' 
+      end
+    end
     get '/', to: 'home#index', as: 'home'
   end
   root 'application#react_app'
