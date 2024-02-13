@@ -26,7 +26,6 @@ const SingleProduct = () => {
             },
           }
         );
-        console.log("Fetched single product:", response.data);
         setProduct(response.data);
       } catch (error) {
         console.error("There was an error fetching the product: ", error);

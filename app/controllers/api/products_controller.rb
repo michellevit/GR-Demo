@@ -15,10 +15,11 @@ module Api
 
     # GET /products/1 or /products/1.json
     def show
-      @product = Product.find(params[:id])
+      @product = Product.includes(:user).find(params[:id])
+      product_with_user = @product.as_json(include: { user: { only: [:name] } })
       respond_to do |format|
-        format.html # Renders app/views/api/products/show.html.erb for HTML requests
-        format.json { render json: @product, status: :ok } # Renders JSON for API requests
+        format.html
+        format.json { render json: product_with_user }
       end
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
