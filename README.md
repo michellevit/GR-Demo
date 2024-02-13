@@ -1,12 +1,12 @@
-# Gumroad Product Page 
+# GR Product Page 
 
-A basic replication of the Gumroad Product Page UX in Rails and React, with a few additons:
+A basic replication of the GR Product Page UX in Rails and React, with a few additons:
 - Discover Page 'Liked' section
 - Product Page 'like' button
 - Product Page 'Liked' section
 - Product Page 'Bundle' section
-Demo - Frontend: [www.michellef.dev](https://gumroad-demo.michellef.dev/)
-Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef.dev/api/products)
+Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
+Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/api/products)
 
 
 ## Table of Contents
@@ -71,7 +71,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
       end
       -EXAMPLES: 
         -rename_column :products, :creator_name, :user
-  -Run: heroku run rake db:migrate -a gumroad-demo
+  -Run: heroku run rake db:migrate -a gr-demo
 
 
 ## 5. Heroku - Updating <a name="heroku-updating"></a>
@@ -88,10 +88,10 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
   - If the frontend isn't working
     - Check if the public folder has the index.html file (if not react build has failed)
 - Commands:
-  - ERROR LOGS: heroku logs --tail -a gumroad-demo
-  - MIGRATE: heroku run rake db:migrate -a gumroad-demo
-  - RESTART SERVER: heroku ps:restart -a gumroad-demo
-  - SEED DB: heroku run rake db:seed --app gumroad-demo
+  - ERROR LOGS: heroku logs --tail -a gr-demo
+  - MIGRATE: heroku run rake db:migrate -a gr-demo
+  - RESTART SERVER: heroku ps:restart -a gr-demo
+  - SEED DB: heroku run rake db:seed --app gr-demo
   - RESET DB (re-seed and index to 0): .\reset-db.bat
 
 

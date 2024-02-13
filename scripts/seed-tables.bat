@@ -4,4 +4,4 @@
 
 @echo off
 cd ".."
-heroku run rails db:seed --app gumroad-demo
+heroku run rails db:seed --app gr-demo
