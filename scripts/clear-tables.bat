@@ -1,4 +1,4 @@
-:: clear-products-table.bat
+:: clear-tables.bat
 :: Note: the heroku command will halt the rest of the reset-database.bat script, so it had to be separated.
 
 
@@ -20,6 +20,23 @@ IF %product_count% GTR 0 (
     SET basePath=%cd%
     cd "%basePath%\scripts"
     call reset-products-ids.bat
+) ELSE (
+    echo No entries found. Skipping deletion.
+)
+
+
+
+SET /A product_count=0
+FOR /F %%i IN ('heroku run rails runner "puts User.count" --app gumroad-demo') DO (
+    SET /A user_count=%%i
+)
+IF %user_count% GTR 0 (
+    echo Found %user_count% entries. Deleting...
+    heroku run rails runner "User.destroy_all" --app gumroad-demo
+    echo Resetting primary key sequences...
+    SET basePath=%cd%
+    cd "%basePath%\scripts"
+    call reset-table-ids.bat
 ) ELSE (
     echo No entries found. Skipping deletion.
 )

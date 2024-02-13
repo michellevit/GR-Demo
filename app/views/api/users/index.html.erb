@@ -1,0 +1,24 @@
+<% provide(:title, "Demo | Users") %>
+
+<h1>Users</h1>
+
+<div id="users">
+  <table class="table table-bordered">
+  <thead>
+  <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Highlight Color</th>
+  <th>BG Color</th>
+  <th>Products</th>
+  <th>Bundled Products</th>
+  <th>Recently Viewed Products</th>
+  <th>Recently Viewed Categories</th>
+  </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <%= render partial: 'user', locals: { user: user } %>
+  <% end %>
+  </table>
+</div>
+

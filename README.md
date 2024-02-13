@@ -56,7 +56,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
 
 
 ## 4. How to Edit Schema - Production <a name="how-to-edit-schema-production"></a>
-- Note: This uses version control -> hence complexity
+- Note: This uses version control -> files in db/migrate folder
 - Open bash terminal 
 - Navigate to backend dir
   - Generate a migration: rails generate migration [description of change being implemented to db]
@@ -90,10 +90,9 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gumroad-demo.michellef
 - Commands:
   - ERROR LOGS: heroku logs --tail -a gumroad-demo
   - MIGRATE: heroku run rake db:migrate -a gumroad-demo
-  - CLEAR DATABASE: ./reset-database.bat
   - RESTART SERVER: heroku ps:restart -a gumroad-demo
   - SEED DB: heroku run rake db:seed --app gumroad-demo
-  - RESET DB: .\reset-products-table.bat
+  - RESET DB (re-seed and index to 0): .\reset-db.bat
 
 
 ## 7. Credits <a name="credits"></a>

@@ -1,2 +1,4 @@
 class Product < ApplicationRecord
-  end
+  t.string "user"
+  belongs_to :user
+end

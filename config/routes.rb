@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :products
+    resources :users
   end
   root 'application#react_app'
   # Health check route

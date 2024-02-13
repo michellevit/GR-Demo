@@ -1,12 +1,12 @@
-:: reset-products-table.bat
+:: reset-db.bat
 
 
 :: This script will:
 :: --1. Check if logged into Heroku CLI
 :: --2. Migrate any pending changes
 :: --3. Commit changes to Github (so Heroku can access the current files)
-:: --4. Check if there are any entries in the Product table before removing
-:: --5. Seed the database with products.json
+:: --4. Check if there are any entries in the Product/User table before removing
+:: --5. Seed the database with products.json and users.json
 :: --6. Echo message of completion if script runs successfully
 
 
@@ -47,24 +47,24 @@ if %errorlevel% neq 0 (
 
 :: Step 3: Commit changes to Github (so Heroku can access the current files)
 git add .
-git commit -m "Commit before resetting products table"
+git commit -m "Commit before resetting database tables"
 git push origin main
 
 
-:: Step 4: Check if there are any entries in the Product table before removing
+:: Step 4: Check if there are any entries in the Product/User table before removing
 echo Checking for existing entries in the Product table...
 cd "%basePath%\scripts"
-call clear-products-table.bat
+call clear-tables.bat
 if %errorlevel% neq 0 (
     echo ERROR: clearing database failed %errorlevel%.
     exit /b %errorlevel%
 )
 
 
-:: Step 5: Seed the database with products.json
-echo Seeding the database with products.json...
+:: Step 5: Seed the database with products.json and users.json
+echo Seeding the database with products.json and users.json...
 cd "%basePath%\scripts"
-call seed-products-table.bat
+call seed-tables.bat
 if %errorlevel% neq 0 (
     echo ERROR: seeding database failed %errorlevel%.
     exit /b %errorlevel%
