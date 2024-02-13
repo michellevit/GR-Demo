@@ -28,13 +28,18 @@ const SingleProduct = () => {
           }
         );
         setProduct(response.data);
+        document.title = response.data.product_name;
       } catch (error) {
         console.error("There was an error fetching the product: ", error);
       }
     };
 
     fetchProduct();
+    
   }, [productId]);
+
+
+
   const nextImage = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex + 1) % product.image_urls.length
