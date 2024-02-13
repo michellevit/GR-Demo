@@ -69,7 +69,8 @@ const SingleProduct = () => {
       prevIndex === 0 ? product.image_urls.length - 1 : prevIndex - 1
     );
   };
-  if (!product) {
+
+  if (!product || !currentUser) {
     return <div>Loading...</div>;
   }
 
@@ -86,7 +87,6 @@ const SingleProduct = () => {
       if (response.status === 200) {
         setIsLiked(!isLiked);
       }
-      console.log(!isLiked);
     } catch (error) {
       console.error("Error liking the product:", error);
     }
