@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :products
     resources :users
+    get '/', to: 'home#index', as: 'api_home'
   end
   root 'application#react_app'
   # Health check route
