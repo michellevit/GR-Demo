@@ -19,7 +19,7 @@ IF %product_count% GTR 0 (
     echo Resetting primary key sequences...
     SET basePath=%cd%
     cd "%basePath%\scripts"
-    call reset-products-ids.bat
+    call reset-table-ids.bat
 ) ELSE (
     echo No entries found. Skipping deletion.
 )
