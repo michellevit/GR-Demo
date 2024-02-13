@@ -101,6 +101,7 @@ body {
 .backend .table thead tr {
   background-color: #ff90e8;
   border: 1px solid black;
+  text-align: center;
 }
 
 .backend .table tr {
