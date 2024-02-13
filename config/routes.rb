@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get 'find_by_email', to: 'users#find_by_email' 
       end
     end
+    resources :bundles
     get '/', to: 'home#index', as: 'home'
   end
   root 'application#react_app'

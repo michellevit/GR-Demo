@@ -1,0 +1,21 @@
+<% provide(:title, "Demo | Backend | Bundles") %>
+
+<h1>Bundles</h1>
+
+<div id="bundles">
+  <table class="table table-bordered">
+  <thead>
+  <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Discount %</th>
+  <th>User ID</th>
+  <th>Products</th>
+  </tr>
+  </thead>
+  <% @bundles.each do |bundle| %>
+    <%= render partial: 'bundle', locals: { bundle: bundle } %>
+  <% end %>
+  </table>
+</div>
