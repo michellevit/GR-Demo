@@ -96,18 +96,18 @@ module Api
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_product
-        @product = Product.find(params[:id])
-        render json: @user, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { error: "Product not found" }, status: :not_found
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_product
+      @product = Product.find(params[:id])
+      render json: @product, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: "Product not found" }, status: :not_found
+    end
 
-      # Only allow a list of trusted parameters through.
-      def product_params
-        params.require(:product).permit(:product_name, :user, :description, :price, :flex_price, :ratings_count, :average_rating, :download_count)
-      end
+    # Only allow a list of trusted parameters through.
+    def product_params
+      params.require(:product).permit(:product_name, :user, :description, :price, :flex_price, :ratings_count, :average_rating, :download_count)
+    end
 
   end
 end
