@@ -1,4 +1,4 @@
-:: automate-git-push.bat
+:: update-app.bat
 
 
 :: This script will:
@@ -13,7 +13,7 @@
 :: Instructions
 :: Make sure you are logged into heroku form terminal (run: 'heroku login')
 :: Navigate into the GR-Demo directory in the powershell terminal
-:: Run: .\automate-build-update.bat "Your commit message here"
+:: Run: .\update-app.bat "Your commit message here"
 
 
 @echo off

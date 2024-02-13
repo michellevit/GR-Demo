@@ -79,7 +79,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 - How to push changes to Heroku app:
   - Navigate into the Gumroad-Demo directory in the powershell terminal
   - Make sure you are logged into heroku from terminal (run: 'heroku login')
-  - Run: .\automate-build-update.bat "Your commit message here"
+  - Run: .\update-app.bat "Your commit message here"
 
 
 ## 6. Heroku - Troubleshooting <a name="heroku-troubleshooting"></a>
