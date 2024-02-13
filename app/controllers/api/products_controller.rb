@@ -5,10 +5,11 @@ module Api
     
     # GET /products or /products.json
     def index
-      @products = Product.all
+      @products = Product.includes(:user).all
+      products_with_user = @products.as_json(include: { user: { only: [:name] } })
       respond_to do |format|
         format.html
-        format.json { render json: @products } 
+        format.json { render json: products_with_user }
       end
     end
 
