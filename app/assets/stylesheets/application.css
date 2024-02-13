@@ -29,7 +29,6 @@ body {
 
 .backend .main {
     padding: 4rem 2rem;
-    margin: auto;
     display: flex;
     flex-direction: column;
 }

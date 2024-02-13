@@ -1,6 +1,5 @@
 module Api
     class UsersController < ApplicationController
-      before_action :set_user, only: %i[ show edit update destroy ]
       layout 'api'
       # GET /api/users or /api/users.json
       def index
