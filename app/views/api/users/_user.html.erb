@@ -20,7 +20,7 @@
   <td>
     <% if user.recently_viewed_products.any? %>
       <ol>
-        <% user.products.each do |product| %>
+        <% user.recently_viewed_products.each do |product| %>
           <li><%= product.product_name %></li>
         <% end %>
       </ol>
@@ -29,9 +29,9 @@
     <% end %>
   </td>
   <td>
-    <% if user.recently_viewed_categories.any? %>
+    <% if user.liked_products.any? %>
       <ol>
-        <% user.products.each do |product| %>
+        <% user.liked_products.each do |product| %>
           <li><%= product.product_name %></li>
         <% end %>
       </ol>
