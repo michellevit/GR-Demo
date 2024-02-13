@@ -14,10 +14,7 @@ module Api
       # GET /api/users/1 or /api/users/1.json
       def show
         @user = User.find(params[:id])
-        respond_to do |format|
-          format.html 
-          format.json { render json: @user, status: :ok } 
-        end
+        render json: @user, status: :ok
       rescue ActiveRecord::RecordNotFound
         render json: { error: "User not found" }, status: :not_found
       end
