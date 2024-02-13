@@ -17,6 +17,7 @@ const SingleProduct = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const { productId } = useParams();
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -30,26 +31,31 @@ const SingleProduct = () => {
         );
         setProduct(response.data);
         document.title = response.data.product_name;
-        axios
-          .get(
-            `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`
-          )
-          .then((userResponse) => {
-            setCurrentUser(userResponse.data);
-            setIsLiked(
-              userResponse.data.liked_products.includes(String(productId))
-            );
-          })
-          .catch((error) => {
-            console.error("There was an error fetching the user: ", error);
-            setCurrentUser(null);
-          });
       } catch (error) {
         console.error("There was an error fetching the product: ", error);
       }
     };
 
     fetchProduct();
+  }, [productId]);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`
+        );
+        setCurrentUser(userResponse.data);
+        setIsLiked(
+          userResponse.data.liked_products.includes(String(productId))
+        );
+      } catch (error) {
+        console.error("There was an error fetching the user: ", error);
+        setCurrentUser(null);
+      }
+    };
+
+    fetchUser();
   }, [productId]);
 
   const nextImage = () => {

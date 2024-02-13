@@ -19,7 +19,6 @@ const AllProducts = () => {
             'Accept': 'application/json',
           },
         });
-        console.log("Fetched products:", response.data);
         setProducts(response.data);
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
