@@ -144,7 +144,7 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <div id="row2-col-mid">
-                    <div id="user">{product.user}</div>
+                    <div id="user">{product.user.name}</div>
                   </div>
                 </div>
                 <div id="row2-col-right">
