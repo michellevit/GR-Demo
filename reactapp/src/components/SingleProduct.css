@@ -265,6 +265,8 @@ button.next-button {
   line-height: 2.5rem;
   text-decoration: underline;
   gap: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .product-card .product-details .user svg {
