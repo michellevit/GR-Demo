@@ -65,9 +65,21 @@ if %errorlevel% neq 0 (
     echo ERROR: clearing database failed %errorlevel%.
     exit /b %errorlevel%
 )
+cd "%basePath%\scripts"
+call clear-bundles-table.bat
+if %errorlevel% neq 0 (
+    echo ERROR: clearing database failed %errorlevel%.
+    exit /b %errorlevel%
+)
+cd "%basePath%\scripts"
+call clear-bundle-products-table.bat
+if %errorlevel% neq 0 (
+    echo ERROR: clearing database failed %errorlevel%.
+    exit /b %errorlevel%
+)
 
 
-:: Step 5: Seed the database with products.json and users.json
+:: Step 5: Seed the database with products.json + users.json + bundles.json
 echo Seeding the database with products.json and users.json...
 cd "%basePath%\scripts"
 call seed-tables.bat

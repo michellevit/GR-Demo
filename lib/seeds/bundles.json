@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Wallpaper Bundle",
+      "description": "A collection of our best-selling wallpapers.",
+      "discount_percentage": 15,
+      "email": "vfoley@gr.com",
+      "products": [
+        "Wave Wallpaper",
+        "Abstract Wallpaper"
+      ]
+    },
+    {
+      "name": "Art Pack",
+      "description": "Everything you need to get started with your graphic design journey.",
+      "discount_percentage": 20,
+      "email": "tsun@gr.com",
+      "products": [
+        "Soft Sketch Brush ✿ FREE Procreate brush",
+        "CR Basic Brushpack for blender texture painting",
+        "IPad Pro + Pencil 2018 - Mockup [FREE PSD] 💎"
+      ]
+    }
+  ]
+  
