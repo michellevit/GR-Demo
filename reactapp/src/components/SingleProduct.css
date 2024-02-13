@@ -258,6 +258,8 @@ button.next-button {
   width: max-content;
   flex-shrink: 0;
   line-height: 2.5rem;
+  text-decoration: underline;
+  gap: 0.5rem;
 }
 
 .single-product .product-price {
