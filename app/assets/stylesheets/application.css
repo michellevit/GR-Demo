@@ -35,6 +35,7 @@ body {
 
 .backend .home {
     text-align: center;
+    display: block;
 }
 
 .backend .main h1 {
