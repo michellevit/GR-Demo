@@ -1,16 +1,16 @@
 :: run-migrations.bat
 :: Note: the heroku command will halt the rest of the reset-database.bat script, so it had to be separated.
 
-
 @echo off
-cd ".."
+setlocal EnableDelayedExpansion
+SET basePath=%cd%
+
 
 :: Migrate locally
-rails db:migrate
+cd "%basePath%
+call migrate-locally.bat
+
 
 :: Migrate Heroku 
-heroku run rails db:migrate --app gr-demo
-if %ERRORLEVEL% neq 0 (
-    echo Migration failed. Exiting...
-    exit /b
-)
+cd "%basePath%
+call migrate-heroku.bat
