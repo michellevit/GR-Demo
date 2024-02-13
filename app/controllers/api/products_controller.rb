@@ -78,7 +78,7 @@ module Api
       end
 
       if request.post?
-        if params[:liked].to_s == "false" 
+        if params[:liked] == false 
           user.liked_products.delete(@product.id.to_s)
         else
           user.liked_products << @product.id.to_s
