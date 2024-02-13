@@ -97,7 +97,3 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 
 ## 7. Credits <a name="credits"></a>
 Michelle Flandin
-
-
-
-TEST

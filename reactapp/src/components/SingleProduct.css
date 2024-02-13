@@ -269,12 +269,12 @@ button.next-button {
   align-items: center;
 }
 
-.product-card .product-details .user svg {
+.product-card .product-details #user svg {
   font-size: 1.25rem;
   color: white;
 }
 
-.product-card .product-details .user .svg-inline--fa path {
+.product-card .product-details #user .svg-inline--fa path {
   stroke: black;
   fill: #ff90e8;
   stroke: 1px;
