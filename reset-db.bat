@@ -54,7 +54,13 @@ git push origin main
 :: Step 4: Check if there are any entries in the Product/User table before removing
 echo Checking for existing entries in the Product table...
 cd "%basePath%\scripts"
-call clear-tables.bat
+call clear-products-table.bat
+if %errorlevel% neq 0 (
+    echo ERROR: clearing database failed %errorlevel%.
+    exit /b %errorlevel%
+)
+cd "%basePath%\scripts"
+call clear-users-table.bat
 if %errorlevel% neq 0 (
     echo ERROR: clearing database failed %errorlevel%.
     exit /b %errorlevel%
