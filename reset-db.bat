@@ -80,7 +80,7 @@ if %errorlevel% neq 0 (
 
 
 :: Step 5: Seed the database with products.json + users.json + bundles.json
-echo Seeding the database with products.json and users.json...
+echo Seeding the database with products & users & bundles
 cd "%basePath%\scripts"
 call seed-tables.bat
 if %errorlevel% neq 0 (

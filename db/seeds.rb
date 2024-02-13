@@ -13,18 +13,12 @@
 users_file_path = Rails.root.join('lib', 'seeds', 'users.json')
 users_data = JSON.parse(File.read(users_file_path))
 users_data.each do |user_attrs|
-  User.find_or_create_by(email: user_attrs["email"]) do |user|
-    user.name = user_attrs["name"]
-    user.highlight_color = user_attrs["highlight_color"]
-    user.background_color = user_attrs["background_color"]
-    user.profile_pic = user_attrs["profile_pic"]
-  end
-  if user_attrs["liked_products"]
-    user_attrs["liked_products"].each do |product_id|
-      # Assuming liked_products references product IDs directly
-      user.liked_products << product_id unless user.liked_products.include?(product_id)
-    end
-    user.save
+  user = User.find_or_create_by(email: user_attrs["email"]) do |u|
+    u.name = user_attrs["name"]
+    u.highlight_color = user_attrs["highlight_color"]
+    u.background_color = user_attrs["background_color"]
+    u.profile_pic = user_attrs["profile_pic"]
+    u.liked_products = user_attrs["liked_products"]
   end
 end
 
