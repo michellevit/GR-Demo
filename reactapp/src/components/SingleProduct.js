@@ -53,15 +53,15 @@ const SingleProduct = () => {
   const handleLike = async () => {
     const userId = 3;
     try {
-      const response = await axios.post("/api/users/updateLikes", {
-        userId: userId,
-        productId: product.id,
+      const response = await axios.post(`${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`, {
+        user_email: "mflandin@gr.com"
       });
+
       if (response.status === 200) {
-        setIsLiked(!isLiked);
+        setIsLiked(!isLiked); 
       }
     } catch (error) {
-      console.error("Error updating likes:", error);
+      console.error("Error liking the product:", error);
     }
   };
 

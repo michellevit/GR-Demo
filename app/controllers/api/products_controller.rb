@@ -72,6 +72,22 @@ module Api
       end
     end
 
+    def like
+      # Assuming you have current_user method to get logged-in user
+      user = User.find_by(email: params[:user_email])
+      if user.liked_products.include?(@product.id.to_s)
+        user.liked_products.delete(@product.id.to_s)
+      else
+        user.liked_products << @product.id.to_s
+      end
+
+      if user.save
+        render json: { status: 'success', liked_products: user.liked_products }, status: :ok
+      else
+        render json: { status: 'error', message: user.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_product
