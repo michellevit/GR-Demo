@@ -16,7 +16,6 @@ const SingleProduct = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  const [productCreator, setProductCreator] = useState("Loading user...")
   const { productId } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
@@ -30,7 +29,6 @@ const SingleProduct = () => {
           }
         );
         setProduct(response.data);
-        setProductCreator(response.data.user.name)
         document.title = response.data.product_name;
         axios
           .get(
@@ -187,7 +185,7 @@ const SingleProduct = () => {
                   <div id="row2-col-mid">
                     <div id="user">
                       <FontAwesomeIcon icon={faCircle} />
-                      {productCreator}
+                      {product.user.name}
                     </div>
                   </div>
                 </div>
