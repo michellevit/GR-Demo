@@ -77,7 +77,7 @@ module Api
       if user.nil?
         return render json: { error: "User not found" }, status: :not_found
       end
-      Rails.logger.info "User: #{user.inspect}"
+      Rails.logger.info "User: #{user}"
 
       if request.post?
         if params[:liked] == "false" 

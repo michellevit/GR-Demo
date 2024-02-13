@@ -24,7 +24,10 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 - To add a dependency:
   - Add gem to 'Gemfile' and run 'bundle install'
   - This updates Gemfile with current dependencies
-
+- To add a log (like console.log/print) in .rb files: 
+    - 'Rails.logger.info "LOG DATA HERE"'
+    - e.g. Rails.logger.info "User: #{user.inspect}"
+    - Note: these may appear in the heroku logs (for example if you add it to controller file and request that url)
 
 ## 2. How to Interact With DB (Development)<a name="how-to-db-development"></a>
 - Open rails console: rails console
