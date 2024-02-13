@@ -19,6 +19,13 @@ users_data.each do |user_attrs|
     user.background_color = user_attrs["background_color"]
     user.profile_pic = user_attrs["profile_pic"]
   end
+  if user_attrs["liked_products"]
+    user_attrs["liked_products"].each do |product_id|
+      # Assuming liked_products references product IDs directly
+      user.liked_products << product_id unless user.liked_products.include?(product_id)
+    end
+    user.save
+  end
 end
 
 

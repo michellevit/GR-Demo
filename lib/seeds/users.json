@@ -18,7 +18,8 @@
         "email": "mflandin@gr.com",
         "highlight_color": "E7CFFE",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-3.jpg.jpg"
+        "profile_pic": "/images/user/user-3.jpg.jpg",
+        "liked_products": [3, 4]
     },
     {
         "name": "Sam Thompson",
