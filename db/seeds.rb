@@ -24,9 +24,6 @@ users_data.each do |user_attrs|
 end
 
 
-
-
-
 # Seed Products
 products_file_path = Rails.root.join('lib', 'seeds', 'products.json')
 products_data = JSON.parse(File.read(products_file_path))
