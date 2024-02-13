@@ -11,9 +11,9 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 
 ## Table of Contents
 1. [How to Basics](#how-to-basics)
-2. [How to Interact With Database (Development)](#how-to-db-development)
-3. [How to Edit Schema (Development)](#how-to-edit-schema-development)
-4. [How to Edit Schema (Production)](#how-to-edit-schema-production)
+2. [How to Interact With DB (Development)](#how-to-db-development)
+3. [How to Edit DB (Development)](#how-to-edit-db-development)
+4. [How to Edit DB (Production)](#how-to-edit-db-production)
 5. [Heroku - Updating](#heroku-troubleshooting)
 6. [Heroku - Troubleshooting](#heroku-troubleshooting)
 7. [Credits](#credits)
@@ -26,7 +26,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
   - This updates Gemfile with current dependencies
 
 
-## 2. How to Interact With Database (Development)<a name="how-to-db-development"></a>
+## 2. How to Interact With DB (Development)<a name="how-to-db-development"></a>
 - Open rails console: rails console
   - See all entries: Product.all
   - List first item in DB: Product.all.first 
@@ -35,7 +35,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 - To seed the db -> exit the rails console + execute: rails db:seed
 
 
-## 3. How to Edit Schema (Development) <a name="how-to-edit-schema-development"></a>
+## 3. How to Edit DB (Development) <a name="how-to-edit-db-development"></a>
 - Note: This uses version control -> hence complexity
 - Open bash terminal 
 - Navigate to backend dir
@@ -55,7 +55,7 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
       - rails db:migrate
 
 
-## 4. How to Edit Schema - Production <a name="how-to-edit-schema-production"></a>
+## 4. How to Edit DB - Production <a name="how-to-edit-db-production"></a>
 - Note: This uses version control -> files in db/migrate folder
 - Open bash terminal 
 - Navigate to backend dir
