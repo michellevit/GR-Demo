@@ -16,10 +16,7 @@ module Api
     def show
       @product = Product.includes(:user).find(params[:id])
       product_with_user = @product.as_json(include: { user: { only: [:name] } })
-      respond_to do |format|
-        format.html
-        format.json { render json: product_with_user }
-      end
+      render json: product_with_user
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end
