@@ -73,7 +73,8 @@ const SingleProduct = () => {
         `${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`,
         {
           user_email: currentUser.email,
-        }
+        },
+        { headers: { Accept: "application/json" } }
       );
 
       if (response.status === 200) {
