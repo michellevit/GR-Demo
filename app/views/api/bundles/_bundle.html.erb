@@ -1,9 +1,12 @@
-<div id="<%= dom_id bundle %>">  
-<tr>
+<tr id="<%= dom_id bundle %>">
   <td><%= bundle.id %></td>
   <td><%= bundle.name %></td>
   <td><%= bundle.description %></td>
   <td><%= bundle.discount_percentage %>%</td>
-  <td><%= bundle.user_id %></td>
-  <td><%= bundle.products %></td>
-<tr>
+  <td><%= bundle.user.name %></td>
+  <td>
+    <% bundle.products.each do |product| %>
+      <div><%= product.product_name %></div>
+    <% end %>
+  </td>
+</tr>

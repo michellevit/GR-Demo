@@ -4,14 +4,16 @@
         "email": "cvoy@gr.com",
         "highlight_color": "F384A4",
         "background_color": "FFFFFF",
-        "profile_pic": "/images/user/user-1.jpg.jpg"
+        "profile_pic": "/images/user/user-1.jpg.jpg",
+        "liked_products": []
     },
     {
         "name": "Vance Foley",
         "email": "vfoley@gr.com",
         "highlight_color": "A5EACB",
         "background_color": "ECE8E8",
-        "profile_pic": "/images/user/user-2.jpg.jpg"
+        "profile_pic": "/images/user/user-2.jpg.jpg",
+        "liked_products": []
     },
     {
         "name": "Michelle Flandin",
@@ -26,27 +28,31 @@
         "email": "sthompson@gr.com",
         "highlight_color": "52FE44",
         "background_color": "F0F0F0",
-        "profile_pic": "/images/user/user-4.jpg.jpg"
+        "profile_pic": "/images/user/user-4.jpg.jpg",
+        "liked_products": []
     },
     {
         "name": "Tonya Sun",
         "email": "tsun@gr.com",
         "highlight_color": "FEDE0D",
         "background_color": "FFFFFF",
-        "profile_pic": "/images/user/user-5.jpg.jpg"
+        "profile_pic": "/images/user/user-5.jpg.jpg",
+        "liked_products": []
     },
     {
         "name": "Jovino",
         "email": "jovino@gr.com",
         "highlight_color": "800080",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-6.jpg.jpg"
+        "profile_pic": "/images/user/user-6.jpg.jpg",
+        "liked_products": []
     },
     {
         "name": "Tom Jones",
         "email": "tjones@gr.com",
         "highlight_color": "68ACC4",
         "background_color": "F4F4F0",
-        "profile_pic": "/images/user/user-6.jpg.jpg"
+        "profile_pic": "/images/user/user-6.jpg.jpg",
+        "liked_products": []
     }
 ]
