@@ -2,12 +2,11 @@ module Api
     class UsersController < ApplicationController
       
       before_action :set_user, only: %i[ show edit update destroy ]
-      layout 'api'
       # GET /api/users or /api/users.json
       def index
         @users = User.all.order(:id)
         respond_to do |format|
-          format.html 
+          format.html { render layout: 'api' }
           format.json { render json: @users }
         end
       end  
@@ -36,6 +35,7 @@ module Api
 
     def set_user
       @user = User.find(params[:id])
+      render json: @user, status: :ok
     rescue ActiveRecord::RecordNotFound
       render json: { error: "User not found" }, status: :not_found
     end
