@@ -73,8 +73,15 @@ module Api
     end
 
     def like
-      # Assuming you have current_user method to get logged-in user
+      if @product.nil?
+        return render json: { error: "Product not found" }, status: :not_found
+      end
+
       user = User.find_by(email: params[:user_email])
+      if user.nil?
+        return render json: { error: "User not found" }, status: :not_found
+      end
+
       if user.liked_products.include?(@product.id.to_s)
         user.liked_products.delete(@product.id.to_s)
       else
