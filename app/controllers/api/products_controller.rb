@@ -73,6 +73,7 @@ module Api
     end
 
     def like
+      
       if @product.nil?
         return render json: { error: "Product not found" }, status: :not_found
       end
