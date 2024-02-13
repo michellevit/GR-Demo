@@ -38,11 +38,11 @@ body {
     padding-bottom: 1rem;
 }
 
-.backend .home {
+.backend .main .home {
     display: block;
 }
 
-.backend .home p {
+.backend .main .home p {
     text-align: center;
 }
 
