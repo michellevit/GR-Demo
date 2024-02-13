@@ -4,7 +4,7 @@ module Api
       layout 'api'
       # GET /api/users or /api/users.json
       def index
-        @users = User.all
+        @users = User.all.order(:id)
         respond_to do |format|
           format.html 
           format.json { render json: @users }
