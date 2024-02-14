@@ -9,31 +9,21 @@ const RatingsBarChart = ({ distribution }) => {
 
   return (
     <div className="ratings-bar-chart">
-        <h3>Ratings</h3>
+      <h3>Ratings</h3>
       {Object.entries(distribution).map(([stars, count]) => {
         const widthPercentage = (count / totalRatings) * 100;
         return (
           <div className="bar-row" key={stars}>
-            <div style={{ fontWeight: "bold" }}>{stars} stars</div>
-            <div
-              style={{
-                background: "lightgray",
-                width: "100%",
-                height: "20px",
-                position: "relative",
-              }}
-            >
+            <div className="stars">{stars} stars</div>
+            <div className="outer-bar">
               <div
+                className="inner-bar"
                 style={{
-                  background: "dodgerblue",
                   width: `${widthPercentage}%`,
-                  height: "100%",
                 }}
               ></div>
             </div>
-            <div style={{ marginTop: "5px" }}>
-              {widthPercentage.toFixed(2) + "%"}
-            </div>
+            <div className="percentage">{widthPercentage.toFixed(2) + "%"}</div>
           </div>
         );
       })}
