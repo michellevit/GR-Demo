@@ -419,7 +419,7 @@ button.next-button {
     gap: 1rem;
   }
 
-  .single-product-container h3 {
+  .single-product-container .product-header-container .product-header h3 {
     font-size: 1rem;
     font-weight: 500;
     margin: 0;

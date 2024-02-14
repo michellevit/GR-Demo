@@ -5,9 +5,9 @@
 }
 
 .ratings-bar-chart h3 {
-  line-height: 1.1375;
   font-weight: 600;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
 .ratings-bar-chart .bar-row {
@@ -19,11 +19,11 @@
 } 
 
 .ratings-bar-chart .bar-row .stars {
-    width: 20%;
+    width: 22%;
 } 
 
 .ratings-bar-chart .bar-row .outer-bar {
-    width: 70%;
+    width: 68%;
     height: 18px;
     position: relative;
     border: 1px solid black;
