@@ -24,7 +24,7 @@ const RatingsBarChart = ({ distribution }) => {
                 }}
               ></div>
             </div>
-            <div className="percentage">{widthPercentage.toFixed(1) + "%"}</div>
+            <div className="percentage">{Math.round(widthPercentage) + "%"}</div>
           </div>
         );
       })}
