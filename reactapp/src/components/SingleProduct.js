@@ -1,10 +1,16 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./SingleProduct.css";
 import ProductCard from "./ProductCard";
 import RatingsBarChart from "./RatingsBarChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart, faCircle, faCircleArrowLeft, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faHeart,
+  faCircle,
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
@@ -15,59 +21,126 @@ const SingleProduct = () => {
   const [bundledProducts, setBundledProducts] = useState([]);
   const [bundleDiscount, setBundleDiscount] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [initialRecentlyViewedProducts, setInitialRecentlyViewedProducts] = useState([]);
+  const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
+
+  const getRandomSelection = (productArray) => {
+    const filteredProducts = productArray.filter(
+      (product) => product.id.toString() !== productId
+    );
+    const shuffledProducts = filteredProducts.sort(() => Math.random() - 0.5);
+    return shuffledProducts.slice(0, 5);
+  };
 
   useEffect(() => {
-    const fetchProductAndRelatedData = async () => {
+    const fetchProductAndBundles = async () => {
       try {
-        const productResponse = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`);
+        const productResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
+        );
         setProduct(productResponse.data);
-
-        const bundlesResponse = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`);
+        const bundlesResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`
+        );
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
+        } else {
+          console.log("nada");
         }
-
-        const userResponse = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`);
-        setCurrentUser(userResponse.data);
-        setIsLiked(userResponse.data.liked_products.includes(String(productId)));
-
-        const recentlyViewedResponse = await axios.get(`${process.env.REACT_APP_DEMO_URL}/api/products`, {
-          headers: { Accept: "application/json" },
-        });
-        setInitialRecentlyViewedProducts(recentlyViewedResponse.data);
       } catch (error) {
-        console.error("There was an error fetching the product or related data: ", error);
+        console.error("Error fetching product or bundles: ", error);
       }
     };
 
-    fetchProductAndRelatedData();
+    fetchProductAndBundles();
   }, [productId]);
 
-  const ratingsDistribution = useMemo(() => {
-    if (!product) return { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-    return simulateRatingsDistribution(product.average_rating, product.ratings_count);
-  }, [product?.average_rating, product?.ratings_count]);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`
+        );
+        setCurrentUser(userResponse.data);
+        setIsLiked(
+          userResponse.data.liked_products.includes(String(productId))
+        );
+      } catch (error) {
+        console.error("There was an error fetching the user: ", error);
+        setCurrentUser(null);
+      }
+    };
+    fetchUser();
+  }, [productId]);
 
-  const recentlyViewedProducts = useMemo(() => getRandomSelection(initialRecentlyViewedProducts), [initialRecentlyViewedProducts, productId]);
+  useEffect(() => {
+    const fetchRecentlyViewedProducts = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        setRecentlyViewedProducts(getRandomSelection(response.data));
+      } catch (error) {
+        console.error("There was an error fetching the products: ", error);
+      }
+    };
 
-  const handleLike = async () => {
-    try {
-      await axios.post(`${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`, {
-        user_email: currentUser.email,
-        liked: !isLiked,
-      }, { headers: { Accept: "application/json" } });
+    fetchRecentlyViewedProducts();
+  }, []);
+  const nextImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % product.image_urls.length
+    );
+  };
 
-      setIsLiked(!isLiked);
-    } catch (error) {
-      console.error("Error liking the product:", error);
-    }
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? product.image_urls.length - 1 : prevIndex - 1
+    );
   };
 
   if (!product || !currentUser) {
     return <div>Loading...</div>;
   }
+
+  const handleLike = async () => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`,
+        {
+          user_email: currentUser.email,
+          liked: !isLiked,
+        },
+        { headers: { Accept: "application/json" } }
+      );
+
+      if (response.status === 200) {
+        setIsLiked(!isLiked);
+      }
+    } catch (error) {
+      console.error("Error liking the product:", error);
+    }
+  };
+
+  function simulateRatingsDistribution(averageRating, totalRatings) {
+    let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    let remainingRatings = totalRatings;
+    distribution[Math.round(averageRating)] = Math.round(totalRatings * 0.5);
+    remainingRatings -= distribution[Math.round(averageRating)];
+    while (remainingRatings > 0) {
+      let rating = Math.floor(Math.random() * 5) + 1;
+      let count = Math.min(remainingRatings, Math.ceil(Math.random() * (remainingRatings / 2)));
+      distribution[rating] += count;
+      remainingRatings -= count;
+    }
+    return distribution;
+  }
+
   return (
     <div className="single-product-container">
       <div className="product-header-container">
