@@ -102,11 +102,9 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 
 
 ## 7. Features To Add <a name="features-to-add"></a>
-- SingleProduct Page: Add bundled items section (if exists for product)
 - DB: Add recently_viewed field to users
 - Backend: Add recently_viewed functionality
-- SingleProduct Page: Add recently_views section
-- Nav: Search functionality
+- SingleProduct Page: Add recently_viewed section
 - DB: Add Cart field for users
 - Nav: Add to Cart functionality
 - SingleProduct Page: Add to Cart functionality
@@ -118,8 +116,9 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 - SingleProduct Page: Rating bar chart + accurate star ratings
 - SingleProduct Page: rating bar chart, fix rating stars, if 0 ratings -> 'no ratings'
 - SingleProduct Page: image carousel sizing when multiple images
-- CSS: define variables for colors and other properties
-- CSS: clean
+- User authentification (liked_products, recently_viewed)
+- CSS: define global variables for colors and other properties
+- CSS: clean/reorganize
 
 
 ## 8. Credits <a name="credits"></a>

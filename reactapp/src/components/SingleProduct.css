@@ -367,7 +367,7 @@ button.next-button {
 }
 
 
-.product-main-container .bundle-purchase {
+.product-main-container .section-container .paragraphs .bundle-section .bundle-purchase {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,7 +376,7 @@ button.next-button {
   gap: 1rem;
 }
 
-.product-main-container .bundle-purchase button {
+.product-main-container .section-container .paragraphs .bundle-section .bundle-purchase button {
   font-size: 1rem;
   background-color: #ff90e8;
 }
