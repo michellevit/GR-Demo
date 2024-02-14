@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :products do
       post 'like', on: :member
       get 'like_status'
-      get 'bundles', to: 'products#bundles'
+      get 'bundles', on: :member
     end
     resources :users do
       collection do
