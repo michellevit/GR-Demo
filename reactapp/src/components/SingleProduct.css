@@ -409,7 +409,7 @@ button.next-button {
     flex-shrink: 0;
   }
 
-  .single-product-container .product-details {
+  .single-product-container .product-main-section .product-details {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -447,7 +447,7 @@ button.next-button {
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
   }
 
-  .single-product-container .product-details .rating-number {
+  .single-product-container .product-main-section .product-details .rating-number {
     font-size: 0.9rem;
     margin-bottom: -4px;
     flex-shrink: 0;
