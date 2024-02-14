@@ -582,7 +582,7 @@ button.next-button {
     border-right: none;
     height: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
 
  #left-column #row2 {
