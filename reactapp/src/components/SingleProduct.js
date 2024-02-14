@@ -141,6 +141,9 @@ const SingleProduct = () => {
     return distribution;
   }
 
+  const ratingsDistribution = simulateRatingsDistribution(product.average_rating, product.ratings_count);
+
+
   return (
     <div className="single-product-container">
       <div className="product-header-container">
