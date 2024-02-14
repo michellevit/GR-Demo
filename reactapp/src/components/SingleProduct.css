@@ -431,7 +431,7 @@ button.next-button {
   }
 
   .single-product-container .rating,
-  .single-product-container .rating_number {
+  .single-product-container .rating .rating_number {
     display: flex;
     align-items: center;
     gap: 0.25rem;
