@@ -34,6 +34,9 @@ const SingleProduct = () => {
           setBundledProducts(bundlesResponse.data[0].products);
           console.log(bundlesResponse.data[0].products);
         }
+        else {
+          console.log("nada");
+        }
       } catch (error) {
         console.error("Error fetching product or bundles: ", error);
       }
