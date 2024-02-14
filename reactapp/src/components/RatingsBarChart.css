@@ -1,7 +1,7 @@
 .ratings-bar-chart {
   display: flex;
   gap: 0.75rem;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .ratings-bar-chart h3 {
