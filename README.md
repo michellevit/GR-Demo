@@ -88,6 +88,11 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
     - Make sure to restart the Heroku server after modifying the routes.rb file 
   - If the frontend isn't working
     - Check if the public folder has the index.html file (if not react build has failed)
+- Debugging: 
+  - To log errors in backend (e.g. controllers) - add this line: 
+    - Add this line: Rails.logger.info "log message here"
+    - Example: Rails.logger.info "Parameters: #{params.inspect}" 
+    - This will be printed in the heroku logs
 - Commands:
   - ERROR LOGS: heroku logs --tail -a gr-demo
   - MIGRATE: heroku run rake db:migrate -a gr-demo
