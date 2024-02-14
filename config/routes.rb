@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :products do
       post 'like', on: :member
-      get 'like_status'
       get 'bundles', on: :member
     end
     resources :users do

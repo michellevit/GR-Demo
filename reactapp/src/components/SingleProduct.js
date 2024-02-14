@@ -27,15 +27,12 @@ const SingleProduct = () => {
           `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
         );
         setProduct(productResponse.data);
-        // Fetch bundled products for this product
         const bundlesResponse = await axios.get(
           `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`
         );
-
-        // Assuming each product can belong to multiple bundles, and you are interested in the first one
         if (bundlesResponse.data.length > 0) {
-          // Update state with bundled products
           setBundledProducts(bundlesResponse.data[0].products);
+          console.log(bundlesResponse.data[0].products);
         }
       } catch (error) {
         console.error("Error fetching product or bundles: ", error);
