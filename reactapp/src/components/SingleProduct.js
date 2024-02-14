@@ -22,7 +22,13 @@ const SingleProduct = () => {
   const [bundleDiscount, setBundleDiscount] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
-  const [ratingsDistribution, setRatingsDistribution] = useState({ 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 });
+  const [ratingsDistribution, setRatingsDistribution] = useState({
+    5: 0,
+    4: 0,
+    3: 0,
+    2: 0,
+    1: 0,
+  });
 
   const getRandomSelection = (productArray) => {
     const filteredProducts = productArray.filter(
@@ -56,6 +62,12 @@ const SingleProduct = () => {
           `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
         );
         setProduct(productResponse.data);
+        setRatingsDistribution(
+          simulateRatingsDistribution(
+            productResponse.data.average_rating,
+            productResponse.data.ratings_count
+          )
+        );
         const bundlesResponse = await axios.get(
           `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`
         );
@@ -63,7 +75,7 @@ const SingleProduct = () => {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
         } else {
-          console.log("nada");
+          console.log("No bundles found.");
         }
       } catch (error) {
         console.error("Error fetching product or bundles: ", error);
@@ -71,7 +83,6 @@ const SingleProduct = () => {
     };
 
     fetchProductAndBundles();
-    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
   }, [productId]);
 
   useEffect(() => {
@@ -145,9 +156,6 @@ const SingleProduct = () => {
       console.error("Error liking the product:", error);
     }
   };
-
-  
-  
 
   return (
     <div className="single-product-container">
