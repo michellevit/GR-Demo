@@ -14,6 +14,7 @@
 .ratings-bar-chart .bar-row {
     width: 100%;
     display: flex;
+    font-size: .875rem;
 } 
 
 /* .ratings-bar-chart .bar-row .stars {
