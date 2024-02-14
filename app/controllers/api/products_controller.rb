@@ -101,11 +101,21 @@ module Api
 
     def bundles
       product = Product.find(params[:id])
-      bundles = product.bundles.includes(:products) 
-      render json: bundles.as_json(include: { products: { methods: [:image_path], include: { user: { only: [:name] } } } })
+      bundles = product.bundles.includes(products: :user)
+      render json: bundles.as_json(include: {
+        products: {
+          only: [:id, :product_name, :price, :description, :average_rating, :ratings_count, :image_urls],
+          include: {
+            user: {
+              only: [:name]
+            }
+          }
+        }
+      })
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end
+    
 
     private
     # Use callbacks to share common setup or constraints between actions.
