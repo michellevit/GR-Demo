@@ -4,3 +4,9 @@
     grid-template-columns: auto 1fr auto;
 }
 
+.ratings-bar-chart h3 {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    --line-height: 2rem;
+    font-weight: 400;
+}
