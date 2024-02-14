@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
@@ -12,10 +12,13 @@ const ProductCard = ({
   const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
   const [discountAmount, setDiscountAmount] = useState(null);
   let finalPrice = product.price;
-  if (isBundledProduct) {
-    setDiscountAmount((product.price * bundleDiscount) / 100);
-    finalPrice = product.price - discountAmount;
-  }
+
+  useEffect(() => {
+    if (isBundledProduct) {
+      setDiscountAmount((product.price * bundleDiscount) / 100);
+      finalPrice = product.price - discountAmount;
+    }
+  }, []);
 
   return (
     <>
