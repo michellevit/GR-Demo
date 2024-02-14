@@ -118,12 +118,16 @@ module Api
     
     def search
       if params[:query].present?
-        @products = Product.where("product_name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+        @products = Product.includes(:user).where("product_name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+        products_with_user = @products.as_json(include: { user: { only: [:name] } })
+        render json: products_with_user
       else
-        @products = Product.all
+        @products = Product.includes(:user).all
+        products_with_user = @products.as_json(include: { user: { only: [:name] } })
+        render json: products_with_user
       end
-      render json: @products
     end
+    
 
     private
     # Use callbacks to share common setup or constraints between actions.
