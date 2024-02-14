@@ -6,8 +6,7 @@
 
 .ratings-bar-chart h3 {
   font-size: 1.25rem;
-  line-height: 1.6;
-  --line-height: 2rem;
+  line-height: 1.1375;
   font-weight: 400;
 }
 
@@ -24,7 +23,7 @@
 
 .ratings-bar-chart .bar-row .outer-bar {
     width: 80%;
-    height: 20px;
+    height: 18px;
     position: relative;
     border: 1px solid black;
     border-radius: .25rem;
