@@ -1,60 +1,49 @@
 .ratings-bar-chart-container h3 {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
-  padding-bottom: 1rem;
-}
-
-.ratings-bar-chart {
-  display: flex;
-  gap: 0.75rem;
-  flex-direction: column-reverse;
-}
-
-.ratings-bar-chart .bar-row {
-  width: 100%;
-  display: flex;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-}
-
-.ratings-bar-chart .bar-row .outer-bar {
-  height: 18px;
-  position: relative;
-  border: 1px solid black;
-  border-radius: 0.25rem;
-}
-
-.ratings-bar-chart .bar-row .inner-bar {
-  background-color: #ff90e8;
-  height: 100%;
-}
-
-@media screen and (max-width: 639px) {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+  
+  .ratings-bar-chart {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  
+  .ratings-bar-chart .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+  
   .ratings-bar-chart .bar-row .stars {
-    width: 10%;
+    flex-basis: var(--stars-width, 21%);
   }
-
+  
   .ratings-bar-chart .bar-row .outer-bar {
-    width: 80%;
+    flex-grow: 1;
+    height: 18px;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    position: relative;
   }
-
+  
+  .ratings-bar-chart .bar-row .inner-bar {
+    background-color: #ff90e8;
+    height: 100%;
+  }
+  
   .ratings-bar-chart .bar-row .percentage {
-    width: 10%;
+    flex-basis: var(--percentage-width, 10%);
   }
-}
-
-@media screen and (min-width: 640px) {
-  .ratings-bar-chart .bar-row .stars {
-    width: 21%;
+  
+  @media screen and (max-width: 639px) {
+    :root {
+      --stars-width: 10%;
+      --percentage-width: 10%;
+    }
   }
-
-  .ratings-bar-chart .bar-row .outer-bar {
-    width: 69%;
-  }
-
-  .ratings-bar-chart .bar-row .percentage {
-    width: 10%;
-  }
-}
+  
