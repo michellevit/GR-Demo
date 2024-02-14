@@ -120,7 +120,7 @@
 
 .product-card .swallowtail-flag-wrapper-narrow {
   display: inline-flex;
-    height: 28px;
+    height: 95%;
     background-color: #ff90e8;
     clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
     align-items: center;
