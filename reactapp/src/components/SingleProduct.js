@@ -75,12 +75,12 @@ const SingleProduct = () => {
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
-          const totalBundlePriceBeforeDiscount = bundle.products.reduce(
+          const totalBundlePriceBeforeDiscount = bundlesResponse.data[0].products.reduce(
             (total, product) => total + product.price,
             0
           );
           const discountAmount =
-            totalBundlePriceBeforeDiscount * (bundle.discount_percentage / 100);
+            totalBundlePriceBeforeDiscount * (bundlesResponse.data[0].discount_percentage / 100);
           const totalBundlePriceAfterDiscount =
             totalBundlePriceBeforeDiscount - discountAmount;
 
