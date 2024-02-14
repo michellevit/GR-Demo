@@ -1,4 +1,5 @@
 import React from "react";
+import "./RatingsBarChart.css";
 
 const RatingsBarChart = ({ distribution }) => {
   const totalRatings = Object.values(distribution).reduce(
@@ -7,11 +8,11 @@ const RatingsBarChart = ({ distribution }) => {
   );
 
   return (
-    <div>
+    <div className="ratings-bar-chart">
       {Object.entries(distribution).map(([stars, count]) => {
         const widthPercentage = (count / totalRatings) * 100;
         return (
-          <div key={stars} style={{ marginBottom: "10px" }}>
+          <div className="bar-row" key={stars}>
             <div style={{ fontWeight: "bold" }}>{stars} stars</div>
             <div
               style={{
