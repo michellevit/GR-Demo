@@ -332,16 +332,6 @@ const SingleProduct = () => {
             </div>
           )}
         </div>
-        <div className="section-container">
-          <div className="paragraphs">
-            <h2>Recently Viewed</h2>
-            <div className="recently-viewed-section">
-              {recentlyViewedProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
