@@ -18,15 +18,19 @@ const AllProducts = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const query = searchParams.get("query");
+      let url = `${process.env.REACT_APP_DEMO_URL}/api/products`;
+      if (query) {
+        url += `/search?query=${encodeURIComponent(query)}`;
+      }
+
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products`,
-          {
-            headers: {
-              Accept: "application/json",
-            },
-          }
-        );
+        const response = await axios.get(url, {
+          headers: {
+            Accept: "application/json",
+          },
+        });
         setProducts(response.data);
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
@@ -59,12 +63,13 @@ const AllProducts = () => {
   const likedProducts = products.filter((product) =>
     currentUser.liked_products.includes(String(product.id))
   );
-
+  const searchParams = new URLSearchParams(window.location.search);
+  const isSearch = searchParams.has('query');
   return (
     <div className="all-products-container">
       <div className="section-container">
         <div className="paragraphs">
-          <h2>Recommended for you</h2>
+        <h2>{isSearch ? 'Search Results' : 'Recommended for you'}</h2>
           <div className="recommended-section">
             {getSectionProducts(products).map((product) => (
               <ProductCard key={product.id} product={product} />
