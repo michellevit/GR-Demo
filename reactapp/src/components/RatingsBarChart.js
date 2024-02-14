@@ -15,7 +15,7 @@ const RatingsBarChart = ({ distribution }) => {
         const widthPercentage = (count / totalRatings) * 100;
         return (
           <div className="bar-row" key={stars}>
-            <div className="stars">{stars} stars</div>
+            <div className="stars">{stars} star</div>
             <div className="outer-bar">
               <div
                 className="inner-bar"
