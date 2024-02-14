@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     resources :products do
       post 'like', on: :member
       get 'bundles', on: :member
-      get 'products/search', to: 'products#search'
     end
+    get 'products/search', to: 'products#search'
     resources :users do
       collection do
         get 'find_by_email', to: 'users#find_by_email' 
