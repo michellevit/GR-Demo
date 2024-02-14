@@ -22,6 +22,7 @@ const SingleProduct = () => {
   const [bundleDiscount, setBundleDiscount] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
+  const [ratingsDistribution, setRatingsDistribution] = useState({ 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 });
 
   const getRandomSelection = (productArray) => {
     const filteredProducts = productArray.filter(
@@ -145,10 +146,7 @@ const SingleProduct = () => {
   }
 
   useEffect(() => {
-    const ratingsDistribution = simulateRatingsDistribution(
-      product.average_rating,
-      product.ratings_count
-    );
+    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
   }, []);
 
   return (
