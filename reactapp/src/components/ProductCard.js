@@ -4,21 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({
-  product,
-  isBundledProduct = false,
-  bundleDiscount = 0,
-}) => {
+const ProductCard = ({ product, isBundledProduct = false, bundleDiscount = 0 }) => {
   const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
-  const [discountAmount, setDiscountAmount] = useState(null);
-  let finalPrice = product.price;
 
-  useEffect(() => {
-    if (isBundledProduct) {
-      setDiscountAmount((product.price * bundleDiscount) / 100);
-      finalPrice = product.price - discountAmount;
-    }
-  }, []);
+  const discountAmount = isBundledProduct ? (product.price * bundleDiscount) / 100 : 0;
+  const finalPrice = isBundledProduct ? product.price - discountAmount : product.price;
 
   return (
     <>
@@ -44,13 +34,10 @@ const ProductCard = ({
                 <div className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
                     <span className="flag-text">
-                      $
-                      {isBundledProduct
-                        ? finalPrice.toFixed(2) +
-                          ` (Save ${discountAmount.toFixed(2)}!)`
-                        : product.price.toFixed(2)}
+                      ${finalPrice.toFixed(2)}
+                      {isBundledProduct && ` (Save ${discountAmount.toFixed(2)}!)`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}
-                    </span>{" "}
+                    </span>
                   </div>
                 </div>
               </div>

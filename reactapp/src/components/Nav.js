@@ -3,19 +3,17 @@ import "./Nav.css";
 import logo from "../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Nav = ({ shrink }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      window.location.href = `/discover?query=${encodeURIComponent(searchQuery)}`;
-    }
-  };
+  const navigate = useNavigate(); 
+
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
   return (
     <header className="hero">
       <div className={`hero-actions ${shrink ? "shrink" : ""}`}>
@@ -36,9 +34,14 @@ const Nav = ({ shrink }) => {
               placeholder="Search products"
               value={searchQuery}
               onChange={handleSearchChange}
-              onKeyPress={handleKeyPress}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  navigate(`/discover?query=${encodeURIComponent(searchQuery)}`); 
+                }
+              }}
             />
             <span className="icon icon-solid-search">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
