@@ -18,6 +18,9 @@ const ProductCard = ({
     ? product.price - discountAmount
     : product.price;
 
+
+  // to use discount price in swallowtail use '{isBundledProduct && ` (-$${bundleDiscount.toFixed(2)})`}' instead
+
   return (
     <>
       <Link to={`/discover/${product.id}`}>
@@ -47,7 +50,7 @@ const ProductCard = ({
                       }`}
                     >
                       ${finalPrice.toFixed(2)}
-                      {isBundledProduct && ` (-$${discountAmount.toFixed(2)})`}
+                      {isBundledProduct && ` (-$${product.price.toFixed(2)})`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}
                     </span>
                   </div>
