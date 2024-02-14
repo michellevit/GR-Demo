@@ -46,10 +46,13 @@ if %errorlevel% neq 0 (
 
 
 :: Step 3: Commit changes to Github (so Heroku can access the current files)
-echo Updating Git with app's current state...
-git add .
-git commit -m "Commit before resetting database tables"
-git push origin main
+echo Updating GitHub repository with app's current state...
+cd "%basePath%\scripts"
+call push-changes-to-git.bat
+if %errorlevel% neq 0 (
+    echo ERROR: pushing changes to GitHub failed %errorlevel%.
+    exit /b %errorlevel%
+)
 
 
 :: Step 4: Check if there are any entries in the Product/User table before removing
