@@ -23,7 +23,9 @@ const SingleProduct = () => {
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
 
   const getRandomSelection = (productArray) => {
-    const filteredProducts = productArray.filter((product) => product.id.toString() !== productId);
+    const filteredProducts = productArray.filter(
+      (product) => product.id.toString() !== productId
+    );
     const shuffledProducts = filteredProducts.sort(() => Math.random() - 0.5);
     return shuffledProducts.slice(0, 5);
   };
@@ -105,8 +107,6 @@ const SingleProduct = () => {
   if (!product || !currentUser) {
     return <div>Loading...</div>;
   }
-
-  
 
   const handleLike = async () => {
     try {
@@ -273,6 +273,8 @@ const SingleProduct = () => {
                   <ProductCard
                     key={bundledProduct.id}
                     product={bundledProduct}
+                    isBundledProduct={true}
+                    bundleDiscount={bundleDiscount}
                   />
                 ))}
               </div>
