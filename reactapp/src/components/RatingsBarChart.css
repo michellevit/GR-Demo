@@ -19,8 +19,9 @@
     font-size: 0.8rem;
   }
   
-  .ratings-bar-chart .bar-row .stars {
-    flex-basis: var(--stars-width, 21%);
+  .ratings-bar-chart .bar-row .stars, .ratings-bar-chart .bar-row .percentage {
+    white-space: nowrap; 
+    flex-shrink: 0; 
   }
   
   .ratings-bar-chart .bar-row .outer-bar {
@@ -34,16 +35,5 @@
   .ratings-bar-chart .bar-row .inner-bar {
     background-color: #ff90e8;
     height: 100%;
-  }
-  
-  .ratings-bar-chart .bar-row .percentage {
-    flex-basis: var(--percentage-width, 10%);
-  }
-  
-  @media screen and (max-width: 639px) {
-    :root {
-      --stars-width: 10%;
-      --percentage-width: 10%;
-    }
   }
   
