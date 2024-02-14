@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./SingleProduct.css";
-import ProductCard from "./ProductCard";
-import RatingsBarChart from "./RatingsBarChart";
+import ProductCard from "../components/ProductCard";
+import RatingsBarChart from "../components/RatingsBarChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
