@@ -324,7 +324,7 @@ const SingleProduct = () => {
                 <div className="bundle-purchase">
                   <div className="bundle-price">
                     Total Price: ${totalBundlePrice}
-                    <p className="savings">Save {bundleAmountSaved}</p>
+                    <p className="savings">Save ${bundleAmountSaved}</p>
                   </div>
                   <button className="bundle-add">Add all to Cart</button>
                 </div>

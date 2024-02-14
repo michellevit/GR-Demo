@@ -375,6 +375,8 @@ button.next-button {
   flex-wrap: nowrap;
   gap: 1rem;
   flex-direction:column;
+  text-align:center;
+
 }
 
 .product-main-container .section-container .paragraphs .bundle-section .bundle-purchase button {
@@ -382,9 +384,10 @@ button.next-button {
   background-color: #ff90e8;
 }
 
-.bundle-purchase .bundle-price{
+.bundle-purchase .bundle-price {
   display: flex;
   justify-content: center;
+  font-weight: 700;
 }
 
 
@@ -392,7 +395,6 @@ button.next-button {
   font-size: 0.8rem;
   display: block;
   margin: 1rem auto;
-  font-weight: 500;
 }
 
 
