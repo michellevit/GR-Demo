@@ -20,7 +20,13 @@ const SingleProduct = () => {
   const [bundledProducts, setBundledProducts] = useState([]);
   const [bundleDiscount, setBundleDiscount] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
 
+  const getRandomSelection = (productArray) => {
+    const filteredProducts = productArray.filter((product) => product.id.toString() !== productId);
+    const shuffledProducts = filteredProducts.sort(() => Math.random() - 0.5);
+    return shuffledProducts.slice(0, 5);
+  };
 
   useEffect(() => {
     const fetchProductAndBundles = async () => {
@@ -64,6 +70,26 @@ const SingleProduct = () => {
     fetchUser();
   }, [productId]);
 
+  useEffect(() => {
+    // Currently just fetching all Products
+    const fetchRecentlyViewedProducts = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        setRecentlyViewedProducts(response.data);
+      } catch (error) {
+        console.error("There was an error fetching the products: ", error);
+      }
+    };
+
+    fetchRecentlyViewedProducts();
+  }, []);
   const nextImage = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex + 1) % product.image_urls.length
@@ -79,6 +105,8 @@ const SingleProduct = () => {
   if (!product || !currentUser) {
     return <div>Loading...</div>;
   }
+
+  
 
   const handleLike = async () => {
     try {
@@ -250,6 +278,16 @@ const SingleProduct = () => {
               </div>
             </div>
           )}
+        </div>
+        <div className="section-container">
+          <div className="paragraphs">
+            <h2>Recently Viewed</h2>
+            <div className="recently-viewed-section">
+              {getRandomSelection(recentlyViewedProducts).map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
