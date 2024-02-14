@@ -23,7 +23,7 @@ const RatingsBarChart = ({ distribution }) => {
                 }}
               ></div>
             </div>
-            <div className="percentage">{widthPercentage.toFixed(2) + "%"}</div>
+            <div className="percentage">{widthPercentage.toFixed(1) + "%"}</div>
           </div>
         );
       })}
