@@ -1,11 +1,10 @@
 .ratings-bar-chart-container h3 {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    padding-bottom: 1rem;
-  }
-  
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 1rem;
+}
 
 .ratings-bar-chart {
   display: flex;
@@ -13,35 +12,44 @@
   flex-direction: column-reverse;
 }
 
-
 .ratings-bar-chart .bar-row {
-    width: 100%;
-    display: flex;
-    gap: 0.75rem;
-    font-size: 0.8rem;
-
-} 
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
 
 .ratings-bar-chart .bar-row .stars {
-    width: 21%;
-} 
+  width: 21%;
+}
 
 .ratings-bar-chart .bar-row .outer-bar {
-    width: 69%;
-    height: 18px;
-    position: relative;
-    border: 1px solid black;
-    border-radius: .25rem;
-} 
+  width: 69%;
+  height: 18px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
 
 .ratings-bar-chart .bar-row .inner-bar {
-    background-color: #FF90E8;
-    height: 100%;
+  background-color: #ff90e8;
+  height: 100%;
 }
 
 .ratings-bar-chart .bar-row .percentage {
+  width: 10%;
+}
+
+@media screen and (max-width: 639px) {
+  .ratings-bar-chart .bar-row .stars {
     width: 10%;
-} 
+  }
 
+  .ratings-bar-chart .bar-row .outer-bar {
+    width: 80%;
+  }
 
-
+  .ratings-bar-chart .bar-row .percentage {
+    width: 10%;
+  }
+}
