@@ -21,10 +21,11 @@
 }  */
 
 .ratings-bar-chart .bar-row .outer-bar {
-    background: "lightgray";
     width: "100%";
     height: "20px";
     position: "relative";
+    border: 1px solid black;
+    border-radius: .25rem;
 } 
 
 .ratings-bar-chart .bar-row .inner-bar {
