@@ -1,12 +1,17 @@
 .ratings-bar-chart {
-    display: grid;
-    gap: 0.75rem;
-    grid-template-columns: auto 1fr auto;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: row;
 }
 
 .ratings-bar-chart h3 {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    --line-height: 2rem;
-    font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  --line-height: 2rem;
+  font-weight: 400;
 }
+
+.ratings-bar-chart .bar-row {
+    WIDTH: 100%;
+} 
+
