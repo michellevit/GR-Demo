@@ -18,7 +18,6 @@ const ProductCard = ({
     ? product.price - discountAmount
     : product.price;
 
-
   // to use discount price in swallowtail use '${finalPrice.toFixed(2)}' instead
 
   return (
@@ -41,7 +40,11 @@ const ProductCard = ({
           </div>
           <div className="product-price">
             <div className="price">
-              <div className="swallowtail-flag-wrapper-wrapper">
+              <div
+                className={`swallowtail-flag-wrapper-wrapper ${
+                  isBundledProduct ? "flag-text-smaller-ratio" : ""
+                }`}
+              >
                 <div className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
                     <span
