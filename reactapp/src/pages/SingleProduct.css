@@ -577,6 +577,9 @@ button.next-button {
     flex-basis: 100%;
     border-bottom: none;
     border-right: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
   }
 
  #left-column #row2 {
