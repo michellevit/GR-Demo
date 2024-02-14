@@ -174,6 +174,7 @@ button.next-button {
 #left-column #row2 > #row2-col-left {
   width: fit-content;
   border-right: 1px solid black;
+  height:40px;
 }
 
 #left-column #row2 > #row2-col-mid {

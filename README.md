@@ -1,16 +1,16 @@
-# GR Product Page 
+# GR Product Engineering Challenge Project 
 
-A basic replication of the GR Product Page UX in Rails and React, with a few additons:
+A basic replication of the GR Discover and Product Page UX in Rails and React, with a few additons:
 - Discover Page 'Liked' section
 - Product Page 'like' button
-- Product Page 'Liked' section
 - Product Page 'Bundle' section
 Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
-Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/api/products)
+Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
 
 ## Table of Contents
-1. [How to Basics](#how-to-basics)
+1. [Architectural Decisions](#architectural-decisions)
+2. [What I Learned](#what-I-learned)
 2. [How To Interact With DB (Development)](#how-to-db-development)
 3. [How To Edit DB (Development)](#how-to-edit-db-development)
 4. [How To Edit DB (Production)](#how-to-edit-db-production)
@@ -20,14 +20,21 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 8. [Credits](#credits)
 
 
-## 1. How to Basics <a name="how-to-basics"></a>
+## 1. Architectural Decisions<a name="how-to-basics"></a>
 - See current routes: rails routes
-- To add a dependency:
-  - Add gem to 'Gemfile' and run 'bundle install'
+
+  - This updates Gemfile with current dependencies
+
+
+## 2. What I Learned<a name="what-I-learned"></a>
+- See current routes: rails routes
+
   - This updates Gemfile with current dependencies
 
 
 ## 2. How To Interact With DB (Development)<a name="how-to-db-development"></a>
+- To add a dependency:
+  - Add gem to 'Gemfile' and run 'bundle install'
 - Open rails console: rails console
   - See all entries: Product.all
   - List first item in DB: Product.all.first 
