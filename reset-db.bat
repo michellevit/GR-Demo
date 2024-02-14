@@ -58,25 +58,25 @@ echo Checking for existing entries in the Product table...
 cd "%basePath%\scripts"
 call clear-products-table.bat
 if %errorlevel% neq 0 (
-    echo ERROR: clearing database failed %errorlevel%.
+    echo ERROR: clearing products table failed %errorlevel%.
     exit /b %errorlevel%
 )
 cd "%basePath%\scripts"
 call clear-users-table.bat
 if %errorlevel% neq 0 (
-    echo ERROR: clearing database failed %errorlevel%.
+    echo ERROR: clearing users table failed %errorlevel%.
     exit /b %errorlevel%
 )
 cd "%basePath%\scripts"
 call clear-bundles-table.bat
 if %errorlevel% neq 0 (
-    echo ERROR: clearing database failed %errorlevel%.
+    echo ERROR: clearing bundles table failed %errorlevel%.
     exit /b %errorlevel%
 )
 cd "%basePath%\scripts"
 call clear-bundle-products-table.bat
 if %errorlevel% neq 0 (
-    echo ERROR: clearing database failed %errorlevel%.
+    echo ERROR: clearing products failed %errorlevel%.
     exit /b %errorlevel%
 )
 
