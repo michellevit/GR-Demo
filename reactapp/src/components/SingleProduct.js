@@ -140,7 +140,10 @@ const SingleProduct = () => {
     }
     return distribution;
   }
-  const ratingsDistribution = useMemo(() => simulateRatingsDistribution(product?.average_rating, product?.ratings_count), [product?.average_rating, product?.ratings_count]);
+  const ratingsDistribution = useMemo(() => {
+    if (!product) return { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 }; 
+    return simulateRatingsDistribution(product.average_rating, product.ratings_count);
+  }, [product]);
 
   return (
     <div className="single-product-container">
