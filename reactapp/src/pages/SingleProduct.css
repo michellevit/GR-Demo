@@ -293,7 +293,7 @@ button.next-button {
 }
 .single-product-container .swallowtail-flag-wrapper-wrapper {
   display: inline-flex;
-  height: 40px;
+  height: 30px;
   background-color: black;
   clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
   align-items: center;
@@ -302,7 +302,7 @@ button.next-button {
 
 .single-product-container .swallowtail-flag-wrapper {
   display: inline-flex;
-  height: 38px;
+  height: 28px;
   background-color: #ff90e8;
   clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
   align-items: center;
