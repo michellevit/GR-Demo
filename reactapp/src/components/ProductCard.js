@@ -10,10 +10,10 @@ const ProductCard = ({
   bundleDiscount = 0,
 }) => {
   const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
-
+  const [discountAmount, setDiscountAmount] = useState(null);
   let finalPrice = product.price;
   if (isBundledProduct) {
-    const discountAmount = (product.price * bundleDiscount) / 100;
+    setDiscountAmount((product.price * bundleDiscount) / 100);
     finalPrice = product.price - discountAmount;
   }
 
