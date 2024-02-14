@@ -41,8 +41,8 @@ const ProductCard = ({
           <div className="product-price">
             <div className="price">
               <div
-                className={`swallowtail-flag-wrapper-wrapper ${
-                  isBundledProduct ? "flag-text-smaller-ratio" : ""
+                className={`${
+                  isBundledProduct ? "swallowtail-flag-wrapper-wrapper-narrow" : "swallowtail-flag-wrapper-wrapper"
                 }`}
               >
                 <div className="swallowtail-flag-wrapper">

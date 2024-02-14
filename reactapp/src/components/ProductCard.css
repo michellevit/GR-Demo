@@ -108,6 +108,14 @@
     box-shadow: 0 0 0 10px black; 
 }
 
+.product-card .swallowtail-flag-wrapper-wrapper-narrow {
+  display: inline-flex;
+  height: 30px;
+  background-color: black;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  align-items: center;
+  box-shadow: 0 0 0 10px black; 
+}
 
 .product-card .swallowtail-flag-wrapper {
     display: inline-flex;
@@ -137,6 +145,3 @@
   padding-right: 1.8rem !important 
 }
 
-.product-card .flag-text-smaller-ratio {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
-}
