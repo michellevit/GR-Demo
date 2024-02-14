@@ -104,7 +104,7 @@ module Api
       bundles = product.bundles.includes(products: :user)
       render json: bundles.as_json(include: {
         products: {
-          only: [:id, :product_name, :price, :description, :average_rating, :ratings_count, :image_urls],
+          only: [:id, :product_name, :price, :description, :flex_price, :average_rating, :ratings_count, :image_urls],
           include: {
             user: {
               only: [:name]
