@@ -137,6 +137,6 @@
   padding-right: 1.8rem !important 
 }
 
-.product-card .swallowtail-flag-wrapper .flag-text-smaller-ratio {
+.product-card .flag-text-smaller-ratio {
   clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
 }
