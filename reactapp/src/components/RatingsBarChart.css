@@ -22,6 +22,7 @@
   .ratings-bar-chart .bar-row .stars, .ratings-bar-chart .bar-row .percentage {
     white-space: nowrap; 
     flex-shrink: 0; 
+    min-width: 50px;
   }
   
   .ratings-bar-chart .bar-row .outer-bar {
