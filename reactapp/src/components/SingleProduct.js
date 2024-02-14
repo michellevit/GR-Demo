@@ -12,30 +12,36 @@ import {
 import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  const [product, setProduct] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
   const { productId } = useParams();
+  const [product, setProduct] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isLiked, setIsLiked] = useState(false);
+  const [bundledProducts, setBundledProducts] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    const fetchProductAndBundles = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`,
-          {
-            headers: {
-              Accept: "application/json",
-            },
-          }
+        const productResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
         );
-        setProduct(response.data);
-        document.title = response.data.product_name;
+        setProduct(productResponse.data);
+        // Fetch bundled products for this product
+        const bundlesResponse = await axios.get(
+          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`
+        );
+
+        // Assuming each product can belong to multiple bundles, and you are interested in the first one
+        if (bundlesResponse.data.length > 0) {
+          // Update state with bundled products
+          setBundledProducts(bundlesResponse.data[0].products);
+        }
       } catch (error) {
-        console.error("There was an error fetching the product: ", error);
+        console.error("Error fetching product or bundles: ", error);
       }
     };
-    fetchProduct();
+
+    fetchProductAndBundles();
   }, [productId]);
 
   useEffect(() => {
@@ -78,7 +84,7 @@ const SingleProduct = () => {
         `${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`,
         {
           user_email: currentUser.email,
-          liked: !isLiked
+          liked: !isLiked,
         },
         { headers: { Accept: "application/json" } }
       );
@@ -227,6 +233,18 @@ const SingleProduct = () => {
               <div id="row2">Rating Bar Chart</div>
             </div>
           </div>
+        </div>
+        <div className="section-container">
+          {bundledProducts.length > 0 && (
+            <div className="paragraphs">
+              <h2>Bundle Deal</h2>
+              <div className="bundle-section">
+                {bundledProducts(products).map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

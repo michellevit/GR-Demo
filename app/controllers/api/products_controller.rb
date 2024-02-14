@@ -99,6 +99,13 @@ module Api
       end
     end
 
+    def bundles
+      product = Product.find(params[:id])
+      bundles = product.bundles.includes(:products) 
+      render json: bundles.as_json(include: { products: { only: [:id, :product_name, :price, :description] } })
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: "Product not found" }, status: :not_found
+    end
 
     private
     # Use callbacks to share common setup or constraints between actions.

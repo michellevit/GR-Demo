@@ -97,7 +97,6 @@ Demo - Backend:  [www.michellef.dev/api/products](https://gr-demo.michellef.dev/
 
 
 ## 7. Features To Add <a name="features-to-add"></a>
-- DB: Add new table - bundled items
 - SingleProduct Page: Add bundled items section (if exists for product)
 - DB: Add recently_viewed field to users
 - Backend: Add recently_viewed functionality
