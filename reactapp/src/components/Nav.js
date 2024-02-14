@@ -3,7 +3,7 @@ import "./Nav.css";
 import logo from "../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 
 const Nav = ({ shrink }) => {
   const [isFocused, setIsFocused] = useState(false);
