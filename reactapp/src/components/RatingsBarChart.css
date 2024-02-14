@@ -19,12 +19,7 @@
   font-size: 0.8rem;
 }
 
-.ratings-bar-chart .bar-row .stars {
-  width: 21%;
-}
-
 .ratings-bar-chart .bar-row .outer-bar {
-  width: 69%;
   height: 18px;
   position: relative;
   border: 1px solid black;
@@ -36,10 +31,6 @@
   height: 100%;
 }
 
-.ratings-bar-chart .bar-row .percentage {
-  width: 10%;
-}
-
 @media screen and (max-width: 639px) {
   .ratings-bar-chart .bar-row .stars {
     width: 10%;
@@ -47,6 +38,20 @@
 
   .ratings-bar-chart .bar-row .outer-bar {
     width: 80%;
+  }
+
+  .ratings-bar-chart .bar-row .percentage {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .ratings-bar-chart .bar-row .stars {
+    width: 21%;
+  }
+
+  .ratings-bar-chart .bar-row .outer-bar {
+    width: 69%;
   }
 
   .ratings-bar-chart .bar-row .percentage {
