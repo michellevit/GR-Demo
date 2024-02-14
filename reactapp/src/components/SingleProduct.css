@@ -606,4 +606,12 @@ button.next-button {
     line-height: 2.5rem;
   }
 
+  .product-main-container .section-container .paragraphs .bundle-section {
+    display: grid;
+    grid-template-columns: 1fr; 
+  }
+  .product-main-container .section-container .paragraphs .bundle-section .bundle-purchase {
+    grid-column: span 2; 
+  }
+
 }
