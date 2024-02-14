@@ -169,14 +169,14 @@ button.next-button {
 #left-column #row2 #row2-col-right {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  height:40px;
+  display: flex;
+  align-items: center;
 }
 
 #left-column #row2 > #row2-col-left {
   width: fit-content;
   border-right: 1px solid black;
-  height:40px;
-  display: flex;
-  align-items: center;
 }
 
 #left-column #row2 > #row2-col-mid {
