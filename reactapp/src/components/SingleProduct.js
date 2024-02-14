@@ -20,6 +20,7 @@ const SingleProduct = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [bundledProducts, setBundledProducts] = useState([]);
   const [bundleDiscount, setBundleDiscount] = useState(null);
+  const [totalBundlePrice, setTotalBundlePrice] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
   const [ratingsDistribution, setRatingsDistribution] = useState({
@@ -320,6 +321,8 @@ const SingleProduct = () => {
               {recentlyViewedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+              <div className="bundle-total-price">Total Price: ${totalBundlePrice}</div>
+              <button className="bundle-add">Add all to Cart</button>
             </div>
           </div>
         </div>
