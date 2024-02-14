@@ -101,7 +101,6 @@ module Api
 
     def bundles
       product = Product.find(params[:id])
-      # Rails.logger.info "Parameters: #{params[:id]}"
       bundles = product.bundles.includes(:products) 
       render json: bundles.as_json(include: { products: { only: [:id, :product_name, :price, :description] } })
     rescue ActiveRecord::RecordNotFound
