@@ -236,11 +236,11 @@ const SingleProduct = () => {
         </div>
         <div className="section-container">
           {bundledProducts.length > 0 && (
-            <div className="paragraphs">
+            <div className="paragraphs">v
               <h2>Bundle Deal</h2>
               <div className="bundle-section">
-                {bundledProducts(products).map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                {bundledProducts.map((bundledProduct) => (
+                  <ProductCard key={product.id} product={bundledProduct} />
                 ))}
               </div>
             </div>
