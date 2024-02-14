@@ -42,12 +42,7 @@ const ProductCard = ({
             <div className="price">
               <div className="swallowtail-flag-wrapper-wrapper">
                 <div
-                  className={`${
-                    isBundledProduct
-                      ? "swallowtail-flag-wrapper-narrow"
-                      : "swallowtail-flag-wrapper-"
-                  }`}
-                >
+                  className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
                     <span
                       className={`flag-text ${
