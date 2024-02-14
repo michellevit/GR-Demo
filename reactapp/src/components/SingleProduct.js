@@ -32,6 +32,28 @@ const SingleProduct = () => {
     return shuffledProducts.slice(0, 5);
   };
 
+  function simulateRatingsDistribution(averageRating, totalRatings) {
+    let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    let remainingRatings = totalRatings;
+    distribution[Math.round(averageRating)] = Math.round(totalRatings * 0.5);
+    remainingRatings -= distribution[Math.round(averageRating)];
+    while (remainingRatings > 0) {
+      let rating = Math.floor(Math.random() * 5) + 1;
+      let count = Math.min(
+        remainingRatings,
+        Math.ceil(Math.random() * (remainingRatings / 2))
+      );
+      distribution[rating] += count;
+      remainingRatings -= count;
+    }
+    return distribution;
+  }
+
+
+  useEffect(() => {
+    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
+  }, []);
+
   useEffect(() => {
     const fetchProductAndBundles = async () => {
       try {
@@ -128,26 +150,8 @@ const SingleProduct = () => {
     }
   };
 
-  function simulateRatingsDistribution(averageRating, totalRatings) {
-    let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-    let remainingRatings = totalRatings;
-    distribution[Math.round(averageRating)] = Math.round(totalRatings * 0.5);
-    remainingRatings -= distribution[Math.round(averageRating)];
-    while (remainingRatings > 0) {
-      let rating = Math.floor(Math.random() * 5) + 1;
-      let count = Math.min(
-        remainingRatings,
-        Math.ceil(Math.random() * (remainingRatings / 2))
-      );
-      distribution[rating] += count;
-      remainingRatings -= count;
-    }
-    return distribution;
-  }
-
-  useEffect(() => {
-    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
-  }, []);
+  
+  
 
   return (
     <div className="single-product-container">
