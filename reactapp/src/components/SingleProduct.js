@@ -21,6 +21,7 @@ const SingleProduct = () => {
   const [bundledProducts, setBundledProducts] = useState([]);
   const [bundleDiscount, setBundleDiscount] = useState(null);
   const [totalBundlePrice, setTotalBundlePrice] = useState(null);
+  const [bundleAmountSaved, setBundleAmountSaved] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
   const [ratingsDistribution, setRatingsDistribution] = useState({
@@ -80,11 +81,11 @@ const SingleProduct = () => {
             0
           );
           const discountAmount =
-            totalBundlePriceBeforeDiscount * (bundlesResponse.data[0].discount_percentage / 100);
-          const totalBundlePriceAfterDiscount =
-            totalBundlePriceBeforeDiscount - discountAmount;
-
-          setTotalBundlePrice(totalBundlePriceAfterDiscount.toFixed(2));
+          totalBundlePriceBeforeDiscount * (bundlesResponse.data[0].discount_percentage / 100);
+        const totalBundlePriceAfterDiscount =
+          totalBundlePriceBeforeDiscount - discountAmount;
+        setTotalBundlePrice(totalBundlePriceAfterDiscount.toFixed(2));
+        setBundleAmountSaved(discountAmount.toFixed(2));
         } else {
           console.log("No bundles found.");
         }
@@ -323,6 +324,7 @@ const SingleProduct = () => {
                 <div className="bundle-purchase">
                   <div className="bundle-total-price">
                     Total Price: ${totalBundlePrice}
+                    <p className="savings">Save {bundleAmountSaved}</p>
                   </div>
                   <button className="bundle-add">Add all to Cart</button>
                 </div>

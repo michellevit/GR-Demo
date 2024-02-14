@@ -382,7 +382,12 @@ button.next-button {
   background-color: #ff90e8;
 }
 
-
+.bundle-purchase .savings {
+  font-size: 0.8rem;
+  display: block;
+  margin: 1rem auto;
+  font-weight: 500;
+}
 
 
 
