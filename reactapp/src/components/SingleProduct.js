@@ -320,7 +320,7 @@ const SingleProduct = () => {
                     bundleDiscount={bundleDiscount}
                   />
                 ))}
-                <div ClassName="bundle-purchase">
+                <div className="bundle-purchase">
                   <div className="bundle-total-price">
                     Total Price: ${totalBundlePrice}
                   </div>
