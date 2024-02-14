@@ -43,7 +43,7 @@ const ProductCard = ({
               <div
                 className={`${
                   isBundledProduct
-                    ? "swallowtail-flag-wrapper-wrapper-wrapper-narrow"
+                    ? "swallowtail-flag-wrapper-wrapper-narrow"
                     : "swallowtail-flag-wrapper-wrapper"
                 }`}
               >
