@@ -1,9 +1,10 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom'; // Remove BrowserRouter import here
+import { Route, Routes } from 'react-router-dom'; 
 import "./App.css";
 import Nav from "./components/Nav";
 import AllProducts from "./pages/AllProducts";
 import SingleProduct from "./components/SingleProduct";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<AllProducts />} /> 
           <Route path="discover" element={<AllProducts />} /> 
           <Route path="discover/:productId" element={<SingleProduct />} /> 
+          <Route path="search" element={<SearchResults />} />
         </Routes>
       </div>
     </div>

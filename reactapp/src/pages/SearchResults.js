@@ -2,42 +2,45 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AllProducts.css";
 import ProductCard from "../components/ProductCard";
-
-const SearchResults = (s) => {
+import { useSearchParams } from "react-router-dom";
+const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const [searchParams] = useSearchParams(); 
+  const query = searchParams.get("query"); 
 
   useEffect(() => {
-    document.title = "Search: search query here";
-  }, []);
+    document.title = `Search: ${query}`; 
+  }, [query]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products`,
+          `${process.env.REACT_APP_DEMO_URL}/api/products/search?query=${query}`, 
           {
             headers: {
               Accept: "application/json",
             },
           }
         );
-        setProducts(response.data);
+        setSearchResults(response.data);
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
       }
     };
 
-    fetchProducts();
-  }, []);
+    if (query) {
+      fetchProducts();
+    }
+  }, [query]);
 
-  
   return (
     <div className="all-products-container">
       <div className="section-container">
         <div className="paragraphs">
-          <h2>Search Results</h2>
+          <h2>Search Results for "{query}"</h2>
           <div className="recommended-section">
-            {searchResults(products).map((product) => (
+            {searchResults.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

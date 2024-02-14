@@ -39,7 +39,7 @@ const Nav = ({ shrink }) => {
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();
-                  navigate(`/discover?query=${encodeURIComponent(searchQuery)}`); 
+                  navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
                 }
               }}
             />
