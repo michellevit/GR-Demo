@@ -49,11 +49,6 @@ const SingleProduct = () => {
     return distribution;
   }
 
-
-  useEffect(() => {
-    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
-  }, []);
-
   useEffect(() => {
     const fetchProductAndBundles = async () => {
       try {
@@ -76,6 +71,7 @@ const SingleProduct = () => {
     };
 
     fetchProductAndBundles();
+    setRatingsDistribution(simulateRatingsDistribution(product.average_rating, product.ratings_count));
   }, [productId]);
 
   useEffect(() => {
