@@ -84,7 +84,7 @@ const SingleProduct = () => {
             },
           }
         );
-        setRecentlyViewedProducts(response.data);
+        setRecentlyViewedProducts(getRandomSelection(response.data));
       } catch (error) {
         console.error("There was an error fetching the products: ", error);
       }
@@ -300,7 +300,7 @@ const SingleProduct = () => {
           <div className="paragraphs">
             <h2>Recently Viewed</h2>
             <div className="recently-viewed-section">
-              {getRandomSelection(recentlyViewedProducts).map((product) => (
+              {recentlyViewedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
