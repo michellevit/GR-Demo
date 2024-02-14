@@ -134,15 +134,22 @@ const SingleProduct = () => {
     remainingRatings -= distribution[Math.round(averageRating)];
     while (remainingRatings > 0) {
       let rating = Math.floor(Math.random() * 5) + 1;
-      let count = Math.min(remainingRatings, Math.ceil(Math.random() * (remainingRatings / 2)));
+      let count = Math.min(
+        remainingRatings,
+        Math.ceil(Math.random() * (remainingRatings / 2))
+      );
       distribution[rating] += count;
       remainingRatings -= count;
     }
     return distribution;
   }
 
-  const ratingsDistribution = simulateRatingsDistribution(product.average_rating, product.ratings_count);
-
+  useEffect(() => {
+    const ratingsDistribution = simulateRatingsDistribution(
+      product.average_rating,
+      product.ratings_count
+    );
+  }, []);
 
   return (
     <div className="single-product-container">
@@ -277,7 +284,9 @@ const SingleProduct = () => {
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
               </div>
-              <div id="row2"><RatingsBarChart distribution={ratingsDistribution} /></div>
+              <div id="row2">
+                <RatingsBarChart distribution={ratingsDistribution} />
+              </div>
             </div>
           </div>
         </div>
