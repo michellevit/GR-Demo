@@ -4,11 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product, isBundledProduct = false, bundleDiscount = 0 }) => {
+const ProductCard = ({
+  product,
+  isBundledProduct = false,
+  bundleDiscount = 0,
+}) => {
   const imagePath = `${process.env.REACT_APP_DEMO_URL}${product.image_urls[0]}`;
 
-  const discountAmount = isBundledProduct ? (product.price * bundleDiscount) / 100 : 0;
-  const finalPrice = isBundledProduct ? product.price - discountAmount : product.price;
+  const discountAmount = isBundledProduct
+    ? (product.price * bundleDiscount) / 100
+    : 0;
+  const finalPrice = isBundledProduct
+    ? product.price - discountAmount
+    : product.price;
 
   return (
     <>
@@ -33,7 +41,11 @@ const ProductCard = ({ product, isBundledProduct = false, bundleDiscount = 0 }) 
               <div className="swallowtail-flag-wrapper-wrapper">
                 <div className="swallowtail-flag-wrapper">
                   <div className="swallowtail-flag">
-                    <span className="flag-text">
+                    <span
+                      className={`flag-text ${
+                        isBundledProduct ? "flag-text-extra-padding" : ""
+                      }`}
+                    >
                       ${finalPrice.toFixed(2)}
                       {isBundledProduct && ` (-$${discountAmount.toFixed(2)})`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}

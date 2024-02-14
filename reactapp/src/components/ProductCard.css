@@ -124,3 +124,7 @@
     white-space: nowrap; 
     padding: 0.25rem 1rem 0.25rem 0; 
 }
+
+.product-card .flag-text-extra-padding {
+  padding-right: 0.25rem; 
+}
