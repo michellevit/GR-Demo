@@ -75,11 +75,16 @@ const SingleProduct = () => {
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
-          const total = bundledProductsData.reduce(
-            (acc, curr) => acc + curr.product_price,
+          const totalBundlePriceBeforeDiscount = bundle.products.reduce(
+            (total, product) => total + product.price,
             0
           );
-          setTotalBundlePrice(total.toFixed(2));
+          const discountAmount =
+            totalBundlePriceBeforeDiscount * (bundle.discount_percentage / 100);
+          const totalBundlePriceAfterDiscount =
+            totalBundlePriceBeforeDiscount - discountAmount;
+
+          setTotalBundlePrice(totalBundlePriceAfterDiscount.toFixed(2));
         } else {
           console.log("No bundles found.");
         }
