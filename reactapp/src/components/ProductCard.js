@@ -43,7 +43,7 @@ const ProductCard = ({
                     <span className="flag-text">
                       $
                       {isBundledProduct ? finalPrice.toFixed(2) : product.price}
-                      {product.flex_price ? "+" : ""}
+                      {!isBundledProduct & product.flex_price ? "+" : ""}
                     </span>{" "}
                   </div>
                 </div>

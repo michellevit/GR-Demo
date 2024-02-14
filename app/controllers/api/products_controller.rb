@@ -116,6 +116,14 @@ module Api
       render json: { error: "Product not found" }, status: :not_found
     end
     
+    def search
+      if params[:query].present?
+        @products = Product.where("product_name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+      else
+        @products = Product.all
+      end
+      render json: @products
+    end
 
     private
     # Use callbacks to share common setup or constraints between actions.
