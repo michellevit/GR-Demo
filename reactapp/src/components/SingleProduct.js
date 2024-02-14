@@ -75,6 +75,11 @@ const SingleProduct = () => {
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
+          const total = bundledProductsData.reduce(
+            (acc, curr) => acc + curr.product_price,
+            0
+          );
+          setTotalBundlePrice(total.toFixed(2));
         } else {
           console.log("No bundles found.");
         }
@@ -310,6 +315,12 @@ const SingleProduct = () => {
                     bundleDiscount={bundleDiscount}
                   />
                 ))}
+                <div ClassName="bundle-purchase">
+                  <div className="bundle-total-price">
+                    Total Price: ${totalBundlePrice}
+                  </div>
+                  <button className="bundle-add">Add all to Cart</button>
+                </div>
               </div>
             </div>
           )}
@@ -321,8 +332,6 @@ const SingleProduct = () => {
               {recentlyViewedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-              <div className="bundle-total-price">Total Price: ${totalBundlePrice}</div>
-              <button className="bundle-add">Add all to Cart</button>
             </div>
           </div>
         </div>
