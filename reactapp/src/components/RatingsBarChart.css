@@ -1,14 +1,16 @@
+.ratings-bar-chart-container h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+
 .ratings-bar-chart {
   display: flex;
   gap: 0.75rem;
   flex-direction: column-reverse;
 }
 
-.ratings-bar-chart h3 {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.6;
-}
 
 .ratings-bar-chart .bar-row {
     width: 100%;

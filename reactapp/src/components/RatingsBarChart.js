@@ -8,8 +8,9 @@ const RatingsBarChart = ({ distribution }) => {
   );
 
   return (
+    <div className="ratings-bar-chart-container">
+    <h3>Ratings</h3>
     <div className="ratings-bar-chart">
-      <h3>Ratings</h3>
       {Object.entries(distribution).map(([stars, count]) => {
         const widthPercentage = (count / totalRatings) * 100;
         return (
@@ -27,6 +28,7 @@ const RatingsBarChart = ({ distribution }) => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };
