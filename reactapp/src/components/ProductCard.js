@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ProductCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,7 @@ const ProductCard = ({ product, isBundledProduct = false, bundleDiscount = 0 }) 
                   <div className="swallowtail-flag">
                     <span className="flag-text">
                       ${finalPrice.toFixed(2)}
-                      {isBundledProduct && ` (Save ${discountAmount.toFixed(2)}!)`}
+                      {isBundledProduct && ` (-$${discountAmount.toFixed(2)}!)`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}
                     </span>
                   </div>
