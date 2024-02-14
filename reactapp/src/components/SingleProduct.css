@@ -333,7 +333,7 @@ button.next-button {
 .product-main-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   max-width: 1140px;
   margin: auto;
@@ -409,6 +409,7 @@ button.next-button {
     flex-shrink: 0;
   }
 
+  .single-product-container .product-header .product-details,
   .single-product-container .product-main-section .product-details {
     display: flex;
     align-items: center;
