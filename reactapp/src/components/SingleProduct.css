@@ -485,7 +485,6 @@ button.next-button {
 
   .single-product-container .product-data-container #right-column {
     width: 30%;
-    width: auto;
     display: flex;
     flex-direction: column;
     border-left: solid 1px black;
