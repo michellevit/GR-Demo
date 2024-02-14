@@ -367,7 +367,19 @@ button.next-button {
 }
 
 
+.product-main-container .bundle-purchase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
 
+.product-main-container .bundle-purchase button {
+  font-size: 1rem;
+  background-color: #ff90e8;
+}
 
 
 
