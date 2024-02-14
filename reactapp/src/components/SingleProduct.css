@@ -376,6 +376,9 @@ button.next-button {
   gap: 1rem;
   flex-direction:column;
   text-align:center;
+}
+
+.product-main-container .section-container .paragraphs .bundle-section .bundle-purchase .bundle-price {
   font-weight: 700;
 }
 
