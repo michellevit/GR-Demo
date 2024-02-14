@@ -33,8 +33,7 @@ const SingleProduct = () => {
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           console.log(bundlesResponse.data[0].products);
-        }
-        else {
+        } else {
           console.log("nada");
         }
       } catch (error) {
@@ -236,17 +235,20 @@ const SingleProduct = () => {
           </div>
         </div>
         <div className="section-container">
-              hi
-          {/* {bundledProducts.length > 0 && (
-            <div className="paragraphs">v
-              <h2>Bundle Deal</h2>
+          hi
+          {bundledProducts.length > 0 && (
+            <div className="paragraphs">
+              v<h2>Bundle Deal</h2>
               <div className="bundle-section">
                 {bundledProducts.map((bundledProduct) => (
-                  <ProductCard key={product.id} product={bundledProduct} />
+                  <ProductCard
+                    key={bundledProduct.id}
+                    product={bundledProduct}
+                  />
                 ))}
               </div>
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </div>
