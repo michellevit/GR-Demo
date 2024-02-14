@@ -35,7 +35,7 @@ const ProductCard = ({ product, isBundledProduct = false, bundleDiscount = 0 }) 
                   <div className="swallowtail-flag">
                     <span className="flag-text">
                       ${finalPrice.toFixed(2)}
-                      {isBundledProduct && ` (-$${discountAmount.toFixed(2)}!)`}
+                      {isBundledProduct && ` (-$${discountAmount.toFixed(2)})`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}
                     </span>
                   </div>
