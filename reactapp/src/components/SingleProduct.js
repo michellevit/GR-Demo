@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./SingleProduct.css";
 import ProductCard from "./ProductCard";
+import RatingsBarChart from "./RatingsBarChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -73,7 +74,6 @@ const SingleProduct = () => {
   }, [productId]);
 
   useEffect(() => {
-    // Currently just fetching all Products
     const fetchRecentlyViewedProducts = async () => {
       try {
         const response = await axios.get(
@@ -126,6 +126,21 @@ const SingleProduct = () => {
       console.error("Error liking the product:", error);
     }
   };
+
+  function simulateRatingsDistribution(averageRating, totalRatings) {
+    let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    let remainingRatings = totalRatings;
+    distribution[Math.round(averageRating)] = Math.round(totalRatings * 0.5);
+    remainingRatings -= distribution[Math.round(averageRating)];
+    while (remainingRatings > 0) {
+      let rating = Math.floor(Math.random() * 5) + 1;
+      let count = Math.min(remainingRatings, Math.ceil(Math.random() * (remainingRatings / 2)));
+      distribution[rating] += count;
+      remainingRatings -= count;
+    }
+    return distribution;
+  }
+  const ratingsDistribution = simulateRatingsDistribution(product.average_rating, product.ratings_count);
 
   return (
     <div className="single-product-container">
@@ -260,7 +275,7 @@ const SingleProduct = () => {
                   <FontAwesomeIcon icon={faHeart} />
                 </div>
               </div>
-              <div id="row2">Rating Bar Chart</div>
+              <div id="row2"><RatingsBarChart distribution={ratingsDistribution} /></div>
             </div>
           </div>
         </div>
