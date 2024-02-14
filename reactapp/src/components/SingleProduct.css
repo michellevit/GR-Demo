@@ -371,9 +371,10 @@ button.next-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min-content;
+  width: auto;
   flex-wrap: nowrap;
   gap: 1rem;
+  flex-direction:column;
 }
 
 .product-main-container .section-container .paragraphs .bundle-section .bundle-purchase button {
