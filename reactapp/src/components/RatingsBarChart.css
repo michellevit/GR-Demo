@@ -18,11 +18,11 @@
 } 
 
 .ratings-bar-chart .bar-row .stars {
-    width: 10%;
+    width: 15%;
 } 
 
 .ratings-bar-chart .bar-row .outer-bar {
-    width: 80%;
+    width: 75%;
     height: 18px;
     position: relative;
     border: 1px solid black;
