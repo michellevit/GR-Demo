@@ -50,7 +50,7 @@ header {
 }
 
 .combobox.focused {
-    outline: 2px solid #FF7800;
+    outline: 2px solid #ff90e8;
     outline-offset: 0; 
 }
 
