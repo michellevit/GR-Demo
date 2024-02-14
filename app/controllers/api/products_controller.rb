@@ -111,7 +111,7 @@ module Api
             }
           }
         }
-      })
+      }, methods: [:discount_percentage])
     rescue ActiveRecord::RecordNotFound
       render json: { error: "Product not found" }, status: :not_found
     end

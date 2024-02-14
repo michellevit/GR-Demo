@@ -18,7 +18,9 @@ const SingleProduct = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
   const [bundledProducts, setBundledProducts] = useState([]);
+  const [bundleDiscount, setBundleDiscount] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
 
   useEffect(() => {
     const fetchProductAndBundles = async () => {
@@ -32,7 +34,7 @@ const SingleProduct = () => {
         );
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
-          console.log(bundlesResponse.data[0].products);
+          setBundleDiscount(bundlesResponse.data[0].discount_percentage);
         } else {
           console.log("nada");
         }
@@ -237,7 +239,7 @@ const SingleProduct = () => {
         <div className="section-container">
           {bundledProducts.length > 0 && (
             <div className="paragraphs">
-              <h2>Bundle Deal</h2>
+              <h2>Bundle Deal - {bundleDiscount}% off</h2>
               <div className="bundle-section">
                 {bundledProducts.map((bundledProduct) => (
                   <ProductCard
