@@ -376,20 +376,13 @@ button.next-button {
   gap: 1rem;
   flex-direction:column;
   text-align:center;
-
+  font-weight: 700;
 }
 
 .product-main-container .section-container .paragraphs .bundle-section .bundle-purchase button {
   font-size: 1rem;
   background-color: #ff90e8;
 }
-
-.bundle-purchase .bundle-price {
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
-}
-
 
 .bundle-purchase .bundle-price .savings {
   font-size: 0.8rem;
