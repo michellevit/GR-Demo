@@ -175,6 +175,8 @@ button.next-button {
   width: fit-content;
   border-right: 1px solid black;
   height:40px;
+  display: flex;
+  align-items: center;
 }
 
 #left-column #row2 > #row2-col-mid {
