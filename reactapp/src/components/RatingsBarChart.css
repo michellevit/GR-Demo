@@ -6,7 +6,8 @@
 
 .ratings-bar-chart h3 {
   line-height: 1.1375;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .ratings-bar-chart .bar-row {

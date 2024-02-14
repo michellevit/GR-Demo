@@ -44,6 +44,14 @@
     border-bottom: solid 0.0625rem black;
   }
 
+  .product-card .product-details h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+  }
+
   .product-card .product-details h4 {
     font-size: 1rem;
     line-height: 1.5rem;
