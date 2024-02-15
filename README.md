@@ -37,9 +37,9 @@ This project is a simplified replication of the GR Discover and Product Page use
   
 
 ## Feature Overview<a name="feature-overview"></a>
-- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
-- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products. 
-- **Product Page 'Bundle' Section:** A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
+- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked - this gives users an easy way to compare products or keep track of products they may not be ready to purchase.
+- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products - this can help creators learn more about their customer base, and potentially provide targetted discounts, 
+- **Product Page 'Bundle' Section:** A section that appears at the bottom of the product page if the product is part of a 'bundle' - this strategically promotes related products, offering creators an opportunity to upsell and increase average order value.
 <div style="display: flex; justify-content: space-between;">
   <img src="screenshots/GR-Demo-Screenshot-Discover-Page.png" style="width: 45%; margin-right: 10px;" alt="Discover Page Screenshot" />
   <img src="screenshots/GR-Demo-Screenshot-Product-Page.png" style="width: 45%;" alt="Product Page Screenshot" />
@@ -48,10 +48,9 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 ## Architectural Decisions<a name="architectural-decisions"></a>
 - **Relational Database Design:** To handle dynamic relationships like product likes and bundles, I implemented a relational schema with join tables (e.g., bundle_products), enhancing data integrity and relationship management.
-- **Single Page Application (SPA) Routing:** Utilized React Router to manage client-side routing, ensuring seamless navigation within the SPA without full page reloads.
 - **Route Configuration in Rails:** Strategically ordered routes in routes.rb to prioritize functionality (e.g., search routes) and correctly handle SPA routing with a catchall route.
 - **Build Process Automation:** Chose batch files over npm scripts for build and deployment tasks to minimize dependencies and ensure compatibility with Heroku's buildpacks, avoiding potential deployment issues.
-- **TypeScript Integration:** Adopted TypeScript to introduce static typing and compile-time checks, enhancing code quality, maintainability, and developer productivity. 
+
 
 ## What I Learned<a name="what-I-learned"></a>
  - **Relational Database Design:** Initially, liked_products were stored as arrays within the User table, a simple but flawed approach due to issues with stale references upon product deletions. Transitioning to a relational design, I used bundles and a join table bundle_products to establish many-to-many relationships, significantly enhancing data integrity and fetch efficiency. This shift highlighted the value of adaptable database schemas for dynamic application needs.
@@ -62,14 +61,17 @@ This project is a simplified replication of the GR Discover and Product Page use
 ## Basic Usage<a name="basic-usage"></a>
 
 ### How to Interact with the Database in Development<a name="interact-db"></a>
-- **Rails Console:** Use rails console to interact directly with your application's database.
-  - **View All Entries:** Execute Product.all to list all products.
-  - **View First Entry:** Use Product.first to see the first product entry.
-  - **Create New Entry:** To add a new product, use Product.create(name: "New Product", price: 100).
-  - **Delete All Entries:** Clear the database with Product.delete_all.
+- *The rails console allows you to interact directly with your application's database*
+- In the terminal, navigate to the project's root directory
+  - **Enter Rails Console:** `rails console`
+  - **View All Entries:** `Product.all`
+  - **View First Entry:** `Product.first`
+  - **Create New Entry:** `Product.create(product_name: "New Product", price: 100)`
+  - **Delete All Entries:** `Product.delete_all`
 
 
 ### How To Modify Database Schema<a name="modify-db"></a>
+- In the terminal, navigate to the project's root directory
   - Generate a migration
     - e.g. `rails generate migration ChangeFieldTypeInProducts`
   - Open the newly created migration file in db/migrate
@@ -95,9 +97,8 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 
 ### Updating the Heroku App<a name="update-app"></a>
-- *This script will rebuild the reactapp in the correct folder and push the changes to GitHub, and every push to main will deploy a new version of the app on Heroku.*
-  - Navigate into the Gumroad-Demo directory in the powershell terminal
-  - Make sure you are logged into heroku from terminal (run: `heroku login`)
+- *This script will rebuild the reactapp in the correct folder and push the changes to GitHub, and every push to main will deploy a new version of the app on Heroku*
+- In the terminal, navigate to the project's root directory
   - Run: `.\update-app.bat "Your commit message here`
 
 
