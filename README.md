@@ -38,8 +38,8 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 - Rails
 - React
 - Typescript
-- Heroku (Hosting Platform)
 - PostgreSQL (Database)
+- Heroku (Hosting Platform)
   
 
 ## Added Features<a name="added-features"></a>
