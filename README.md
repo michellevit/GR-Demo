@@ -82,7 +82,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 
 ### How To Modify Database Schema<a name="how-to-modify-db"></a>
-- In the terminal, navigate to the project's root directory
+- In a Powershell terminal, navigate to the project's root directory
   - Generate a migration
     - e.g. `rails generate migration ChangeFieldTypeInProducts`
   - Open the newly created migration file in db/migrate
@@ -95,21 +95,21 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 ### How To Seed the Database<a name="how-to-seed-db"></a>
 - *This command will seed the database with mock data from the JSON files in lib/seeds*
-- In the terminal, navigate to the project's root directory
+- In a Powershell terminal, navigate to the project's root directory
   - Run the seed command
     - Development: `rail db:seed`
     - Production: `heroku run rake db:seed --app gr-demo`
 
 
 ### How To Reset the Database<a name="how-to-reset-db"></a>
-- *This script will clear the entries from all tables (i.e. Product, User, Bundle) then reseed the database with the mock data from the JSON files in lib/seeds*
-- In the terminal, navigate to the project's root directory
+- *This script will clear the entries from all tables (i.e. Product, User, Bundle), reset the ids to 0, then reseed the database with the mock data from the JSON files in lib/seeds*
+- In a Powershell terminal, navigate to the project's root directory
   - Run: `.\reset-db.bat`
 
 
 ### How To Update the Heroku App<a name="how-to-update-app"></a>
-- *This script will rebuild the reactapp in the correct folder and push the changes to GitHub, and every push to main will deploy a new version of the app on Heroku*
-- In the terminal, navigate to the project's root directory
+- *This script will rebuild the reactapp, copy the contents into the public folder, and push the changes to GitHub - every push to main deploys a new version of the app on Heroku*
+- In a Powershell terminal, navigate to the project's root directory
   - Run: `.\update-app.bat "Your commit message here`
 
 
