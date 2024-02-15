@@ -5,10 +5,10 @@ This project is a simplified replication of the GR Discover and Product Page use
 - Product Page 'Like' Button: An interactive heart icon allowing users to 'like' or 'unlike' products. 
 - Product Page 'Bundle' Section: A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
 
-Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
-
+Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)  
 Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
-
+<a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
+<a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-blue?style=for-the-badge&logo=ruby"></a>
 
 ![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
