@@ -20,7 +20,6 @@ const ProductCard = ({
   //   ? product.price - discountAmount
   //   : product.price;
 
-
   return (
     <>
       <Link to={`/discover/${product.id}`}>
