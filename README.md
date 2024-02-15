@@ -34,12 +34,12 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 
 ## Technologies Used<a name="technologies-used"></a>
-  - Ruby
-  - Rails
-  - React
-  - Typescript
-  - PostgreSQL
-  - Heroku
+- Ruby
+- Rails
+- React
+- Typescript
+- Heroku (Hosting Platform)
+- PostgreSQL (Database)
   
 
 ## Added Features<a name="added-features"></a>
