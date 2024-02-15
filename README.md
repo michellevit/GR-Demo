@@ -8,8 +8,10 @@ This project is a simplified replication of the GR Discover and Product Page use
 Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
 Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
-![npm](https://badge.fury.io/js/reactapp.svg)
-![Gem](https://badge.fury.io/rb/example_gem.svg)
+
+![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
+![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
+![React Version](https://img.shields.io/badge/react-18.2.0-blue.svg)
 
 
 ## Table of Contents
