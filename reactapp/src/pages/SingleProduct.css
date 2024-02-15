@@ -2,6 +2,14 @@
   width: 100%;
 }
 
+.single-product-loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
 .product-header-container {
   display: none;
 }

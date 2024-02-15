@@ -147,7 +147,7 @@ const SingleProduct = () => {
   };
 
   if (!product || !currentUser) {
-    return <div>Loading...</div>;
+    return <div className='single-product-loading'>Loading...</div>;
   }
 
   const handleLike = async () => {
