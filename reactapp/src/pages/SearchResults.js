@@ -9,7 +9,7 @@ const SearchResults = () => {
   const query = searchParams.get("query"); 
 
   useEffect(() => {
-    document.title = `Search results for: "${query}" | GR Discover`; 
+    document.title = `Search results for "${query}" | GR Discover`; 
   }, [query]);
 
   useEffect(() => {
