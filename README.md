@@ -104,6 +104,12 @@ Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
   - RESET DB (re-seed and index to 0): .\reset-db.bat
 
 
+## 6. Typescript <a name="typescript"></a>
+- to compile ts into js (while in reactapp dir)
+  - run: npm run tsc
+  - Note: this automatically is part of the 'npm run build' command
+
+
 ## 7. Features To Add <a name="features-to-add"></a>
 - DB: Add recently_viewed field to users
 - Backend: Add recently_viewed functionality
