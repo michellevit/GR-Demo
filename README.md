@@ -120,7 +120,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
   - If the frontend isn't working
     - Check if the public folder has the index.html file (if not the reactapp build has failed due to compile error)
 - Error Logging: 
-  - To log errors in backend (e.g. controllers) - add this line: 
+  - To log errors in backend (e.g., controllers) - add this line: 
     - Add this line: `Rails.logger.info "log message here"`
     - Example: `Rails.logger.info "Parameters: #{params.inspect}"`
     - This will be printed in the Heroku logs
