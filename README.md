@@ -53,9 +53,9 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 
 ## Architectural Decisions<a name="architectural-decisions"></a>
-- **Relational Database Design:** To handle dynamic relationships like product likes and bundles, I implemented a relational schema with join tables (e.g., bundle_products), enhancing data integrity and relationship management.
-- **Route Configuration in Rails:** Strategically ordered routes in routes.rb to prioritize functionality (e.g., search routes) and correctly handle SPA routing with a catchall route.
-- **Build Process Automation:** Chose batch files over npm scripts for build and deployment tasks to minimize dependencies and ensure compatibility with Heroku's buildpacks, avoiding potential deployment issues.
+- **Relational Database Design:** A relational schema with join tables (e.g., bundle_products) was implemented to handle dynamic relationships like product likes and bundles, enhancing data integrity and relationship management.
+- **Route Configuration in Rails:** Routes were strategically ordered in routes.rb to prioritize functionality (e.g., search routes) and correctly handle SPA routing with a catchall route.
+- **Build Process Automation:** Batch files were chosen over npm scripts for build and deployment tasks to minimize dependencies and ensure compatibility with Heroku's buildpacks, avoiding potential deployment issues.
 
 
 ## What I Learned<a name="what-I-learned"></a>
