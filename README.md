@@ -6,6 +6,7 @@ This project is a simplified replication of the GR Discover and Product Page use
 - Product Page 'Bundle' Section: A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
 
 Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
+
 Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
 
@@ -16,6 +17,7 @@ Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
+- [Feature Overview](#feature-overview)
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
 - [How to Use the Project](#how-to-use-the-project)
@@ -29,15 +31,19 @@ Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 ## Technologies Used<a name="technologies-used"></a>
 
 
-## Architectural Decisions<a name="how-to-basics"></a>
+## Feature Overview<a name="feature-overview"></a>
+![Discover Page Screenshot](screenshots/GR-Demo-Screenshot-Discover-Page.png "Discover Page Screenshot")
+![Product Page Screenshot](screenshots/GR-Demo-Screenshot-Product-Page.png "Product Page Screenshot")
+
+## Architectural Decisions<a name="architectural-decisions"></a>
 
 
 
 ## What I Learned<a name="what-I-learned"></a>
 
 
-## How to Use the Project
-### How To Interact With DB (Development)<a name="how-to-db-development"></a>
+## How To Use the Project<a name="how-to-use"></a>
+### How To Interact With DB (Development)
 - To add a dependency:
   - Add gem to 'Gemfile' and run 'bundle install'
 - Open rails console: rails console
