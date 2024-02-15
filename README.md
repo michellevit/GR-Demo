@@ -4,11 +4,7 @@
 ![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
 
-This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React. It incorporates core features of the original interface with several enhancements to improve user interaction and engagement. Key features include:
-- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
-- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products. 
-- **Product Page 'Bundle' Section:** A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
-
+This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React. It incorporates core features of the original interface with several enhancements to improve user interaction and engagement. 
 
 <a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
 <a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-red?style=for-the-badge&logo=ruby"></a>
@@ -33,9 +29,17 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 
 ## Technologies Used<a name="technologies-used"></a>
-
+  - Ruby
+  - Rails
+  - React
+  - Typescript
+  - Heroku
+  
 
 ## Feature Overview<a name="feature-overview"></a>
+- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
+- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products. 
+- **Product Page 'Bundle' Section:** A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
 <div style="display: flex; justify-content: space-between;">
   <img src="screenshots/GR-Demo-Screenshot-Discover-Page.png" style="width: 45%; margin-right: 10px;" alt="Discover Page Screenshot" />
   <img src="screenshots/GR-Demo-Screenshot-Product-Page.png" style="width: 45%;" alt="Product Page Screenshot" />
@@ -43,10 +47,16 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 
 ## Architectural Decisions<a name="architectural-decisions"></a>
-
-
+- **Relational Database Design:** To handle dynamic relationships like product likes and bundles, I implemented a relational schema with join tables (e.g., bundle_products), enhancing data integrity and relationship management.
+- **Single Page Application (SPA) Routing:** Utilized React Router to manage client-side routing, ensuring seamless navigation within the SPA without full page reloads.
+- **Route Configuration in Rails:** Strategically ordered routes in routes.rb to prioritize functionality (e.g., search routes) and correctly handle SPA routing with a catchall route.
+- **Build Process Automation:** Chose batch files over npm scripts for build and deployment tasks to minimize dependencies and ensure compatibility with Heroku's buildpacks, avoiding potential deployment issues.
+- **TypeScript Integration:** Adopted TypeScript to introduce static typing and compile-time checks, enhancing code quality, maintainability, and developer productivity. 
 
 ## What I Learned<a name="what-I-learned"></a>
+ - **Relational Database Design:** Initially, liked_products were stored as arrays within the User table, a simple but flawed approach due to issues with stale references upon product deletions. Transitioning to a relational design, I used bundles and a join table bundle_products to establish many-to-many relationships, significantly enhancing data integrity and fetch efficiency. This shift highlighted the value of adaptable database schemas for dynamic application needs.
+- **Routing Order Significance:** Implementing the search functionality brought to light the importance of the order of routes in the config/routes.rb file. Placing the search route before the resources block ensured it was matched first, while the catchall route for the single-page application had to be placed at the very end. This lesson in routing order was instrumental in achieving both functional search features and seamless SPA (Single Page Application) navigation.
+- **Controller Callbacks:** I learned the importance of selectively applying before_action callbacks in controllers after encountering a limitation while handling the bundles method in my products controller. This method required fetching not only the product but also its associated bundles and related users, rendering it unsuitable for conventional before_action usage.
 
 
 ## Basic Usage<a name="basic-usage"></a>
