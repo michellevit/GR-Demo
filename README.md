@@ -1,26 +1,36 @@
-# GR Product Engineering Challenge Project 
+# GR Product Engineering Challenge 
 
-A basic replication of the GR Discover and Product Page UX in Rails and React, with a few additions:
-- Discover Page 'Liked' section
-- Product Page Like button
-- Product Page 'Bundle' section
+This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React. It incorporates core features of the original interface with several enhancements to improve user interaction and engagement. Key features include:
+- Discover Page 'Liked' Section: A new section on the 'Discover' page to display products that the user has liked.
+- Product Page 'Like' Button: An interactive heart icon allowing users to 'like' or 'unlike' products. 
+- Product Page 'Bundle' Section: A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
+
 Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
 Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
+![npm](https://badge.fury.io/js/reactapp.svg)
+![Gem](https://badge.fury.io/rb/example_gem.svg)
+
 
 ## Table of Contents
-1. [Architectural Decisions](#architectural-decisions)
-2. [What I Learned](#what-I-learned)
-2. [How To Interact With DB (Development)](#how-to-db-development)
-3. [How To Edit DB (Development)](#how-to-edit-db-development)
-4. [How To Edit DB (Production)](#how-to-edit-db-production)
-5. [Heroku - Updating](#heroku-troubleshooting)
-6. [Heroku - Troubleshooting](#heroku-troubleshooting)
-7. [Features To Add](#features-to-add)
-8. [Credits](#credits)
+- [Technologies Used](#technologies-used)
+- [Architectural Decisions](#architectural-decisions)
+- [What I Learned](#what-i-learned)
+- [How to Use the Project](#how-to-use-the-project)
+  - [Interacting With DB (Development)](#interacting-with-db-development)
+  - [Editing DB (Development)](#editing-db-development)
+  - [Editing DB (Production)](#editing-db-production)
+  - [Heroku - Updating](#heroku-updating)
+  - [Heroku - Troubleshooting](#heroku-troubleshooting)
+- [TypeScript](#typescript)
+- [Features To Add](#features-to-add)
+- [Credits](#credits)
 
 
-## 1. Architectural Decisions<a name="how-to-basics"></a>
+## 1. Technologies Used<a name="technologies-used"></a>
+
+
+## 2. Architectural Decisions<a name="how-to-basics"></a>
 
 
 
