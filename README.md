@@ -1,11 +1,11 @@
 # GR Product Engineering Challenge 
 
-![React Version](https://img.shields.io/badge/react-18.2.0-blue.svg)
 ![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
+![React Version](https://img.shields.io/badge/react-18.2.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.5.4-blue.svg)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.5.4-blue.svg)
 
 This project is a simplified replication of the GR Discover and Product Page UX, developed using Rails and React.
 
