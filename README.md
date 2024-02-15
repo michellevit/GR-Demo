@@ -4,7 +4,7 @@
 ![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
 
-This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React. It incorporates core features of the original interface with several enhancements to improve user interaction and engagement. 
+This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React.
 
 <a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
 <a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-red?style=for-the-badge&logo=ruby"></a>
@@ -14,7 +14,7 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [Feature Overview](#feature-overview)
+- [Added Features](#feature-overview)
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
 - [Basic Usage](#basic-usage)
@@ -36,7 +36,7 @@ This project is a simplified replication of the GR Discover and Product Page use
   - Heroku
   
 
-## Feature Overview<a name="feature-overview"></a>
+## Added Features<a name="added-features"></a>
 - **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
 - **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products.
 - **Product Page 'Bundle' Section:** A section that appears at the bottom of the product page if the product is part of a 'bundle'.
