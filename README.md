@@ -37,9 +37,9 @@ This project is a simplified replication of the GR Discover and Product Page use
   
 
 ## Feature Overview<a name="feature-overview"></a>
-- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked - this gives users an easy way to compare products or keep track of products they may not be ready to purchase.
-- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products - this can help creators learn more about their customer base, and potentially provide targetted discounts, 
-- **Product Page 'Bundle' Section:** A section that appears at the bottom of the product page if the product is part of a 'bundle' - this strategically promotes related products, offering creators an opportunity to upsell and increase average order value.
+- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
+- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products.
+- **Product Page 'Bundle' Section:** A section that appears at the bottom of the product page if the product is part of a 'bundle'.
 <div style="display: flex; justify-content: space-between;">
   <img src="screenshots/GR-Demo-Screenshot-Discover-Page.png" style="width: 45%; margin-right: 10px;" alt="Discover Page Screenshot" />
   <img src="screenshots/GR-Demo-Screenshot-Product-Page.png" style="width: 45%;" alt="Product Page Screenshot" />
@@ -64,10 +64,10 @@ This project is a simplified replication of the GR Discover and Product Page use
 - *The rails console allows you to interact directly with your application's database*
 - In the terminal, navigate to the project's root directory
   - **Enter Rails Console:** `rails console`
-  - **View All Entries:** `Product.all`
-  - **View First Entry:** `Product.first`
-  - **Create New Entry:** `Product.create(product_name: "New Product", price: 100)`
-  - **Delete All Entries:** `Product.delete_all`
+  - **View All Records:** `Product.all`
+  - **View First Record:** `Product.first`
+  - **Create New Record:** `Product.create(product_name: "New Product", price: 100)`
+  - **Delete All Record:** `Product.delete_all`
 
 
 ### How To Modify Database Schema<a name="modify-db"></a>
@@ -118,25 +118,22 @@ This project is a simplified replication of the GR Discover and Product Page use
   - **Restart Server:** `heroku ps:restart -a gr-demo`
 
 
-
 ## Features To Add <a name="features-to-add"></a>
-- DB: Add recently_viewed field to users
-- Backend: Add recently_viewed functionality
-- SingleProduct Page: Add recently_viewed section
-- DB: Add Cart field for users
-- Nav: Add to Cart functionality
-- SingleProduct Page: Add to Cart functionality
-- DB: Add 'Staff Picks' table (or assign users staff status and implement star button w/ before_action)
-- AllProducts Page: Add Staff Picks
+- SingleProduct Page: spacing for 'Add all to Cart' section on smaller screen size / more products
+- DB: liked_products -> implement join table instead of stale array
+- SingleProduct Page: Rating bar chart + accurate star ratings + if 0 ratings -> 'no ratings'
+- SingleProduct Page: image carousel sizing when multiple images + transition
 - AllProducts Page: Add profile pics for users
 - SingleProduct Page: Add profile pics for users
-- DB: Add profile pics for users
-- SingleProduct Page: Rating bar chart + accurate star ratings
-- SingleProduct Page: rating bar chart, fix rating stars, if 0 ratings -> 'no ratings'
-- SingleProduct Page: image carousel sizing when multiple images
-- User authentification (liked_products, recently_viewed)
+- DB: Modify existing profile pic for users
+- SingleProduct Page: implement user highlight_color + background_color
+- DB: Add 'Cart' field for users
+- Nav: 'Add to Cart' functionality
+- SingleProduct Page: 'Add to Cart' functionality
 - CSS: define global variables for colors and other properties
-- CSS: clean/reorganize
+- User authentification (liked_products, recently_viewed)
+- AllProducts Page: Tailor liked_products section to logged-in user
+- Backend: Add recently_viewed functionality
 
 
 ## Credits <a name="credits"></a>
