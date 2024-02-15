@@ -1,4 +1,3 @@
-let age: number = 20;
-if (age < 50)
-    age += 10;
+let age: string = "test";
+
 console.log(age);
