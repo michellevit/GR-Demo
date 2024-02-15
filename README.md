@@ -59,7 +59,7 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 
 ## Basic Usage<a name="basic-usage"></a>
-
+*Basic usage instructions for developers who want to interact with the project's database or perform common tasks.*
 ### How to Interact with the Database in Development<a name="interact-db"></a>
 - *The rails console allows you to interact directly with your application's database*
 - In the terminal, navigate to the project's root directory
