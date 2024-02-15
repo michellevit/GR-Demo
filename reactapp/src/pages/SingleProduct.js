@@ -50,12 +50,17 @@ const SingleProduct = () => {
   }
 
   useEffect(() => {
+  }, []);
+
+
+  useEffect(() => {
     const fetchProductAndBundles = async () => {
       try {
         const productResponse = await axios.get(
           `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
         );
         setProduct(productResponse.data);
+        document.title = productResponse.data.product_name;
         setRatingsDistribution(
           simulateRatingsDistribution(
             productResponse.data.average_rating,
