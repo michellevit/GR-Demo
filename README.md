@@ -21,10 +21,12 @@ This project is a simplified replication of the GR Discover and Product Page use
 - [Feature Overview](#feature-overview)
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
-- [How to Use the Project](#how-to-use-the-project)
-  - [Interacting With DB (Development)](#interacting-with-db-development)
-  - [Editing DB](#editing-db)
-  - [Heroku](#heroku)
+- [Basic Usage](#basic-usage)
+  - [Managing Database Interactions in Development](#managing-db-development)
+  - [Making Changes to the Database](#editing-db)
+  - [How To Reset the Database](#reset-db)
+  - [How To Push Changes to App](#updating-app)
+  - [Heroku Troubleshooting](#heroku-troubleshooting)
 - [Features To Add](#features-to-add)
 - [Credits](#credits)
 
@@ -46,78 +48,57 @@ This project is a simplified replication of the GR Discover and Product Page use
 ## What I Learned<a name="what-I-learned"></a>
 
 
-## How To Use the Project<a name="how-to-use"></a>
-### How To Interact With DB (Development)
-- To add a dependency:
-  - Add gem to 'Gemfile' and run 'bundle install'
-- Open rails console: rails console
-  - See all entries: Product.all
-  - List first item in DB: Product.all.first 
-  - Create new entry: Product.create(product_name: "example 1")
-  - Delete all entries: Product.delete_all
-- To seed the db -> exit the rails console + execute: rails db:seed
+## Basic Usage<a name="basic-usage"></a>
+### Managing Database Interactions in Development<a name="managing-db-development"></a>
+- **Rails Console:** Use rails console to interact directly with your application's database.
+  - **View All Entries:** Execute Product.all to list all products.
+  - **View First Entry:** Use Product.first to see the first product entry.
+  - **Create New Entry:** To add a new product, use Product.create(name: "New Product", price: 100).
+  - **Delete All Entries:** Clear the database with Product.delete_all.
+- **Seeding the Database:** After exiting the console, run rails db:seed to populate the database with predefined data.
 
-
-### How To Edit DB (Development) <a name="how-to-edit-db"></a>
-#### Development
-- Open bash terminal 
-- Navigate to backend dir
+### Making Changes to the Database<a name="editing-db"></a>
   - Generate a migration: rails generate migration [description of change being implemented to db]
-    - e.g. rails generate migration ChangeFieldTypeInProducts
+    - e.g. `rails generate migration ChangeFieldTypeInProducts`
   - Open the newly created migration file in db/migrate
-    - Inside the migration file, add the command needed to make the change
-    - e.g. For example, to change a column named description from string to text in the products table, you would write:
-    - class ChangeFieldTypeInProducts < ActiveRecord::Migration[7.1]
-        def change
-          change_column :products, :description, :text
-        end
-      end
-      -EXAMPLES: 
-        -rename_column :products, :creator_name, :user
-    -Run the migration (in bash terminal): 
-      - rails db:migrate
-#### Production
-- Note: This uses version control -> files in db/migrate folder
-- Open bash terminal 
-- Navigate to backend dir
-  - Generate a migration: rails generate migration [description of change being implemented to db]
-    - e.g. rails generate migration ChangeFieldTypeInProducts
-  - Open the newly created migration file in db/migrate
-    - Inside the migration file, you'll need to add a command to make the change
-    - e.g. For example, to change a column named description from string to text in the products table, you   would write:
-    - class ChangeFieldTypeInProducts < ActiveRecord::Migration[7.1]
-        def change
-          change_column :products, :description, :text
-        end
-      end
-      -EXAMPLES: 
-        -rename_column :products, :creator_name, :user
-  -Run: heroku run rake db:migrate -a gr-demo
+  - Inside the migration file's 'def change' section, add the command needed to make the change
+    - e.g. For example: `rename_column :products, :creator_name, :user`
+  - Run the migration
+    - Development: `rails db:migrate`
+    - Production (Heroku): `heroku run rake db:migrate -a gr-demo`
 
 
-### Heroku<a name="heroku"></a>
-#### Updating App
-- How to push changes to Heroku app:
+#### How To Reset the Database<a name="reset-db"></a>
+- *This script will clear the entries from all tables (i.e. Product, User, Bundle) then reseed it with lib/seeds JSON dummy data*
+- In the terminal, navigate to the project's root directory
+  - Run: `.\reset-db.bat`
+
+
+#### Updating the Heroku App<a name="updating-app"></a>
+- *This script will rebuild the reactapp in the correct folder and push the changes to Github, and every push to main will deploy a new version of the app on Heroku.*
   - Navigate into the Gumroad-Demo directory in the powershell terminal
-  - Make sure you are logged into heroku from terminal (run: 'heroku login')
-  - Run: .\update-app.bat "Your commit message here"
-#### Troubleshooting
+  - Make sure you are logged into heroku from terminal (run: `heroku login`)
+  - Run: `.\update-app.bat "Your commit message here`
+
+
+### Heroku Troubleshooting<a name="heroku-troubleshooting"></a>
 - Reminders:
   - After updating routes.rb file: 
     - Make sure to restart the Heroku server after modifying the routes.rb file 
   - If the frontend isn't working
-    - Check if the public folder has the index.html file (if not react build has failed)
+    - Check if the public folder has the index.html file (if not the reactapp build has failed due to compile error)
 - Debugging: 
   - To log errors in backend (e.g. controllers) - add this line: 
-    - Add this line: Rails.logger.info "log message here"
-    - Example: Rails.logger.info "Parameters: #{params.inspect}" 
+    - Add this line: `Rails.logger.info "log message here"`
+    - Example: `Rails.logger.info "Parameters: #{params.inspect}"`
     - This will be printed in the heroku logs
 - Commands:
-  - ERROR LOGS: heroku logs --tail -a gr-demo
-  - MIGRATE: heroku run rake db:migrate -a gr-demo
-  - RESTART SERVER: heroku ps:restart -a gr-demo
-  - SEED DB: heroku run rake db:seed --app gr-demo
-  - RESET DB (re-seed and index to 0): .\reset-db.bat
+  - **Error Logs:** `heroku logs --tail -a gr-demo`
+  - **Restart Server:** `heroku ps:restart -a gr-demo`
+  - **Migrate:** `heroku run rake db:migrate -a gr-demo`
+  - **Seed Database:** `heroku run rake db:seed --app gr-demo`
+  - **Update App:** `.\update-app`
+  - **Reset Database:** `.\reset-db.bat`
 
 
 

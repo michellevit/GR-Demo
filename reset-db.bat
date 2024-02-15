@@ -5,7 +5,7 @@
 :: --1. Check if logged into Heroku CLI
 :: --2. Migrate any pending changes
 :: --3. Commit changes to Github (so Heroku can access the current files)
-:: --4. Check if there are any entries in the Product/User table before removing
+:: --4. Check if there are any entries in each table before deleting all entries
 :: --5. Seed the database with products.json and users.json
 :: --6. Echo message of completion if script runs successfully
 
@@ -53,7 +53,7 @@ git commit -m "Commit before resetting database tables"
 git push origin main
 
 
-:: Step 4: Check if there are any entries in the Product/User table before removing
+:: Step 4: Check if there are any entries in each table before deleting all entries
 echo Checking for existing entries in the Product table...
 cd "%basePath%\scripts"
 call clear-products-table.bat
