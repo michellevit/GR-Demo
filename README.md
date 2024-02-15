@@ -3,6 +3,7 @@
 ![React Version](https://img.shields.io/badge/react-18.2.0-blue.svg)
 ![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
 
 This project is a simplified replication of the GR Discover and Product Page UX, developed using Rails and React.
 
@@ -34,6 +35,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
   - Rails
   - React
   - Typescript
+  - PostgreSQL
   - Heroku
   
 
