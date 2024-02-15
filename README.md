@@ -1,8 +1,8 @@
 # GR Product Engineering Challenge Project 
 
-A basic replication of the GR Discover and Product Page UX in Rails and React, with a few additons:
+A basic replication of the GR Discover and Product Page UX in Rails and React, with a few additions:
 - Discover Page 'Liked' section
-- Product Page 'like' button
+- Product Page Like button
 - Product Page 'Bundle' section
 Demo - Frontend: [www.michellef.dev](https://gr-demo.michellef.dev/)
 Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
