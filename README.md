@@ -21,15 +21,11 @@ Demo - Backend:  [www.michellef.dev/api](https://gr-demo.michellef.dev/api)
 
 
 ## 1. Architectural Decisions<a name="how-to-basics"></a>
-- See current routes: rails routes
 
-  - This updates Gemfile with current dependencies
 
 
 ## 2. What I Learned<a name="what-I-learned"></a>
-- See current routes: rails routes
 
-  - This updates Gemfile with current dependencies
 
 
 ## 2. How To Interact With DB (Development)<a name="how-to-db-development"></a>

@@ -50,7 +50,7 @@ const ProductCard = ({
                       }`}
                     >
                       ${product.price.toFixed(2)}
-                      {isBundledProduct && ` (-$${bundleDiscount.toFixed(2)})`}
+                      {isBundledProduct && ` (-$${discountAmount.toFixed(2)})`}
                       {!isBundledProduct && product.flex_price ? "+" : ""}
                     </span>
                   </div>
