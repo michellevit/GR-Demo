@@ -69,3 +69,4 @@ git push origin main
 
 :: --6. Echo message of completion if script runs properly
 echo Update, build, and git update process completed.
+echo update-app.bat completed successfully.
