@@ -83,9 +83,7 @@ const SingleProduct = () => {
           totalBundlePriceBeforeDiscount - discountAmount;
         setTotalBundlePrice(totalBundlePriceAfterDiscount.toFixed(2));
         setBundleAmountSaved(discountAmount.toFixed(2));
-        } else {
-          console.log("No bundles found.");
-        }
+        } 
       } catch (error) {
         console.error("Error fetching product or bundles: ", error);
       }
