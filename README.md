@@ -5,9 +5,9 @@
 ![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
 
 This project is a simplified replication of the GR Discover and Product Page user experience, developed using Rails and React. It incorporates core features of the original interface with several enhancements to improve user interaction and engagement. Key features include:
-- Discover Page 'Liked' Section: A new section on the 'Discover' page to display products that the user has liked.
-- Product Page 'Like' Button: An interactive heart icon allowing users to 'like' or 'unlike' products. 
-- Product Page 'Bundle' Section: A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
+- **Discover Page 'Liked' Section:** A new section on the 'Discover' page to display products that the user has liked.
+- **Product Page 'Like' Button:** An interactive heart icon allowing users to 'like' or 'unlike' products. 
+- **Product Page 'Bundle' Section:** A section that appears if the product is part of a 'bundle', offering users the option to purchase related products together at a discounted rate. 
 
 
 <a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
@@ -22,10 +22,11 @@ This project is a simplified replication of the GR Discover and Product Page use
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
 - [Basic Usage](#basic-usage)
-  - [Managing Database Interactions in Development](#managing-db-development)
-  - [Making Changes to the Database](#editing-db)
+  - [How to Interact with the Database in Development](#interact-db)
+  - [How to Modify Database Schema](#modify-db)
+  - [How to Seed the Database](#seed-db)
   - [How To Reset the Database](#reset-db)
-  - [How To Push Changes to App](#updating-app)
+  - [How To Update the App](#update-app)
   - [Heroku Troubleshooting](#heroku-troubleshooting)
 - [Features To Add](#features-to-add)
 - [Credits](#credits)
@@ -49,33 +50,42 @@ This project is a simplified replication of the GR Discover and Product Page use
 
 
 ## Basic Usage<a name="basic-usage"></a>
-### Managing Database Interactions in Development<a name="managing-db-development"></a>
+
+### How to Interact with the Database in Development<a name="interact-db"></a>
 - **Rails Console:** Use rails console to interact directly with your application's database.
   - **View All Entries:** Execute Product.all to list all products.
   - **View First Entry:** Use Product.first to see the first product entry.
   - **Create New Entry:** To add a new product, use Product.create(name: "New Product", price: 100).
   - **Delete All Entries:** Clear the database with Product.delete_all.
-- **Seeding the Database:** After exiting the console, run rails db:seed to populate the database with predefined data.
 
-### Making Changes to the Database<a name="editing-db"></a>
-  - Generate a migration: rails generate migration [description of change being implemented to db]
+
+### How To Modify Database Schema<a name="modify-db"></a>
+  - Generate a migration
     - e.g. `rails generate migration ChangeFieldTypeInProducts`
   - Open the newly created migration file in db/migrate
   - Inside the migration file's 'def change' section, add the command needed to make the change
-    - e.g. For example: `rename_column :products, :creator_name, :user`
+    - e.g. `rename_column :products, :creator_name, :user`
   - Run the migration
     - Development: `rails db:migrate`
-    - Production (Heroku): `heroku run rake db:migrate -a gr-demo`
+    - Production: `heroku run rake db:migrate -a gr-demo`
 
 
-#### How To Reset the Database<a name="reset-db"></a>
-- *This script will clear the entries from all tables (i.e. Product, User, Bundle) then reseed it with lib/seeds JSON dummy data*
+### How to Seed the Database<a name="seed-db"></a>
+- *This command will seed the database with mock data from the JSON files in lib/seeds*
+- In the terminal, navigate to the project's root directory
+  - Run the seed command
+    - Development: `rail db:seed`
+    - Production: `heroku run rake db:seed --app gr-demo`
+
+
+### How To Reset the Database<a name="reset-db"></a>
+- *This script will clear the entries from all tables (i.e. Product, User, Bundle) then reseed the database with the mock data from the JSON files in lib/seeds*
 - In the terminal, navigate to the project's root directory
   - Run: `.\reset-db.bat`
 
 
-#### Updating the Heroku App<a name="updating-app"></a>
-- *This script will rebuild the reactapp in the correct folder and push the changes to Github, and every push to main will deploy a new version of the app on Heroku.*
+### Updating the Heroku App<a name="update-app"></a>
+- *This script will rebuild the reactapp in the correct folder and push the changes to GitHub, and every push to main will deploy a new version of the app on Heroku.*
   - Navigate into the Gumroad-Demo directory in the powershell terminal
   - Make sure you are logged into heroku from terminal (run: `heroku login`)
   - Run: `.\update-app.bat "Your commit message here`
@@ -87,18 +97,14 @@ This project is a simplified replication of the GR Discover and Product Page use
     - Make sure to restart the Heroku server after modifying the routes.rb file 
   - If the frontend isn't working
     - Check if the public folder has the index.html file (if not the reactapp build has failed due to compile error)
-- Debugging: 
+- Error Logging: 
   - To log errors in backend (e.g. controllers) - add this line: 
     - Add this line: `Rails.logger.info "log message here"`
     - Example: `Rails.logger.info "Parameters: #{params.inspect}"`
-    - This will be printed in the heroku logs
+    - This will be printed in the Heroku logs
 - Commands:
   - **Error Logs:** `heroku logs --tail -a gr-demo`
   - **Restart Server:** `heroku ps:restart -a gr-demo`
-  - **Migrate:** `heroku run rake db:migrate -a gr-demo`
-  - **Seed Database:** `heroku run rake db:seed --app gr-demo`
-  - **Update App:** `.\update-app`
-  - **Reset Database:** `.\reset-db.bat`
 
 
 
