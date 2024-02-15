@@ -14,11 +14,12 @@ const ProductCard = ({
   const discountAmount = isBundledProduct
     ? (product.price * bundleDiscount) / 100
     : 0;
-  const finalPrice = isBundledProduct
-    ? product.price - discountAmount
-    : product.price;
 
-  // to use discount price in swallowtail use '${finalPrice.toFixed(2)}' instead
+    // to use discount price in swallowtail use '${finalPrice.toFixed(2)}' instead
+  // const finalPrice = isBundledProduct
+  //   ? product.price - discountAmount
+  //   : product.price;
+
 
   return (
     <>

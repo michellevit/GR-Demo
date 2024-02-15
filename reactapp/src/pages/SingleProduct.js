@@ -23,7 +23,6 @@ const SingleProduct = () => {
   const [totalBundlePrice, setTotalBundlePrice] = useState(null);
   const [bundleAmountSaved, setBundleAmountSaved] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
   const [ratingsDistribution, setRatingsDistribution] = useState({
     5: 0,
     4: 0,
@@ -32,13 +31,6 @@ const SingleProduct = () => {
     1: 0,
   });
 
-  const getRandomSelection = (productArray) => {
-    const filteredProducts = productArray.filter(
-      (product) => product.id.toString() !== productId
-    );
-    const shuffledProducts = filteredProducts.sort(() => Math.random() - 0.5);
-    return shuffledProducts.slice(0, 5);
-  };
 
   function simulateRatingsDistribution(averageRating, totalRatings) {
     let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
@@ -115,25 +107,6 @@ const SingleProduct = () => {
     fetchUser();
   }, [productId]);
 
-  useEffect(() => {
-    const fetchRecentlyViewedProducts = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products`,
-          {
-            headers: {
-              Accept: "application/json",
-            },
-          }
-        );
-        setRecentlyViewedProducts(getRandomSelection(response.data));
-      } catch (error) {
-        console.error("There was an error fetching the products: ", error);
-      }
-    };
-
-    fetchRecentlyViewedProducts();
-  }, []);
   const nextImage = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex + 1) % product.image_urls.length
