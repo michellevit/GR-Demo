@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
-const Nav = () => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+const Nav: React.FC = () => {
+  const [isFocused, setIsFocused] = useState<boolean>(false); // Specified boolean type for isFocused state
+  const [searchQuery, setSearchQuery] = useState<string>(""); // Specified string type for searchQuery state
   const navigate = useNavigate();
 
-  const handleSearchChange = (e) => {
+  // Specified the event type for handleSearchChange
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
 
@@ -34,8 +35,8 @@ const Nav = () => {
               onChange={handleSearchChange}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
+              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => { // Specified the event type for onKeyDown
+                if (e.key === 'Enter') {
                   e.preventDefault();
                   navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
                 }
