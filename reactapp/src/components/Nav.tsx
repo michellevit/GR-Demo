@@ -6,11 +6,10 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav: React.FC = () => {
-  const [isFocused, setIsFocused] = useState<boolean>(false); // Specified boolean type for isFocused state
-  const [searchQuery, setSearchQuery] = useState<string>(""); // Specified string type for searchQuery state
+  const [isFocused, setIsFocused] = useState<boolean>(false); 
+  const [searchQuery, setSearchQuery] = useState<string>(""); 
   const navigate = useNavigate();
 
-  // Specified the event type for handleSearchChange
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
@@ -35,7 +34,7 @@ const Nav: React.FC = () => {
               onChange={handleSearchChange}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
-              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => { // Specified the event type for onKeyDown
+              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => { 
                 if (e.key === 'Enter') {
                   e.preventDefault();
                   navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
