@@ -54,10 +54,7 @@ header {
     outline-offset: 0; 
 }
 
-.combobox.shrink.focused {
-    outline: 2px solid #ff90e8; 
-    outline-offset: 0px; 
-}
+
 .app-logo {
     display: flex;
 }
