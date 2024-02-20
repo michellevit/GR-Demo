@@ -3,19 +3,7 @@ import "./ProductCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
-interface Product {
-  id: string;
-  image_urls: string[];
-  product_name: string;
-  price: number;
-  user: {
-    name: string;
-  };
-  average_rating: number;
-  ratings_count: number;
-  flex_price?: boolean;
-}
+import { Product } from '../types/types';
 
 interface ProductCardProps {
   product: Product;

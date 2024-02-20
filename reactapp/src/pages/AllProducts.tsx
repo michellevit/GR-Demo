@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AllProducts.css";
 import ProductCard from "../components/ProductCard";
+import { Product, User } from '../types/types';
 
-const AllProducts = () => {
-  const [products, setProducts] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
 
-  const getSectionProducts = (productArray) => {
+const AllProducts: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+  const getSectionProducts = (productArray: Product[]): Product[] => {
     const shuffledProducts = productArray.sort(() => Math.random() - 0.5);
     return shuffledProducts.slice(0, 5);
   };
@@ -19,7 +21,7 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
+        const response = await axios.get<Product[]>(
           `${process.env.REACT_APP_DEMO_URL}/api/products`,
           {
             headers: {
@@ -39,7 +41,7 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const userResponse = await axios.get(
+        const userResponse = await axios.get<User>(
           `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`
         );
         setCurrentUser(userResponse.data);
@@ -57,7 +59,7 @@ const AllProducts = () => {
   }
 
   const likedProducts = products.filter((product) =>
-    currentUser.liked_products.includes(String(product.id))
+    currentUser.liked_products.includes(product.id)
   );
 
   return (

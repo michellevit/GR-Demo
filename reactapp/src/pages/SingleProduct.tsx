@@ -4,26 +4,29 @@ import "./SingleProduct.css";
 import ProductCard from "../components/ProductCard";
 import RatingsBarChart from "../components/RatingsBarChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faHeart,
-  faCircle,
-  faCircleArrowLeft,
-  faCircleArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStar, faHeart, faCircle, faCircleArrowLeft, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
+import { Product, User } from '../types/types';
 
-const SingleProduct = () => {
-  const { productId } = useParams();
-  const [product, setProduct] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
+interface BundleProduct extends Product {
+  bundleDiscountPercentage?: number; // Optional: Bundle-specific discount percentage
+}
+
+interface RatingsDistribution {
+  [key: number]: number;
+}
+
+const SingleProduct: React.FC = () => {
+  const { productId } = useParams<{ productId: string }>();
+  const [product, setProduct] = useState<Product | null>(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isLiked, setIsLiked] = useState(false);
-  const [bundledProducts, setBundledProducts] = useState([]);
-  const [bundleDiscount, setBundleDiscount] = useState(null);
-  const [totalBundlePrice, setTotalBundlePrice] = useState(null);
-  const [bundleAmountSaved, setBundleAmountSaved] = useState(null);
+  const [bundledProducts, setBundledProducts] = useState<BundleProduct[]>([]);
+  const [bundleDiscount, setBundleDiscount] = useState<number | null>(null);
+  const [totalBundlePrice, setTotalBundlePrice] = useState<string | null>(null);
+  const [bundleAmountSaved, setBundleAmountSaved] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [ratingsDistribution, setRatingsDistribution] = useState({
+  const [ratingsDistribution, setRatingsDistribution] = useState<RatingsDistribution>({
     5: 0,
     4: 0,
     3: 0,
@@ -31,112 +34,62 @@ const SingleProduct = () => {
     1: 0,
   });
 
-
-  function simulateRatingsDistribution(averageRating, totalRatings) {
-    let distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-    let remainingRatings = totalRatings;
-    distribution[Math.round(averageRating)] = Math.round(totalRatings * 0.5);
-    remainingRatings -= distribution[Math.round(averageRating)];
-    while (remainingRatings > 0) {
-      let rating = Math.floor(Math.random() * 5) + 1;
-      let count = Math.min(
-        remainingRatings,
-        Math.ceil(Math.random() * (remainingRatings / 2))
-      );
-      distribution[rating] += count;
-      remainingRatings -= count;
-    }
-    return distribution;
-  }
-
   useEffect(() => {
-  }, []);
-
-
-  useEffect(() => {
+    if (!productId) return;
     const fetchProductAndBundles = async () => {
       try {
-        const productResponse = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`
-        );
+        const productResponse = await axios.get<Product>(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`);
         setProduct(productResponse.data);
         document.title = productResponse.data.product_name;
-        setRatingsDistribution(
-          simulateRatingsDistribution(
-            productResponse.data.average_rating,
-            productResponse.data.ratings_count
-          )
-        );
-        const bundlesResponse = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`
-        );
+
+        const bundlesResponse = await axios.get<{ products: BundleProduct[], discount_percentage: number }[]>(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`);
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
           setBundleDiscount(bundlesResponse.data[0].discount_percentage);
-          const totalBundlePriceBeforeDiscount = bundlesResponse.data[0].products.reduce(
-            (total, product) => total + product.price,
-            0
-          );
-          const discountAmount =
-          totalBundlePriceBeforeDiscount * (bundlesResponse.data[0].discount_percentage / 100);
-        const totalBundlePriceAfterDiscount =
-          totalBundlePriceBeforeDiscount - discountAmount;
-        setTotalBundlePrice(totalBundlePriceAfterDiscount.toFixed(2));
-        setBundleAmountSaved(discountAmount.toFixed(2));
-        } 
+          const totalBeforeDiscount = bundlesResponse.data[0].products.reduce((total, prod) => total + prod.price, 0);
+          const discountAmount = totalBeforeDiscount * (bundlesResponse.data[0].discount_percentage / 100);
+          const totalAfterDiscount = totalBeforeDiscount - discountAmount;
+          setTotalBundlePrice(totalAfterDiscount.toFixed(2));
+          setBundleAmountSaved(discountAmount.toFixed(2));
+        }
       } catch (error) {
         console.error("Error fetching product or bundles: ", error);
       }
     };
 
-    fetchProductAndBundles();
-  }, [productId]);
-
-  useEffect(() => {
     const fetchUser = async () => {
       try {
-        const userResponse = await axios.get(
-          `${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`
-        );
+        const userResponse = await axios.get<User>(`${process.env.REACT_APP_DEMO_URL}/api/users/find_by_email?email=mflandin@gr.com`);
         setCurrentUser(userResponse.data);
-        setIsLiked(
-          userResponse.data.liked_products.includes(String(productId))
-        );
+        setIsLiked(userResponse.data.liked_products.includes(Number(productId)));
       } catch (error) {
         console.error("There was an error fetching the user: ", error);
         setCurrentUser(null);
       }
     };
+
+    fetchProductAndBundles();
     fetchUser();
   }, [productId]);
 
   const nextImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex + 1) % product.image_urls.length
-    );
+    if (!product) return;
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % product.image_urls.length);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? product.image_urls.length - 1 : prevIndex - 1
-    );
+    if (!product) return;
+    setCurrentImageIndex((prevIndex) => prevIndex === 0 ? product.image_urls.length - 1 : prevIndex - 1);
   };
 
   if (!product || !currentUser) {
-    return <div className='single-product-loading'>Loading...</div>;
+    return <div className="single-product-loading">Loading...</div>;
   }
 
   const handleLike = async () => {
+    if (!product) return;
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`,
-        {
-          user_email: currentUser.email,
-          liked: !isLiked,
-        },
-        { headers: { Accept: "application/json" } }
-      );
-
+      const response = await axios.post(`${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`, { user_email: currentUser.email, liked: !isLiked }, { headers: { Accept: "application/json" } });
       if (response.status === 200) {
         setIsLiked(!isLiked);
       }
@@ -263,7 +216,7 @@ const SingleProduct = () => {
               </div>
               <div
                 id="row3"
-                dangerouslySetInnerHTML={{ __html: product.description }}
+                dangerouslySetInnerHTML={{ __html: product?.description || '' }}
               ></div>
             </div>
             <div id="right-column">
@@ -294,7 +247,7 @@ const SingleProduct = () => {
                     key={bundledProduct.id}
                     product={bundledProduct}
                     isBundledProduct={true}
-                    bundleDiscount={bundleDiscount}
+                    bundleDiscount={bundleDiscount ?? 0}
                   />
                 ))}
                 <div className="bundle-purchase">
