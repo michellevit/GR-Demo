@@ -81,15 +81,14 @@ module Api
       if user.nil?
         return render json: { error: "User not found" }, status: :not_found
       end
-      if request.post?
-        if params[:liked] == false 
-          user.liked_products.delete(@product.id.to_s)
-        else
-          user.liked_products << @product.id.to_s
+      product_id_as_int = @product.id.to_i 
+      if params[:liked] == 'true'
+        unless user.liked_products.include?(product_id_as_int)
+          user.liked_products << product_id_as_int
         end
-      elsif request.get?
-        return render json: { liked: user.liked_products.include?(@product.id.to_s) }, status: :ok
-      else
+      elsif params[:liked] == 'false'
+        user.liked_products.delete(product_id_as_int)
+      end
         return render json: { error: "Unsupported request method" }, status: :unprocessable_entity
       end
       if user.save

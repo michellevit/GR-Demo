@@ -127,6 +127,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 - Commands:
   - **Error Logs:** `heroku logs --tail -a gr-demo`
   - **Restart Server:** `heroku ps:restart -a gr-demo`
+  --**Delete Table Entries:** `heroku run rails runner "User.destroy_all" --app gr-demo`
 
 
 ## Features To Add <a name="features-to-add"></a>
