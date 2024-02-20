@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import { Product, User } from '../types/types';
 
 interface BundleProduct extends Product {
-  bundleDiscountPercentage?: number; // Optional: Bundle-specific discount percentage
+  bundleDiscountPercentage?: number; 
 }
 
 interface RatingsDistribution {
@@ -35,7 +35,6 @@ const SingleProduct: React.FC = () => {
   });
 
   useEffect(() => {
-    console.log("Liked: ", isLiked)
     if (!productId) return;
     const fetchProductAndBundles = async () => {
       try {
@@ -90,7 +89,6 @@ const SingleProduct: React.FC = () => {
   const handleLike = async () => {
     if (!product) return;
     try {
-      console.log("Liked: ", !isLiked)
       const response = await axios.post(`${process.env.REACT_APP_DEMO_URL}/api/products/${product.id}/like`, { user_email: currentUser.email, liked: !isLiked }, { headers: { Accept: "application/json" } });
       if (response.status === 200) {
         setIsLiked(!isLiked);
