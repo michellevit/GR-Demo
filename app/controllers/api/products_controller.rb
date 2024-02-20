@@ -83,10 +83,10 @@ module Api
       end
       product_id = @product.id
     
-      if params[:liked] == 'true'
+      if params[:liked] == true
         # Add product_id to liked_products array only if it's not already included
         user.liked_products |= [product_id]
-      elsif params[:liked] == 'false'
+      elsif params[:liked] == false
         # Remove product_id from liked_products array
         user.liked_products.delete(product_id)
       else
