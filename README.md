@@ -131,6 +131,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 
 ## Features To Add <a name="features-to-add"></a>
+- DB: lib/tasks -> rake files not consistent
 - SingleProduct Page: spacing for 'Add all to Cart' section on smaller screen size / more products
 - DB: liked_products -> implement join table instead of stale array
 - SingleProduct Page: Rating bar chart + accurate star ratings + if 0 ratings -> 'no ratings'
