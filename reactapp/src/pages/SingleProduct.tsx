@@ -34,6 +34,23 @@ const SingleProduct: React.FC = () => {
     1: 0,
   });
 
+  const simulateRatingsDistribution = (averageRating: number, totalRatings: number): RatingsDistribution => {
+    let distribution: RatingsDistribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    let remainingRatings = totalRatings;
+    const roundedAverage = Math.round(averageRating);
+    distribution[roundedAverage] = Math.round(totalRatings * 0.5);
+    remainingRatings -= distribution[roundedAverage];
+  
+    while (remainingRatings > 0) {
+      const rating = Math.floor(Math.random() * 5) + 1;
+      const count = Math.min(remainingRatings, Math.ceil(Math.random() * (remainingRatings / 2)));
+      distribution[rating] += count;
+      remainingRatings -= count;
+    }
+  
+    return distribution;
+  };
+
   useEffect(() => {
     if (!productId) return;
     const fetchProductAndBundles = async () => {
@@ -41,7 +58,12 @@ const SingleProduct: React.FC = () => {
         const productResponse = await axios.get<Product>(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}`);
         setProduct(productResponse.data);
         document.title = productResponse.data.product_name;
-
+        setRatingsDistribution(
+          simulateRatingsDistribution(
+            productResponse.data.average_rating,
+            productResponse.data.ratings_count
+          )
+        );
         const bundlesResponse = await axios.get<{ products: BundleProduct[], discount_percentage: number }[]>(`${process.env.REACT_APP_DEMO_URL}/api/products/${productId}/bundles`);
         if (bundlesResponse.data.length > 0) {
           setBundledProducts(bundlesResponse.data[0].products);
