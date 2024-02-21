@@ -7,6 +7,8 @@ interface RatingsBarChartProps {
 
 const RatingsBarChart: React.FC<RatingsBarChartProps> = ({ distribution }) => {
   const totalRatings = Object.values(distribution).reduce((sum, value) => sum + value, 0);
+  console.log("Distribution:", distribution);
+  console.log("Total Ratings:", totalRatings);
   return (
     <div className="ratings-bar-chart-container">
       <h3>Ratings</h3>
