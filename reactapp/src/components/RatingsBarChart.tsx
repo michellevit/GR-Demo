@@ -7,13 +7,12 @@ interface RatingsBarChartProps {
 
 const RatingsBarChart: React.FC<RatingsBarChartProps> = ({ distribution }) => {
   const totalRatings = Object.values(distribution).reduce((sum, value) => sum + value, 0);
-
   return (
     <div className="ratings-bar-chart-container">
       <h3>Ratings</h3>
       <div className="ratings-bar-chart">
         {Object.entries(distribution).map(([stars, count]) => {
-          const widthPercentage = (count / totalRatings) * 100;
+          const widthPercentage = totalRatings > 0 ? (count / totalRatings) * 100 : 0; 
           return (
             <div className="bar-row" key={stars}>
               <div className="stars">{stars} star</div>
