@@ -1,8 +1,8 @@
 # GR Product Engineering Challenge 
 
-![Ruby Version](https://img.shields.io/badge/ruby-3.2.3-red.svg)
-![Rails Version](https://img.shields.io/badge/rails-7.1.3-red.svg)
-![React Version](https://img.shields.io/badge/react-18.2.0-blue.svg)
+![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-red.svg)
+![Rails Version](https://img.shields.io/badge/Rails-7.1.3-red.svg)
+![React Version](https://img.shields.io/badge/React-18.2.0-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue.svg)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg)
@@ -12,8 +12,6 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 <a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-red?style=for-the-badge&logo=ruby"></a>
 <a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
-
-
 
 
 ## Table of Contents
@@ -53,7 +51,7 @@ This project is a simplified replication of the GR Discover and Product Page UX,
 
 
 ## Architectural Decisions<a name="architectural-decisions"></a>
-- **Relational Database Design:** A relational schema with a join table (i.e., bundle_products) was implemented to handle the dynamic product bundle relationship, enhancing data integrity and management.
+- **Relational Database Design:** A relational schema with a join tables (i.e., bundle_products) was implemented to handle the dynamic product bundle relationship, enhancing data integrity and relationship management.
 - **Route Configuration in Rails:** Routes were strategically ordered in routes.rb to prioritize functionality (e.g., search routes) and correctly handle SPA routing with a catchall route.
 - **Build Process Automation:** Batch files were chosen over npm scripts for build and deployment tasks to minimize dependencies and ensure compatibility with Heroku's buildpacks, avoiding potential deployment issues.
 
