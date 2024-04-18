@@ -1,7 +1,3 @@
-# NOTE: Local environment will not work with current setup: 
-#       *db is not set up with postgresql, and sqlite3 will not work because of difference in how sqlite3 and postgresql handle json fields
-
-# database.yml
 # database.yml
 
 default: &default
