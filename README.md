@@ -10,8 +10,8 @@
 This project is a simplified replication of the GR Discover and Product Page UX, developed using Rails and React.
 
 
-<a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-red?style=for-the-badge&logo=ruby"></a>
-<a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a>
+<a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-cc0000?style=for-the-badge&logo=ruby"></a>
+<a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-61dafb?style=for-the-badge&logo=react"></a>
 
 
 ## Table of Contents
